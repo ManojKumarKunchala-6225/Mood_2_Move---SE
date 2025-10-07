@@ -1,0 +1,26 @@
+# ------------------
+# 1. Frontend (Client) Files
+# ------------------
+/Client/node_modules/
+/Client/build/
+
+# ------------------
+# 2. Backend (Server) Environment and Secrets
+# ------------------
+# Virtual Environment
+/Server/venv/
+
+# Database file
+/Server/db.sqlite3
+
+# Secret and Local Configuration (CRITICAL)
+/Server/.env
+
+# Temporary / Cache Files
+/Server/__pycache__/
+/Server/**/__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
