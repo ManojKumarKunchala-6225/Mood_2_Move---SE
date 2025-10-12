@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios"; // 1. Import axios
 import { FaPlus, FaMinus } from 'react-icons/fa';
-import Navbar from "./Navbar"; // Make sure to import your Navbar
+import Navbar from "../components/Navbar"; // Make sure to import your Navbar
 
 export default function Explore() {
   const [selectedOptions, setSelectedOptions] = useState({

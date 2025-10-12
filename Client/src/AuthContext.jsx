@@ -1,42 +1,63 @@
 // src/AuthContext.jsx
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from "react";
 
-export const AuthContext = createContext(null);
+// Create context with default structure
+const AuthContext = createContext({
+  user: null,
+  login: () => {},
+  logout: () => {},
+});
 
-export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-  // This effect runs once when the app loads. It checks for the
-  // access token to determine if the user is already logged in.
+  // Load user session on mount
   useEffect(() => {
-    const token = localStorage.getItem('access_token');
-    if (token) {
-      setIsLoggedIn(true);
+    const token = localStorage.getItem("access_token");
+    const storedFullName = localStorage.getItem("full_name"); // ✅ Get full name
+    const storedUsername = localStorage.getItem("username");
+
+    if (token && (storedFullName || storedUsername)) {
+      // ✅ Prefer full name if available
+      setUser({ 
+        full_name: storedFullName || null, 
+        username: storedUsername || null 
+      });
+    } else {
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("refresh_token");
+      localStorage.removeItem("full_name");
+      localStorage.removeItem("username");
+      setUser(null);
     }
   }, []);
 
-  // This function will be called from your LoginSignup page
-  // to update the global state and tell the Navbar to change the icon.
-  const login = () => {
-    setIsLoggedIn(true);
+  // Function to handle login
+  const login = (userData) => {
+    // Expected userData: { full_name: "...", username: "..." }
+    if (userData.full_name) localStorage.setItem("full_name", userData.full_name);
+    if (userData.username) localStorage.setItem("username", userData.username);
+
+    setUser(userData);
   };
 
-  // This function will be called from your UserProfile page
-  // to log the user out and update the Navbar icon.
+  // Function to handle logout
   const logout = () => {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
-    setIsLoggedIn(false);
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+    localStorage.removeItem("full_name");
+    localStorage.removeItem("username");
+    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// You can create a custom hook to make it easier to use this context
-export const useAuth = () => {
-    return useContext(AuthContext);
-}
+// Custom hook for easy access
+const useAuth = () => useContext(AuthContext);
+
+export { AuthContext, AuthProvider, useAuth };

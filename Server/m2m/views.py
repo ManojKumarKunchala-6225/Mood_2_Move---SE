@@ -1,5 +1,3 @@
-# m2m/views.py
-
 import logging
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions, serializers, status
@@ -14,117 +12,56 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth import get_user_model # Added for ChangePasswordView
+from django.shortcuts import get_object_or_404 # Added for ProfileUpdateAPIView context
 
 from .recommend_logic import find_recommendations
 from .models import Profile # Make sure Profile is imported
 
+# 🚀 NEW IMPORTS FOR SERIALIZERS: Import the ChangePasswordSerializer
+from .serializers import (
+    ChangePasswordSerializer, # NEW
+    RecommendationRequestSerializer,
+    UserProfileSerializer,
+    UserProfileUpdateSerializer,
+    RegisterSerializer,
+    PasswordResetRequestSerializer,
+    PasswordResetConfirmSerializer,
+)
+
+User = get_user_model()
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
 
 # ==============================================================================
-# SERIALIZERS
+# SERIALIZERS (Note: Serializer definitions are better kept in m2m/serializers.py 
+# but are repeated here for context if the file structure is non-standard. 
+# We remove the definitions here to only keep the necessary imports/usage.)
 # ==============================================================================
 
-class UserProfileSerializer(serializers.ModelSerializer):
-    """
-    Serializer to get user details including data from the profile.
-    Used for READ operations (GET /api/profile/).
-    """
-    # These fields are read from the Profile model
-    phone_number = serializers.CharField(source='profile.phone_number', read_only=True)
-    blood_group = serializers.CharField(source='profile.blood_group', read_only=True)
-    
-    # Add name field to retrieve
-    name = serializers.CharField(source='first_name', read_only=True)
+# NOTE: The UserProfileSerializer, UserProfileUpdateSerializer, 
+# RegisterSerializer, RecommendationRequestSerializer, MyTokenObtainPairSerializer, 
+# PasswordResetRequestSerializer, and PasswordResetConfirmSerializer definitions 
+# should ideally be REMOVED from this views.py file since they are defined 
+# and imported from .serializers above. 
+# I will retain the class names in the views below, relying on the imports.
 
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'email', 'name', 'phone_number', 'blood_group']
+# Keeping only the necessary UserProfile/Update serializers here to fix potential issues
+# but recommending they remain fully defined in m2m/serializers.py:
 
+# UserProfileSerializer definition removed here and imported from .serializers
 
-# 🛠️ CRITICAL FIX APPLIED TO THIS SERIALIZER
-class UserProfileUpdateSerializer(serializers.ModelSerializer):
-    """
-    Serializer to handle PATCH requests for updating User and Profile data.
-    """
-    # Maps phone_number and blood_group to the Profile model
-    phone_number = serializers.CharField(source='profile.phone_number', required=False, allow_blank=True)
-    blood_group = serializers.CharField(source='profile.blood_group', required=False, allow_blank=True)
-    
-    # Maps name to the first_name field of the User model
-    name = serializers.CharField(source='first_name', required=False, allow_blank=True)
+# UserProfileUpdateSerializer definition removed here and imported from .serializers
 
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'name', 'phone_number', 'blood_group']
-        read_only_fields = ['id'] 
-        extra_kwargs = {
-            'username': {'required': False},
-            'email': {'required': False},
-        }
+# RegisterSerializer definition removed here and imported from .serializers
 
-    # 🔑 CORRECTED update method to handle nested Profile data from source='profile.field'
-    def update(self, instance, validated_data):
-        # 1. Extract the nested profile data dictionary if it exists
-        #    This is where DRF places fields defined with source='profile.field'
-        profile_data = validated_data.pop('profile', {})
-
-        # 2. Update User model fields
-        
-        # Apply 'name' (which maps to first_name)
-        if 'first_name' in validated_data:
-            instance.first_name = validated_data.pop('first_name')
-            
-        # Call super().update to handle direct User fields (username, email)
-        user = super().update(instance, validated_data)
-        
-        # 3. Update Profile model fields
-        profile = user.profile
-        
-        # Apply phone_number and blood_group from the extracted profile_data
-        if 'phone_number' in profile_data:
-            profile.phone_number = profile_data['phone_number']
-        
-        if 'blood_group' in profile_data:
-            profile.blood_group = profile_data['blood_group']
-
-        # Save both instances
-        profile.save()
-        user.save()
-        return user
+# RecommendationRequestSerializer definition removed here and imported from .serializers
 
 
-class RegisterSerializer(serializers.ModelSerializer):
-    """Serializer for the user registration endpoint."""
-    phone_number = serializers.CharField(max_length=15, write_only=True, required=True)
-    name = serializers.CharField(write_only=True, required=False, allow_blank=True) # Added name for registration
-
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'password', 'email', 'phone_number', 'name')
-        extra_kwargs = {'password': {'write_only': True}}
-
-    def create(self, validated_data):
-        phone_number = validated_data.pop('phone_number')
-        first_name = validated_data.pop('name', '')
-        
-        user = User.objects.create_user(
-            username=validated_data['username'],
-            email=validated_data['email'],
-            password=validated_data['password'],
-            first_name=first_name # Save the name field
-        )
-        Profile.objects.create(user=user, phone_number=phone_number)
-        return user
-
-
-class RecommendationRequestSerializer(serializers.Serializer):
-    """Handles validation for the recommendation request."""
-    mood = serializers.CharField(max_length=100, required=True)
-    people = serializers.CharField(max_length=100, required=True)
-    location = serializers.CharField(max_length=100, required=True)
-
+# ==============================================================================
+# TOKEN SERIALIZER (Defined here since it extends a JWT view)
+# ==============================================================================
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     """
@@ -153,16 +90,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
             return data
         
         raise serializers.ValidationError('No active account found with the given credentials')
-
-
-class PasswordResetRequestSerializer(serializers.Serializer):
-    """Serializer for the password reset request."""
-    email = serializers.EmailField(required=True)
-
-
-class PasswordResetConfirmSerializer(serializers.Serializer):
-    """Serializer for confirming the password reset."""
-    password = serializers.CharField(write_only=True, required=True)
 
 
 # ==============================================================================
@@ -231,6 +158,41 @@ class ProfileUpdateAPIView(generics.UpdateAPIView):
     def get_object(self):
         # Set the object to be updated to the currently authenticated user
         return self.request.user
+
+
+# 🚀 NEW VIEW: Change Password View (Resolves ImportError)
+class ChangePasswordView(generics.GenericAPIView):
+    """
+    An endpoint for changing the currently authenticated user's password.
+    Endpoint: api/profile/change_password/
+    """
+    serializer_class = ChangePasswordSerializer
+    permission_classes = (permissions.IsAuthenticated,) 
+    
+    def get_object(self, queryset=None):
+        # Ensures we operate on the currently logged-in user
+        return self.request.user
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        # Pass the request object to the serializer context for old password validation
+        serializer = self.get_serializer(data=request.data, context={'request': request}) 
+
+        if serializer.is_valid(raise_exception=True):
+            # Save the new password
+            self.object.set_password(serializer.validated_data['new_password1'])
+            self.object.save()
+            
+            # Note: No need to return tokens, as the frontend handles logout/re-login.
+            
+            return Response(
+                {"detail": "Password updated successfully."},
+                status=status.HTTP_200_OK
+            )
+
+        # This part should be unreachable if raise_exception=True is used, 
+        # but included for clarity.
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class HelloWorldView(APIView):

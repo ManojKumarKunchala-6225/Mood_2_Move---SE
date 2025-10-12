@@ -1,5 +1,3 @@
-# mood2move_backend/urls.py
-
 from django.contrib import admin
 from django.urls import path
 
@@ -13,9 +11,11 @@ from m2m.views import (
     RegisterView,
     MyTokenObtainPairView,
     UserProfileView,
-    ProfileUpdateAPIView, # Ensure this is imported
+    ProfileUpdateAPIView,
     PasswordResetRequestView,
     PasswordResetConfirmView,
+    # ⭐ FIX 1: Import the new view by name (assuming it's in m2m.views)
+    ChangePasswordView, 
 )
 
 urlpatterns = [
@@ -33,11 +33,14 @@ urlpatterns = [
     # Profile Retrieve (GET)
     path('api/profile/', UserProfileView.as_view(), name='user_profile'),
     
-    # 🟢 ADD THIS LINE: Profile Update (PATCH) 
+    # Profile Update (PATCH) 
     path('api/profile/update/', ProfileUpdateAPIView.as_view(), name='user_profile_update'), 
     
     path('api/password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
     path('api/password-reset-confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    
+    # ⭐ FIX 2: Corrected URL path and used the directly imported view name
+    path('api/profile/change_password/', ChangePasswordView.as_view(), name='change_password'),
 
     # 4. Application-Specific Endpoints
     # -----------------------------------------------------------------

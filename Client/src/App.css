@@ -1,0 +1,6 @@
+.small-image {
+  width: 100px;
+  height: 50px;
+  object-fit: cover; /* maintains aspect ratio */
+  border-radius: 8px; /* optional rounded corners */
+}

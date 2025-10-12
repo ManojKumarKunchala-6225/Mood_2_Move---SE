@@ -1,6 +1,6 @@
 // src/pages/Contact.jsx
 import React, { useState, useRef } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar"; 
 import emailjs from '@emailjs/browser'; // 1. Import EmailJS
 
 const Contact = () => {
@@ -36,10 +36,8 @@ const Contact = () => {
 
       {/* Contact Form Section */}
       <div
-        className="min-h-screen flex items-center justify-center bg-cover bg-center p-4"
-        style={{
-          backgroundImage: 'url("background.jpg")',
-        }}
+        className="min-h-screen flex items-center justify-center p-4"
+        style={{ backgroundColor: "#ffffff" }} // or any color you want
       >
         <div className="bg-lightgreen bg-opacity-95 p-6 md:p-10 rounded-2xl shadow-lg w-full max-w-md sm:max-w-lg md:max-w-2xl relative text-left">
           <h2 className="text-center text-2xl sm:text-3xl font-bold text-teal-900 mt-4 mb-6">
