@@ -2,77 +2,975 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const nearbyPlacesData = {
-  "Mumbai": [
-    { name: "Gateway of India", type: "Attraction", image: "/images/gateway.jpeg" },
-    { name: "Marine Drive", type: "Attraction", image: "/images/marine.jpeg" },
-    { name: "Leopold Cafe", type: "Food", image: "/images/leopold.jpg" },
+  "Agra": [
+    {
+      name: "Taj Mahal",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGFqJTIwbWFoYWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500",
+      className: "w-full h-full object-cover"
+    },
+    {
+      name: "Agra Fort",
+      type: "Attraction",
+      image: "https://plus.unsplash.com/premium_photo-1697730373510-51b7fcf2ff52?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWdyYSUyMGZvcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500",
+    },
+    {
+      name: "ITC Mughal",
+      type: "Hotel",
+      image: "https://media.istockphoto.com/id/698902360/photo/diwan-i-khas-in-the-pachisi-courtyard-fatehpur-sikri-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=2fDXdXtTHH70CQhXxIq2t3NZSB-TyOaarMQV2XQp91c=",
+    }
+  ],
+  "Ahmedabad": [
+    {
+      name: "Sabarmati Ashram",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1594736797933-d0d69c1d9466?w=1200&h=600&fit=crop",
+    },
+    {
+      name: "Kankaria Lake",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+    },
+    {
+      name: "Adalaj Stepwell",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1547981609-4b6bf67b9d0a?w=1200&h=600&fit=crop",
+    }
+  ],
+  "AjantaElloraCaves": [
+    {
+      name: "Ajanta Caves",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1587135941948-670b381f08ce?w=1200&h=600&fit=crop",
+    },
+    {
+      name: "Ellora Caves",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=1200&h=600&fit=crop",
+    },
+    {
+      name: "Hotel Kailas",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1621261144936-7b3f6c4c0d6a?w=1200&h=600&fit=crop",
+    }
+  ],
+  "AndamanNicobar": [
+    {
+      name: "Radhanagar Beach",
+      type: "Attraction",
+      image: "https://media.istockphoto.com/id/1369829721/photo/radhanagar-beach-swaraj-dweep.webp?a=1&b=1&s=612x612&w=0&k=20&c=DGOFtRuwFnMSbuS7DiP-uxoQGTyRPOLoI_omNQ_wZ90=",
+    },
+    {
+      name: "Neil Island",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+    },
+    {
+      name: "Scuba Diving",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1603383928972-0d6b0cac7e8f?w=1200&h=600&fit=crop",
+    }
+  ],
+  "Auli": [
+    {
+      name: "Auli Ski Resort",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1579033064629-155106c33b24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVsaSUyMHNraWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    },
+    {
+      name: "Auli Artificial Lake",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXVsaSUyMGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    },
+    {
+      name: "Paonromic Himalayan Views",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXVsaSUyMGhpbWFsYXlhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    }
+  ],
+  "Backwater_Stays": [
+    {
+      name: "Alleppey Backwaters",
+      type: "Attraction",
+      image: "https://media.istockphoto.com/id/177447843/photo/house-boat-in-backwaters.webp?a=1&b=1&s=612x612&w=0&k=20&c=-qor9710ge3GbC6MvV0Mp9AK4UxmzfcFxphG5L_xMXE=",
+    },
+    {
+      name: "Paddy Fields",
+      type: "Attraction",
+      image: "https://media.istockphoto.com/id/657317806/photo/green-rice-fields-beside-kerala-backwaters-in-alleppey-kerala-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=4KNhXP-PQFxNc77O1RSVxC0wO-68kqdKRdMMfmc45_U=",
+    },
+    {
+      name: "Houseboats",
+      type: "Hotel",
+      image: "https://media.istockphoto.com/id/471988323/photo/india.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVx3BjCK4oghitogZjx9BN-dn4RWiKH-4ghZJFWzsiw=",
+    }
+  ],
+  "Bikaner": [
+    {
+      name: "Junagarh Fort",
+      type: "Attraction",
+      image: "https://source.unsplash.com/400x300/?junagarh-fort"
+    },
+    {
+      name: "Karni Mata Temple",
+      type: "Attraction",
+      image: "https://source.unsplash.com/400x300/?karni-mata-temple"
+    },
+    {
+      name: "Narendra Bhawan",
+      type: "Hotel",
+      image: "https://source.unsplash.com/400x300/?narendra-bhawan"
+    }
+  ],
+  "Bir Billing": [
+    {
+      name: "Bir Monastery",
+      type: "Attraction",
+      image: "https://source.unsplash.com/400x300/?bir-monastery"
+    },
+    {
+      name: "Billing Paragliding",
+      type: "Attraction",
+      image: "https://source.unsplash.com/400x300/?billing-paragliding"
+    },
+    {
+      name: "Zostel Bir",
+      type: "Hotel",
+      image: "https://source.unsplash.com/400x300/?zostel-bir"
+    }
   ],
   "Jaipur": [
-    { name: "Hawa Mahal", type: "Attraction", image: "/images/hawamahal.jpg",className:"w-full h-32 object-cover rounded-t-lg"},
-    { name: "City Palace", type: "Attraction", image: "/images/citypalace.jpg" },
-    { name: "LMB Restaurant", type: "Food", image: "/images/LMB_restaurant.jpg" },
+    {
+      name: "Hawa Mahal",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amFpcHVyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Amber Fort",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGphaXB1cnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Rambagh Palace",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1602339752474-f77aa7bcaecd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGphaXB1cnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+    }
   ],
-  "Goa": [
-    { name: "Baga Beach", type: "Attraction", image: "/images/bagabeach.jpeg" },
-    { name: "Fort Aguada", type: "Attraction", image: "/images/fortaguada.jpg" },
-    { name: "Tito’s Bar", type: "Food", image: "/images/titobar.jpg"},
+  // "Jaisalmer": [
+  //   {
+  //     name: "Jaisalmer Fort",
+  //     type: "Attraction",
+  //     image: "https://source.unsplash.com/400x300/?jaisalmer-fort"
+  //   },
+  //   {
+  //     name: "Sam Sand Dunes",
+  //     type: "Attraction",
+  //     image: "https://source.unsplash.com/400x300/?sam-sand-dunes"
+  //   },
+  //   {
+  //     name: "Suryagarh",
+  //     type: "Hotel",
+  //     image: "https://source.unsplash.com/400x300/?suryagarh"
+  //   }
+  // ],
+  "Jodhpur": [
+    {
+      name: "Mehrangarh Fort",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1566873535350-a3f5d4a804b7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8am9kaHB1cnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Umaid Bhawan Palace",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1545321945-7edd9bf1331a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8am9kaHB1cnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400"
+    },
+    {
+      name: "RAAS Jodhpur",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1504194947363-2f14d9e0e445?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8am9kaHB1cnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+    }
   ],
-  "Delhi": [
-    { name: "Red Fort", type: "Attraction", image: "https://source.unsplash.com/400x300/?red,fort,delhi" },
-    { name: "India Gate", type: "Attraction", image: "https://source.unsplash.com/400x300/?india,gate" },
-    { name: "Karim's Restaurant", type: "Food", image: "https://source.unsplash.com/400x300/?mughlai,food" },
+  "Kanchipuram": [
+    {
+      name: "Kanchipuram Temples",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1697263021095-1b702c092026?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2FuY2hpcHVyYW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Kanchi Kudil",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1757681079728-a9a115fff11f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGthbmNoaXB1cmFtfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Regency Kanchipuram",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1660463835177-bc6329055a6d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGthbmNoaXB1cmFtfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+    }
   ],
-  "Kerala": [
-    { name: "Alleppey Backwaters", type: "Attraction", image: "https://source.unsplash.com/400x300/?alleppey,backwaters" },
-    { name: "Munnar Tea Gardens", type: "Attraction", image: "https://source.unsplash.com/400x300/?munnar,tea" },
-    { name: "Local Kerala Cuisine", type: "Food", image: "https://source.unsplash.com/400x300/?kerala,food" },
+  "Kanyakumari": [
+    {
+      name: "Vivekananda Rock Memorial",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1646722391520-98919b71ea72?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGthbnlha3VtYXJpfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Kanyakumari Temple",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1645689326349-61af008aad82?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGthbnlha3VtYXJpfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "The Gopinivas Grand",
+      type: "Hotel",
+      image: "https://source.unsplash.com/400x300/?gopinivas-grand"
+    }
   ],
-  "Maldives": [
-    { name: "Sunset Beach", type: "Attraction", image: "https://source.unsplash.com/400x300/?maldives,beach" },
-    { name: "Coral Island", type: "Attraction", image: "https://source.unsplash.com/400x300/?maldives,island" },
-    { name: "Seafood Shack", type: "Food", image: "https://source.unsplash.com/400x300/?maldives,food" },
+  "Kasauli": [
+    {
+      name: "Kasauli Brewery",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1637204329780-e82358c50ee3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2FzYXVsaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Christ Church",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1715964644963-ec9668b880ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2FzYXVsaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Kasauli Regency",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1634541576884-359e3db2a675?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGthc2F1bGl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    }
   ],
-  "Sunny Beach": [
-    { name: "Golden Sands", type: "Attraction", image: "https://source.unsplash.com/400x300/?sunny,beach" },
-    { name: "Beachfront Cafe", type: "Food", image: "https://source.unsplash.com/400x300/?beach,cafe" },
-    { name: "Sunset Point", type: "Attraction", image: "https://source.unsplash.com/400x300/?sunset,beach" },
+  "Kasol": [
+    {
+      name: "Parvati River",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1612638039814-1a67ea727114?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2Fzb2x8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Riverside Camps",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1662944113366-123561a844e1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2Fzb2x8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "The Himalayan Village",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1643042725188-42df82135f1b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a2Fzb2x8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    }
   ],
-    "Kerala Backwaters": [
-    { name: "Alleppey Houseboats", type: "Attraction", image: "/images/alleppey_houseboats.jpg" },
-    { name: "Kumarakom Bird Sanctuary", type: "Attraction", image: "/images/kumarakom_bird.jpg" },
-    { name: "Taj Green Cove Resort", type: "Hotel", image: "/images/taj_green_cove.jpg" },
+  "Kedarnath": [
+    {
+      name: "Kedarnath Temple",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1612438214708-f428a707dd4e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2VkYXJuYXRofGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Himalayan Ranges",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1606722581293-628fa217a6f7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGtlZGFybmF0aHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Chorobari Glacier",
+      type: "Hotel",
+      image: "https://images.unsplash.com/photo-1617860931879-19d32ec9912d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a2VkYXJuYXRofGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+    }
   ],
-  "Darjeeling Hills": [
-    { name: "Tiger Hill", type: "Attraction", image: "/images/tigerhill.jpg" },
-    { name: "Batasia Loop", type: "Attraction", image: "/images/batasia_loop.jpg" },
-    { name: "Mayfair Darjeeling Hotel", type: "Hotel", image: "/images/mayfair_darjeeling_hotel.jpg" },
+  "Khajjiar": [
+    {
+      name: "Khajjiar Lake",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1714381639586-80d1f04dfb0e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2hhamppYXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Khajjar Meadow",
+      type: "Attraction",
+      image: "https://images.unsplash.com/photo-1600491001617-36f4e8005cc1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2hhamppYXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    },
+    {
+      name: "Khajji Nag Temple",
+      type: "Temple",
+      image: "https://images.unsplash.com/photo-1653454656100-0fd5ea96bebf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2hhamppYXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+    }
   ],
-  "Andaman & Nicobar": [
-    { name: "Radhanagar Beach", type: "Attraction", image: "/images/radhanagarbeach.jpg" },
-    { name: "Ross Island", type: "Attraction", image: "/images/rossisland.jpg" },
-    { name: "Taj Exotica Resort", type: "Hotel", image: "/images/taj_exotica_resort.jpg" },
-  ],
-  "Rishikesh Adventure": [
-    { name: "Laxman Jhula", type: "Attraction", image: "/images/laxman_jhula.jpg" },
-    { name: "Ram Jhula", type: "Attraction", image: "/images/ram_jhula.jpg" },
-    { name: "Aloha on the Ganges", type: "Hotel", image: "/images/aloha_ganges.jpg" },
-  ],
-    "Manali Trek": [
-      { name: "Jogini Waterfalls", type: "Attraction", image: "/images/jogini_waterfalls.jpg" },
-      { name: "Hidimba Devi Temple", type: "Attraction", image: "/images/hidimba_temple.jpg" },
-      { name: "The Himalayan", type: "Hotel", image: "/images/the_himalayan.jpg" },
-    ],
-  "Udaipur Lakes": [
-    { name: "Lake Pichola", type: "Attraction", image: "/images/lake_pichola.jpg" },
-    { name: "Fateh Sagar Lake", type: "Attraction", image: "/images/fateh_sagar_lake.jpg" },
-    { name: "The Leela Palace Udaipur", type: "Hotel", image: "/images/leela_palace_udaipur.jpg" },
-  ],
-  "Agra Taj Mahal": [
-    { name: "Taj Mahal", type: "Attraction", image: "/images/tajmahal_romantic.jpeg" , className:"w-full h-full object-cover"},
-    { name: "Agra Fort", type: "Attraction", image: "/images/agra_fort.jpg", className:"w-full h-full object-cover" },
-    { name: "ITC Mughal", type: "Hotel", image: "/images/itc_mughal.jpg", className:"w-full h-full object-cover" },
-  ],
-  
+  "Khajuraho": [
+  {
+    name: "Kandariya Mahadev Temple",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1606298855672-3efb63017be8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2hhanVyYWhvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Western Group of Temples",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1672215051407-6e05138da3a9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2hhanVyYWhvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "The Lalit Temple View",
+    type: "Temple",
+    image: "https://images.unsplash.com/photo-1671375159250-8f81a29e54e7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a2hhanVyYWhvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  }
+],
+"Kochi": [
+  {
+    name: "Marine Drive",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1558013400-b724200f9c39?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a29jaGl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Chinese Fishing Nets",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1605955794720-651b9ae7f5e7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29jaGl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Jewish Synagogue",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1590123717647-de5b78ed762e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGtvY2hpfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  }
+],
+"Kodaikanal": [
+  {
+    name: "Kodaikanal Lake",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1593692716621-1e228b0a9224?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29kYWlrYW5hbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Coaker's Walk",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1633931698758-f59cdaf042a2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGtvZGFpa2FuYWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Pillar Rocks",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1734007741768-0d55ed0cc02b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a29kYWlrYW5hbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+  }
+],
+"Kolkata": [
+  {
+    name: "Howrah Bridge",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1571679654681-ba01b9e1e117?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29sa2F0YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Victoria Memorial",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1603813507806-0d311a6eecd1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a29sa2F0YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "The Dakshineswar Temple",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1558431382-27e303142255?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a29sa2F0YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+  }
+],
+// "Kollur Mookambika": [
+//   {
+//     name: "Mookambika Temple",
+//     type: "Attraction",
+//     image: "https://source.unsplash.com/400x300/?mookambika-temple"
+//   },
+//   {
+//     name: "Kollur Beach",
+//     type: "Attraction",
+//     image: "https://source.unsplash.com/400x300/?kollur,beach"
+//   },
+//   {
+//     name: "Adiga's Hotel",
+//     type: "Hotel",
+//     image: "https://source.unsplash.com/400x300/?kollur,hotel"
+//   }
+// ],
+"Konark": [
+  {
+    name: "Sun Temple",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1677211352662-30e7775c7ce8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29uYXJrfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Intricate Carvings",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1601815264039-67c8ba1a7f98?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a29uYXJrfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Wheel of Konark",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1682703174034-f9de5333d7d0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGtvbmFya3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400",
+  }
+],
+"Lansdowne": [
+  {
+    name: "Snow-clad Himalayas",
+    type: "Attraction",
+    image:  "https://images.unsplash.com/photo-1606202801044-284067800cdf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuc2Rvd25lfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Colonial Architecture",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1502215842985-f167631b0151?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFuc2Rvd25lfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Pine Forests",
+    type: "Hotel",
+    image: "https://plus.unsplash.com/premium_photo-1674289121560-79ca47c03788?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuc2Rvd25lfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  }
+],
+"Leh": [
+  {
+    name: "Pangong Lake",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1619837374214-f5b9eb80876d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGVofGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Leh Palace",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1695954591222-b8645dee4caf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVoJTIwcGFsYWNlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Nubra Valley",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGVofGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400",
+  }
+],
+"Lovedale": [
+  {
+    name: "Ooty Rose Garden",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1729228639759-bf2e14d8673d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG92ZWRhbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Doddabetta Peak",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1708505116595-488b5cbf58d7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bG92ZWRhbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+  },
+  {
+    name: "Colonial Bunglows",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1589908916333-ff0862dc16be?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG92ZWRhbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400",
+  }
+],
+"Lucknow": [
+  {
+    name: "Bara Imambara",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1601752874509-0e350467dc7b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHVja25vd3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Rumi Darwaza",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1688287580970-70fe8e0f4bef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bHVja25vd3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "British Residency",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1547716467-fdb9102f1ac4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bHVja25vd3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Mahabalipuram": [
+  {
+    name: "Shore Temple",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1717522692051-78f400c96270?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcmUlMjB0ZW1wbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Five Rathas",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1740727263526-106ea10a355a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UGFuY2hhJTIwUmF0aGFzfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Arjuna's Penance",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1713986720216-4abc6d414c82?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QXJqdW5hJ3MlMjBQZW5hbmNlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Manali": [
+  {
+    name: "Snow-Capped Mountains",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1735453251488-7a2175e4a716?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U25vdy1DYXBwZWQlMjBNb3VudGFpbnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Solang Valley",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1713063968789-adf139c4a1eb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U29sYW5nJTIwVmFsbGV5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Hadimba Temple",
+    type: "Ancient temple amidst deodar forests",
+    image: "https://images.unsplash.com/photo-1655470062196-c37e923fc4c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SGFkaW1iYSUyMFRlbXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Mathura": [
+  {
+    name: "Shri Krishna Janmabhoomi",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1644254881308-70dca01a049d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWF0aHVyYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Vishram Ghat",
+    type: "Attraction",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfQNs10KGVf1Ep0PTzl4mqKSTTih-KhJgxJw&s"
+  },
+  {
+    name: "Dwarkadhish Temple",
+    type: "Beautiful temple dedicated to Lord Krishna",
+    image: "https://images.unsplash.com/photo-1668160747331-4275e35f0713?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RHdhcmthZGhpc2glMjBUZW1wbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Meppadi": [
+  {
+    name: "Meppadi hills",
+    type: "Beautiful hill station in Wayanad",
+    image: "https://images.unsplash.com/photo-1709105134096-7f0ebf30a3b5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWVwcGFkaSUyMEhpbGxzfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Coffee Plantations",
+    type: "Lush green coffee estates",
+    image: "https://images.unsplash.com/photo-1649815510295-189356f5b694?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29mZWUlMjBwbGFudGF0aW9uc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Misty Mountains",
+    type: "Cloud-covered Western Ghats",
+    image: "https://images.unsplash.com/photo-1585883721249-85e1112e6281?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVwcGFkaSUyMG1pc3QlMjBtb3VudGFpbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],"Mount Abu": [
+  {
+    name: "Dilwara Temples",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1675080990465-e04000543cd8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRpbHdhcmElMjB0ZW1wbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Nakki Lake",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1724250385111-3e06c1429b29?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmFra2klMjBsYWtlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Sunset Point",
+    type: "Breathtaking sunset views over Aravalli hills",
+    image: "https://images.unsplash.com/photo-1676555359137-3c84dd96a226?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnQlMjBhYnUlMjBzdW5zZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Mumbai": [
+  {
+    name: "Gateway of India",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=800&h=400&fit=crop"
+  },
+  {
+    name: "Marine Drive",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1666843527155-14ec5f016802?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFyaW5lJTIwZHJpdmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Chhatrapati Shivaji Terminus",
+    type: "UNESCO World Heritage Site",
+    image: "https://images.unsplash.com/photo-1710838182226-8646b6949a2d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q2hoYXRyYXBhdGklMjBTaGl2YWppJTIwVGVybWludXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Munnar": [
+  {
+    name: "Munnar Tea Gardens",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1637066742971-726bee8d9f56?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVubmFyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Eravikulam National Park",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1574423886860-a27bb1814f28?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RXJhdmlrdWxhbSUyME5hdGlvbmFsJTIwUGFya3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Mattupetty Dam",
+    type: "Beautiful dam surrounded by rolling hills",
+    image: "https://images.unsplash.com/photo-1706721030382-c14c27844fbd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TWF0dHVwZXR0eSUyMERhbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Mussoorie": [
+  {
+    name: "Kempty Falls",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1580723209134-48a2fd4b5712?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8S2VtcHR5JTIwRmFsbHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Gun Hill",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1638487246406-83a6dbdd3f36?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3VuJTIwaGlsbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Camel's Back Road",
+    type: "Scenic walking trail with mountain views",
+    image: "https://images.unsplash.com/photo-1610858976366-7299c0ddee75?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q2FtZWwncyUyMEJhY2slMjBSb2FkfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Mysore": [
+  {
+    name: "Mysore Palace",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1659126574791-13313aa424bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXlzb3JlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Chamundi Hill",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1606141836803-d011ab38b61e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbXVuZCUyMGhpbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Brindavan Gardens",
+    type: "Beautiful gardens with musical fountain show",
+    image: "https://images.unsplash.com/photo-1652010570939-6f8b53410331?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJpbmRhdmFuJTIwZ2FyZGVufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600p"
+  }
+],
+"Naggar": [
+  {
+    name: "Naggar Castle",
+    type: "Attraction",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLTWhxD16_OCYNBd1VOHsbJ_r29ldW_tt1GQ&s"
+  },
+  {
+    name: "Nicholas Roerich Art Gallery",
+    type: "Attraction",
+    image: "https://plus.unsplash.com/premium_photo-1706430433607-48f37bdd71b8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TmljaG9sYXMlMjBSb2VyaWNoJTIwQXJ0JTIwR2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Chandrakhani Pass",
+    type: "HoBeautiful mountain pass with panoramic viewstel",
+    image: "https://images.unsplash.com/photo-1560278384-ef70153784a5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q2hhbmRyYWtoYW5pJTIwUGFzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Nagpur": [
+  {
+    name: "Deekshabhoomi",
+    type: "Attraction",
+    image: "https://plus.unsplash.com/premium_photo-1694475572292-5f19c8a188c6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmFncHVyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Futala Lake",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1728306919437-2b94c1c43388?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZnV0YWxhJTIwbGFrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Sitabuldi Fort",
+    type: "Historic fort with panoramic city views",
+    image: "https://images.unsplash.com/photo-1695911242774-c089fc814913?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2l0YWJ1bGRpJTIwRm9ydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Ooty": [
+  {
+    name: "Ooty Lake",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1711553186754-0cfbdfe38b8d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b290eSUyMGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Botanical Gardens",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym90YW5pY2FsJTIwZ2FyZGVufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Doddabetta Peak",
+    type: "Highest point in the Nilgiri mountains",
+    image: "https://images.unsplash.com/photo-1655895348625-5d9d7a366350?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RG9kZGFiZXR0YSUyMFBlYWt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  }
+],
+"Pahalgam": [
+  {
+    name: "Betaab Valley",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pahalgam,betaab-valley"
+  },
+  {
+    name: "Aru Valley",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pahalgam,aru-valley"
+  },
+  {
+    name: "Welcomhotel by ITC",
+    type: "Hotel",
+    image: "https://source.unsplash.com/400x300/?pahalgam,hotel"
+  }
+],
+"Pangot": [
+  {
+    name: "Pangot Forest",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pangot,forest"
+  },
+  {
+    name: "Bird Watching Trails",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pangot,birds"
+  },
+  {
+    name: "Jungle Lore Birding Lodge",
+    type: "Hotel",
+    image: "https://source.unsplash.com/400x300/?pangot,hotel"
+  }
+],
+"Patna": [
+  {
+    name: "Golghar",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?patna,golghar"
+  },
+  {
+    name: "Patna Sahib Gurudwara",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?patna,gurudwara"
+  },
+  {
+    name: "Hotel Maurya",
+    type: "Hotel",
+    image: "https://source.unsplash.com/400x300/?patna,hotel"
+  }
+],
+"Pondicherry": [
+  {
+    name: "Promenade Beach",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pondicherry,beach"
+  },
+  {
+    name: "Aurobindo Ashram",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pondicherry,ashram"
+  },
+  {
+    name: "Palais de Mahe",
+    type: "Hotel",
+    image: "https://source.unsplash.com/400x300/?pondicherry,hotel"
+  }
+],
+"Pune": [
+  {
+    name: "Shaniwar Wada",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pune,shaniwar-wada"
+  },
+  {
+    name: "Aga Khan Palace",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?pune,aga-khan-palace"
+  },
+  {
+    name: "JW Marriott Pune",
+    type: "Hotel",
+    image: "https://source.unsplash.com/400x300/?pune,hotel"
+  }
+],
+"Puri": [
+  {
+    name: "Jagannath Temple",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?puri,jagannath-temple"
+  },
+  {
+    name: "Chilika Lake",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?puri,chilika-lake"
+  },
+  {
+    name: "Mayfair Heritage",
+    type: "Hotel",
+    image: "https://source.unsplash.com/400x300/?puri,hotel"
+  }
+],
+"Pushkar": [
+  {
+    name: "Pushkar Lake",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/475177362/photo/pushkar-camel-fair.webp?a=1&b=1&s=612x612&w=0&k=20&c=zkDWCmabI59HZHevjM0yngklejZvTHyWS11or9jPTMY=",
+  },
+  {
+    name: "Brahma Temple",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/638532774/photo/brahma-hindu-temple-in-pushkar.webp?a=1&b=1&s=612x612&w=0&k=20&c=FdVMVpSZBwISwpPtealT94vF-hIMdjPXP3QdrJrMmYI=",
+  },
+  {
+    name: "Colourful Streets",
+    type: "Hotel",
+    image: "https://media.istockphoto.com/id/979183928/photo/pushkar-town-sunset-panorama-view-from-papmochani-mata-hindu-temple-in-pushkar-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=MNsSJf3VO3uCwW6cJSTuNPCnkoP-oaR745OzzkfLzKg=",
+  }
+],
+"Rameswaram": [
+  {
+    name: "Ramanathaswamy Temple",
+    type: "Attraction",
+    image: "https://plus.unsplash.com/premium_photo-1697729444936-8c6a6f643312?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UmFtYW5hdGhhc3dhbXklMjBUZW1wbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=700",
+  },
+  {
+    name: "Dhanushkodi Beach",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/2200798244/photo/closeup-view-of-dhanushkodi-via-drone-image-of-tamil-nadu-india-its-in-the-ramanathapuram.webp?a=1&b=1&s=612x612&w=0&k=20&c=J1svLNsK2WNgZtcb-JcQ3SZ90BKvkPAArhr2oE_pnCQ=",
+  },
+  {
+    name: "Coastal Beauty",
+    type: "Hotel",
+    image: "https://media.istockphoto.com/id/2200798405/photo/scenic-aerial-image-of-the-pamban-bridge-at-sunrise-as-the-golden-hues-reflect-over-the.webp?a=1&b=1&s=612x612&w=0&k=20&c=4FyuOKif19F3EHhVtiO_fJKac8Ab0qKxPBt2SlzA3lY=",
+  }
+],
+"Ranikhet": [
+  {
+    name: "Ranikhet Hills",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/2151837635/photo/himalayan-landscapes.webp?a=1&b=1&s=612x612&w=0&k=20&c=vwKPTwWpeCOfsq7nX3hoSRTaQ36y-mT67iLiISdsBI0=",
+  },
+  {
+    name: "Chaubatia Gardens",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/1184370261/photo/public-gardens-hyderabad-telangana-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=jdhISwFrUid4ZglP2UmCcoLZ5O5F8GUy0cFYqbFTvU8=",
+  },
+  {
+    name: "Sunset Points",
+    type: "Hotel",
+    image: "https://media.istockphoto.com/id/1335083724/photo/sunset.webp?a=1&b=1&s=612x612&w=0&k=20&c=szY1LglMbVd8oep1hCzycGz0cizldmLP04iwQYyUeLY=",
+  }
+],
+"Ranthambore": [
+  {
+    name: "Royal Bengal Tiger",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/674191480/photo/bengal-tiger-at-ranthambhore-national-park-in-rajasthan-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=gMayPggRz6Cf-Eskiz5TjaU8C7SR9a7Feunt1dXcYcQ=",
+  },
+  {
+    name: "Ranthambore Fort",
+    type: "Attraction",
+    image:"https://media.istockphoto.com/id/1957671557/photo/ranthambore-fort-among-the-breathtaking-jungle-scenery-of-ranthambore-national-park-in.webp?a=1&b=1&s=612x612&w=0&k=20&c=PO6qOD-vEXtOWEmz1c5-UruLTbFBdQglYCiuFF6G-BQ=",
+  },
+  {
+    name: "Wildlife Diversity",
+    type: "Hotel",
+    image: "https://media.istockphoto.com/id/1163174046/photo/landscape-from-the-land-of-tigers-ranthambore-national-park-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=S2xhBpleYH5GDfvutCySvy-3GgsGkZwnYp7DsGRHGFc=",
+  }
+],
+"Rishikesh": [
+  {
+    name: "Laxman Jhula",
+    type: "Attraction",
+    image: "https://www.istockphoto.com/photo/lakshman-jhula-rishikesh-india-gm1148100484-309941252?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2FLaxman-Jhula&utm_term=Laxman+Jhula%3A%3A%3A",
+  },
+  {
+    name: "Ganga Arthi at Triveni Ghat",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/2070123132/photo/aryaghat.webp?a=1&b=1&s=612x612&w=0&k=20&c=doCLc5CZT4wmhU7laiQhcNqHV5O-vscLFBzNqptJXTg=",
+  },
+  {
+    name: "Yoga by the Ganges",
+    type: "Hotel",
+    image: "https://media.istockphoto.com/id/182755489/photo/young-woman-meditating-by-ganges-river-in-rishikesh-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=cIup9CXDPA6U32LKMODUeQg3ikg_-4QAAwUjJ8wRLEk=",
+  }
+],
+"Sabarimala": [
+  {
+    name: "Sabarimala Temple",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/1353922374/photo/sabarimala-lord-ayyappa-temple-keral.webp?a=1&b=1&s=612x612&w=0&k=20&c=ULpDumMY-SeRlBNE35a_yFgh9tUqHgXS5XPsNZ8ITKo=",
+  },
+  {
+    name: "Pampa River",
+    type: "Attraction",
+    image: "https://plus.unsplash.com/premium_photo-1669047670004-e952cb988335?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFtYmElMjByaXZlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500",
+  },
+  {
+    name: "Makara Jyothi",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1706392925777-6208f7b8f2e5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=435",
+  }
+],
+"Saputara": [
+  {
+    name: "Saputara Lake",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?saputara,lake"
+  },
+  {
+    name: "Sunset Point",
+    type: "Attraction",
+    image: "https://source.unsplash.com/400x300/?saputara,sunset"
+  },
+  {
+    name: "Aakar Lords Inn",
+    type: "Hotel",
+    image: "https://source.unsplash.com/400x300/?saputara,hotel"
+  }
+],
+"ShaktiPeeths": [
+  {
+    name: "Kamakhya Temple",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/1502218452/photo/sacred-hindu-shrine-in-assam-india-kamakhya-temple-sacred-place-of-worship-in-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=jme10wCWQH3PSHg6R2lfr2OkIf75x0t7d0N2hyHD1oQ=",
+  },
+  {
+    name: "Vaishno Devi",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/1319981113/photo/vaishno-you-have-to.webp?a=1&b=1&s=612x612&w=0&k=20&c=knHEQfEqtcOjBYNrhY9EB29gWs-2kKEBFgJnKKnQSxo=",
+  },
+  {
+    name: "Jwalamukhi Temple",
+    type: "Hotel",
+    image: "https://media.istockphoto.com/id/2222586177/photo/shri-chamunda-mata-temple-and-maa-jwalamukhi-devi-temple-on-the-south-side-of-mehrangarh-fort.webp?a=1&b=1&s=612x612&w=0&k=20&c=vD6kgWZZ58lQjP5BdeMnbVkz5QFFkr71cMt7SrR3zAY=",
+  }
+],
+"Shillong": [
+  {
+    name: "Ward's Lake",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/1256329737/photo/the-umiam-lake-in-shillong-meghalaya-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ul8eCfFy0QOCm7_v19fyA3llHAm_oIUcG6V9yl3khgY=",
+  },
+  {
+    name: "Shillong City View",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/2148423299/photo/shillong-city-buildings-with-mountains-and-clouds.webp?a=1&b=1&s=612x612&w=0&k=20&c=BSWmD8agFpbL7j9Qxx2m6jJEfXLTjtm10Hzf0mc2aa0=",
+  },
+  {
+    name: "Police Bazaar",
+    type: "Hotel",
+    image: "https://plus.unsplash.com/premium_photo-1749499938590-40291c621d2d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9saWNlJTIwYmF6YWFyJTIwaW4lMjBzaGlsbG9uZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500",
+  }
+],
+"Shimla": [
+  {
+    name: "The Ridge",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/468899408/photo/dhingu-mandir-sanjauli-shimla.webp?a=1&b=1&s=612x612&w=0&k=20&c=kEq0xjYIRGgX95KA7hh_WLiVnK9pdeDxqbAii1Uqii4=",
+  },
+  {
+    name: "Shimla Mall Road",
+    type: "Attraction",
+    image: "https://media.istockphoto.com/id/1138999470/photo/shimla-mall-road-in-evening.webp?a=1&b=1&s=612x612&w=0&k=20&c=KmDCGYmgmtXQyHAwjVlNG40AbVrIydYSkLYqBPcsdiQ=",
+  },
+  {
+    name: "Toy Train Journey",
+    type: "Hotel",
+    image: "https://media.istockphoto.com/id/1225623485/photo/beautiful-view-of-after-snowfall-in-shimla-railway-station.webp?a=1&b=1&s=612x612&w=0&k=20&c=kd5DqPFz3bbTjD7ISr6bEqYO6Tur5wUpl2DnAjZ4AuE=",
+  }
+],
+"Shirdi": [
+  {
+    name: "Sai Baba Temple",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+  },
+  {
+    name: "Dwarkamai",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1603383928972-0d6b0cac7e8f?w=1200&h=600&fit=crop",
+  },
+  {
+    name: "Lendi Baug",
+    type: "Hotel",
+    image: "https://images.unsplash.com/photo-1547981609-4b6bf67b9d0a?w=1200&h=600&fit=crop",
+  }
+],
+"Tirupati": [
+  {
+    name: "Tirumala Venkateswara Temple",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1733805569204-41768c7d8c0f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGlydW1hbGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Golden Gopuram",
+    type: "Attraction",
+    image: "https://images.unsplash.com/photo-1705723116788-d11fa6e3f415?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dGlydW1hbGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+  },
+  {
+    name: "Marasa Sarovar Premiere",
+    type: "Magnificent temple tower",
+    image: "https://source.unsplash.com/400x300/?tirupati,hotel"
+  }
+]
 };
 
 const NearbyPlaces = ({ destinationName, onBack }) => {

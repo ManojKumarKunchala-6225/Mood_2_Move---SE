@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";//
 const categories = [
   { name: "Happy", image: "/images/jaipur_happy.jpeg" }, // Diwali, Holi, etc.
-  { name: "Relaxed", image: "/images/kerala_relaxed.jpeg" }, // Kerala backwaters
-  { name: "Adventurous", image: "/images/Birbilling_adventure.jpeg" }, // Himalayan adventure
+  { name: "Relax", image: "/images/kerala_relaxed.jpeg" }, // Kerala backwaters
+  { name: "Adventure", image: "/images/Birbilling_adventure.jpeg" }, // Himalayan adventure
   { name: "Romantic", image: "/images/goa_romantic.jpeg" }, // Romantic lakes of Udaipur
 ];
 

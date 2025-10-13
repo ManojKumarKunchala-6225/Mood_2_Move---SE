@@ -336,9 +336,9 @@ const UserProfile = () => {
     return (
         <div
             className="min-h-screen bg-cover bg-center flex flex-col items-center pt-24 pb-8 px-4"
-            style={{
-                backgroundImage: `url(${backgroundImageUrl})`,
-            }}
+            // style={{
+            //     backgroundImage: `url(${backgroundImageUrl})`,
+            // }}
         >
             {/* Main Profile Card */}
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-6 sm:p-10 transform transition-all duration-500">

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const moods = ["Happy", "Relaxed", "Adventurous", "Romantic"];
+const moods = ["Happy", "Relax", "Adventure", "Romantic"];
 
 const MoodSearch = ({ destinations, onFilter }) => {
   const [selectedMood, setSelectedMood] = useState("Happy");

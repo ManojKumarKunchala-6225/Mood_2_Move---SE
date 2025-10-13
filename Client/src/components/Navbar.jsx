@@ -31,12 +31,13 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16">
+      <div className="max-w-9xl mx-auto sm:px-6 lg:px-8 flex items-center h-16">
         
         {/* Logo Left */}
         <div
           onClick={() => { navigate("/"); handleLinkClick(); }}
           className="text-2xl font-bold text-blue-600 cursor-pointer hover:text-blue-700 transition"
+
         >
           Mood2Move
         </div>
@@ -48,6 +49,7 @@ const Navbar = () => {
           <Link to="/blog" className="hover:text-blue-600 cursor-pointer transition">Blog</Link>
           <ScrollLink to="testimonials" smooth duration={500} className="hover:text-blue-600 cursor-pointer transition">Reviews</ScrollLink>
           <Link to="/contact" className="hover:text-blue-600 cursor-pointer transition">Contact</Link>
+          <Link to="/about" className="hover:text-blue-600 cursor-pointer transition">About</Link>
         </div>
 
         {/* Right Auth Buttons */}
@@ -118,6 +120,7 @@ const Navbar = () => {
           <Link to="/blog" className="hover:text-blue-600 cursor-pointer py-1" onClick={handleLinkClick}>Blog</Link>
           <ScrollLink to="testimonials" smooth duration={500} className="hover:text-blue-600 cursor-pointer py-1" onClick={handleLinkClick}>Reviews</ScrollLink>
           <Link to="/contact" className="hover:text-blue-600 cursor-pointer py-1" onClick={handleLinkClick}>Contact</Link>
+          <Link to="/about" className="hover:text-blue-600 cursor-pointer py-1" onClick={handleLinkClick}>About</Link>
 
           {user ? (
             <>

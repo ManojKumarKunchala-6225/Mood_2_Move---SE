@@ -17,50 +17,72 @@ def load_data():
 
         # Load the destination file
         destinations_df = pd.read_excel(destinations_file)
-        destinations_df['Destination'] = destinations_df['Destination'].str.strip().str.title()
+        destinations_df = destinations_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+        destinations_df.columns = destinations_df.columns.str.strip().str.title()
+        destinations_df['Destination'] = destinations_df['Destination'].str.title()
         destinations_df.set_index('Destination', inplace=True)
 
         # Load the place details file
         place_info_df = pd.read_excel(place_details_file)
-        place_info_df['Place'] = place_info_df['Place'].str.strip().str.title()
+        place_info_df = place_info_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+        place_info_df.columns = place_info_df.columns.str.strip().str.title()
+        place_info_df['Place'] = place_info_df['Place'].str.title()
         place_info_df.drop_duplicates(subset='Place', keep='first', inplace=True)
         place_details_dict = place_info_df.set_index('Place').to_dict('index')
 
         print("✅ Recommendation data loaded successfully!")
+        print("DESTINATIONS_DF columns:", destinations_df.columns.tolist())
+        print("PLACE_DETAILS_DICT keys sample:", list(place_details_dict.keys())[:5])
         return destinations_df, place_details_dict
 
     except FileNotFoundError as e:
         print(f"❌ Error loading recommendation data: {e}")
         return None, None
+    except Exception as e:
+        print(f"❌ Unexpected error loading recommendation data: {e}")
+        return None, None
 
-# --- IMPORTANT ---
 # Load the data into memory when the Django app starts
 DESTINATIONS_DF, PLACE_DETAILS_DICT = load_data()
 
 
 def find_recommendations(user_choices):
     """
-    This is your main logic function, adapted for the API.
-    It takes user choices as a dictionary and returns a list of results.
+    Main logic function.
+    Takes user choices as a dictionary and returns a list of results.
     """
     if DESTINATIONS_DF is None:
-        return [] # Return empty list if data failed to load
+        print("❌ Data not loaded. Cannot find recommendations.")
+        return []
 
-    # Build the column names from the user's choices
-    mood_col = f"Mood_{user_choices['mood'].title()}"
-    people_col = f"People_{user_choices['people'].title()}"
-    location_col = f"Region_{user_choices['location'].title()}"
+    # Normalize user input
+    mood = user_choices.get('mood', '').strip().title()
+    people = user_choices.get('people', '').strip().title()
+    location = user_choices.get('location', '').strip().title()
 
-    # Filter the DataFrame
+    mood_col = f"Mood_{mood}"
+    people_col = f"People_{people}"
+    location_col = f"Region_{location}"
+
+    # Check if columns exist
+    missing_cols = [c for c in [mood_col, people_col, location_col] if c not in DESTINATIONS_DF.columns]
+    if missing_cols:
+        print(f"❌ Columns not found in DESTINATIONS_DF: {missing_cols}")
+        return []
+
     try:
         matches = DESTINATIONS_DF[
             (DESTINATIONS_DF[mood_col] == 1) &
             (DESTINATIONS_DF[people_col] == 1) &
             (DESTINATIONS_DF[location_col] == 1)
         ]
-        
+
         recommended_places = matches.index.unique().tolist()
-        
+
+        if not recommended_places:
+            print("⚠️ No matching places found for the given criteria.")
+            return []
+
         # Prepare the results with details
         results = []
         for place in recommended_places:
@@ -72,9 +94,9 @@ def find_recommendations(user_choices):
                 'shopping': details.get('Shopping', 'N/A'),
                 'nearby_places': details.get('Nearby_Places', 'N/A')
             })
+
         return results
 
-    except KeyError as e:
-        # This can happen if a column name is not found
-        print(f"Error during filtering: Invalid choice resulting in column {e}")
+    except Exception as e:
+        print(f"❌ Error during filtering: {e}")
         return []
