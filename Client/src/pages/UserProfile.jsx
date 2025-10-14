@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 // Assuming UserProfile.jsx and Navbar.jsx are in the same folder (e.g., src/pages/)
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FaUserCircle, FaEnvelope, FaMobileAlt, FaTint, FaEdit, FaSave, FaSignOutAlt, FaTimesCircle, FaLock, FaList, FaHistory, FaIdBadge, FaCheckCircle } from 'react-icons/fa';
+// Assuming AuthContext is correctly imported from its location
+// import { AuthContext } from "../AuthContext.jsx"; 
+import { FaUserCircle, FaEnvelope, FaMobileAlt, FaTint, FaEdit, FaSave, FaSignOutAlt, FaTimesCircle, FaLock, FaList, FaHistory, FaIdBadge, FaCheckCircle, FaVenusMars } from 'react-icons/fa';
+
+// NOTE: Since AuthContext was imported in your original code, 
+// I'll assume its context is available even though I can't access its definition.
 
 // --- Reusable Detail Row Component (Unchanged) ---
 const DetailRow = ({ label, Icon, value, isEditing, name, editedValue, handleChange }) => (
@@ -30,18 +35,50 @@ const DetailRow = ({ label, Icon, value, isEditing, name, editedValue, handleCha
     </div>
 );
 
+// --- NEW Gender Row Component (Editable via Select) ---
+const GenderRow = ({ value, isEditing, name, editedValue, handleChange }) => {
+    const genderOptions = ["Male", "Female", "Other", "N/A"];
+
+    return (
+        <div className="flex flex-col border-b border-gray-100 pb-2">
+            {/* Label (Top) */}
+            <div className="flex items-center text-sm font-semibold text-gray-600 mb-1">
+                <FaVenusMars className="mr-2 text-gray-400" /> Gender
+            </div>
+            {/* Value/Select (Bottom) */}
+            <div className="w-full">
+                {isEditing ? (
+                    <select
+                        name={name}
+                        value={editedValue || 'N/A'}
+                        onChange={handleChange}
+                        className={`w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-600 transition duration-200 text-gray-800`}
+                    >
+                        {genderOptions.map(option => (
+                            <option key={option} value={option}>{option}</option>
+                        ))}
+                    </select>
+                ) : (
+                    <p className="text-md text-gray-800 ml-1">{value || "N/A"}</p>
+                )}
+            </div>
+        </div>
+    );
+};
+
 // --- Reusable Action Button Component (Unchanged) ---
-const ActionButton = ({ onClick, Icon, label, className, disabled }) => (
+const ActionButton = ({ onClick, Icon, label, className, disabled, type = 'button' }) => (
     <button
         onClick={onClick}
         disabled={disabled}
+        type={type}
         className={`flex items-center justify-center px-5 py-2 rounded-full font-semibold transition duration-300 shadow-md disabled:opacity-50 disabled:cursor-not-allowed text-sm ${className}`}
     >
         <Icon className="mr-2" /> {label}
     </button>
 );
 
-// --- New Change Password Modal Component (UPDATED TOKEN ERROR CHECK) ---
+// --- Change Password Modal Component (Unchanged) ---
 const ChangePasswordModal = ({ isVisible, onClose, onSuccess }) => {
     const [passwords, setPasswords] = useState({
         old_password: "",
@@ -92,11 +129,9 @@ const ChangePasswordModal = ({ isVisible, onClose, onSuccess }) => {
             if (error.response && error.response.data) {
                 const data = error.response.data;
                 
-                // 🔴 CRITICAL FIX: Specific check for JWT token failure
+                // CRITICAL FIX: Specific check for JWT token failure
                 if (data.code === 'token_not_valid') {
                     errorMessage = "Your session has expired. Please log out and log back in to change your password.";
-                    // We don't call onSuccess() here because the password wasn't changed,
-                    // but we guide the user to log out.
                 } else {
                     // Fallback to robust error extraction for password validation failures
                     const extractError = (value) => {
@@ -211,12 +246,20 @@ const ChangePasswordModal = ({ isVisible, onClose, onSuccess }) => {
 const UserProfile = () => {
     const navigate = useNavigate();
     const [userProfile, setUserProfile] = useState(null);
+    // CRITICAL: Ensure editedProfile has the gender key
     const [editedProfile, setEditedProfile] = useState({});
     const [loading, setLoading] = useState(true);
     const [isEditing, setIsEditing] = useState(false);
     const [showPasswordModal, setShowPasswordModal] = useState(false); 
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+
+    // --- Utility functions for dynamic input handling (Used for clarity) ---
+    const getProfileKey = (label) => {
+        if (label === "Full Name") return "name";
+        // Handle all other fields that map directly or via profile model
+        return label.toLowerCase().replace(" ", "_");
+    };
 
     // useEffect and data fetching logic remains the same
     useEffect(() => {
@@ -235,6 +278,8 @@ const UserProfile = () => {
                 });
 
                 const data = response.data;
+                // Ensure gender exists in the data and defaults to 'N/A' if missing
+                data.gender = data.gender || 'N/A';
                 setUserProfile(data);
                 setEditedProfile(data);
             } catch (error) {
@@ -268,16 +313,20 @@ const UserProfile = () => {
         setError(null);
         setSuccess(null);
 
+        // Ensure all fields expected by the backend are present
         const dataToUpdate = {
             name: editedProfile.name,
             username: editedProfile.username,
             email: editedProfile.email,
             phone_number: editedProfile.phone_number,
             blood_group: editedProfile.blood_group,
+            // CRITICAL: Send gender data
+            gender: editedProfile.gender, 
         };
 
         try {
             const token = localStorage.getItem("access_token");
+            // Using PATCH for partial updates
             await axios.patch("http://127.0.0.1:8000/api/profile/update/", dataToUpdate, {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -291,7 +340,7 @@ const UserProfile = () => {
 
         } catch (error) {
             console.error("Failed to save user profile:", error.response?.data || error.message);
-            setError("Failed to update profile. Please try again.");
+            setError("Failed to update profile. Please try again. Check backend console for details.");
         } finally {
             setLoading(false);
         }
@@ -330,15 +379,11 @@ const UserProfile = () => {
         );
     }
 
-    const backgroundImageUrl = '/background.jpg';
     const currentUsername = userProfile?.username || "Guest";
 
     return (
         <div
             className="min-h-screen bg-cover bg-center flex flex-col items-center pt-24 pb-8 px-4"
-            // style={{
-            //     backgroundImage: `url(${backgroundImageUrl})`,
-            // }}
         >
             {/* Main Profile Card */}
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-6 sm:p-10 transform transition-all duration-500">
@@ -375,6 +420,11 @@ const UserProfile = () => {
                     <DetailRow
                         label="Blood Group" Icon={FaTint} value={userProfile?.blood_group} isEditing={isEditing}
                         name="blood_group" editedValue={editedProfile.blood_group} handleChange={handleChange}
+                    />
+                    {/* GENDER ROW INTEGRATION */}
+                    <GenderRow
+                        value={userProfile?.gender} isEditing={isEditing}
+                        name="gender" editedValue={editedProfile.gender} handleChange={handleChange}
                     />
                 </div>
 

@@ -31,6 +31,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password'],
             first_name=first_name
         )
+        # Note: Gender defaults to 'N/A' in the Profile model if not provided here
         Profile.objects.create(user=user, phone_number=phone_number)
         return user
 
@@ -41,25 +42,28 @@ class UserProfileSerializer(serializers.ModelSerializer):
     """
     phone_number = serializers.CharField(source='profile.phone_number', read_only=True)
     blood_group = serializers.CharField(source='profile.blood_group', read_only=True)
+    # ADDED: Read-only field for gender from the related Profile model
+    gender = serializers.CharField(source='profile.gender', read_only=True) 
     name = serializers.CharField(source='first_name', read_only=True)
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'name', 'phone_number', 'blood_group']
+        fields = ['id', 'username', 'email', 'name', 'phone_number', 'blood_group', 'gender']
 
 
-# 🛑 FIX: MISSING SERIALIZER ADDED 🛑
 class UserProfileUpdateSerializer(serializers.ModelSerializer):
     """
     Serializer to handle PATCH requests for updating User and Profile data.
     """
     phone_number = serializers.CharField(source='profile.phone_number', required=False, allow_blank=True)
     blood_group = serializers.CharField(source='profile.blood_group', required=False, allow_blank=True)
+    gender = serializers.CharField(source='profile.gender', required=False, allow_blank=True) # ADDED
     name = serializers.CharField(source='first_name', required=False, allow_blank=True)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'name', 'phone_number', 'blood_group']
+        # ADDED 'gender' to fields list
+        fields = ['username', 'email', 'name', 'phone_number', 'blood_group', 'gender'] 
         read_only_fields = ['id'] 
         extra_kwargs = {
             'username': {'required': False},
@@ -84,12 +88,16 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
         if 'blood_group' in profile_data:
             profile.blood_group = profile_data['blood_group']
 
+        # ADDED: Handle updating the gender field in the Profile model
+        if 'gender' in profile_data:
+            profile.gender = profile_data['gender']
+
         profile.save()
         user.save()
         return user
 
 
-# 🚀 NEW: ChangePasswordSerializer
+# 🚀 NEW: ChangePasswordSerializer (Unchanged)
 class ChangePasswordSerializer(serializers.Serializer):
     """
     Serializer for the password change endpoint.

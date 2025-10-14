@@ -35,12 +35,23 @@ const Navbar = () => {
         
         {/* Logo Left */}
         <div
-          onClick={() => { navigate("/"); handleLinkClick(); }}
-          className="text-2xl font-bold text-blue-600 cursor-pointer hover:text-blue-700 transition"
-
-        >
-          Mood2Move
-        </div>
+  onClick={() => { navigate("/"); handleLinkClick(); }}
+  className="text-2xl font-bold text-blue-600 cursor-pointer hover:text-blue-700 transition flex items-center"
+>
+  {/* Updated: 
+    1. Used standard JSX style object.
+    2. Set a more appropriate fixed size (e.g., 40px) for a logo in a navigation bar.
+    3. Added 'flex items-center' to the div to vertically align the logo and text.
+    4. Added 'mr-2' for spacing between the logo and text.
+  */}
+  <img 
+    src="./logo.jpg" 
+    alt="Mood2Move Logo" 
+    style={{ height: '30px', width: '35px' }} 
+    className="mr-2"
+  />
+  Mood2Move
+</div>
 
         {/* Centered Links */}
         <div className="hidden md:flex flex-1 justify-center space-x-6">

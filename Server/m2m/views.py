@@ -12,15 +12,15 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import send_mail
 from django.conf import settings
-from django.contrib.auth import get_user_model # Added for ChangePasswordView
-from django.shortcuts import get_object_or_404 # Added for ProfileUpdateAPIView context
+from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404 
 
 from .recommend_logic import find_recommendations
 from .models import Profile # Make sure Profile is imported
 
-# 🚀 NEW IMPORTS FOR SERIALIZERS: Import the ChangePasswordSerializer
+# 🚀 SERIALIZER IMPORTS
 from .serializers import (
-    ChangePasswordSerializer, # NEW
+    ChangePasswordSerializer, 
     RecommendationRequestSerializer,
     UserProfileSerializer,
     UserProfileUpdateSerializer,
@@ -32,31 +32,6 @@ from .serializers import (
 User = get_user_model()
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
-
-
-# ==============================================================================
-# SERIALIZERS (Note: Serializer definitions are better kept in m2m/serializers.py 
-# but are repeated here for context if the file structure is non-standard. 
-# We remove the definitions here to only keep the necessary imports/usage.)
-# ==============================================================================
-
-# NOTE: The UserProfileSerializer, UserProfileUpdateSerializer, 
-# RegisterSerializer, RecommendationRequestSerializer, MyTokenObtainPairSerializer, 
-# PasswordResetRequestSerializer, and PasswordResetConfirmSerializer definitions 
-# should ideally be REMOVED from this views.py file since they are defined 
-# and imported from .serializers above. 
-# I will retain the class names in the views below, relying on the imports.
-
-# Keeping only the necessary UserProfile/Update serializers here to fix potential issues
-# but recommending they remain fully defined in m2m/serializers.py:
-
-# UserProfileSerializer definition removed here and imported from .serializers
-
-# UserProfileUpdateSerializer definition removed here and imported from .serializers
-
-# RegisterSerializer definition removed here and imported from .serializers
-
-# RecommendationRequestSerializer definition removed here and imported from .serializers
 
 
 # ==============================================================================
@@ -160,7 +135,7 @@ class ProfileUpdateAPIView(generics.UpdateAPIView):
         return self.request.user
 
 
-# 🚀 NEW VIEW: Change Password View (Resolves ImportError)
+# 🚀 Change Password View
 class ChangePasswordView(generics.GenericAPIView):
     """
     An endpoint for changing the currently authenticated user's password.
@@ -183,15 +158,11 @@ class ChangePasswordView(generics.GenericAPIView):
             self.object.set_password(serializer.validated_data['new_password1'])
             self.object.save()
             
-            # Note: No need to return tokens, as the frontend handles logout/re-login.
-            
             return Response(
                 {"detail": "Password updated successfully."},
                 status=status.HTTP_200_OK
             )
 
-        # This part should be unreachable if raise_exception=True is used, 
-        # but included for clarity.
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -223,6 +194,7 @@ class PasswordResetRequestView(generics.GenericAPIView):
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token = default_token_generator.make_token(user)
             
+            # 💡 CRITICAL: Ensure this reset_url matches your frontend route structure
             reset_url = f"http://localhost:5173/reset-password/{uid}/{token}/"
             
             subject = "Password Reset for Your Mood2Move Account"
