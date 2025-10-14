@@ -12,27 +12,17 @@ const BikanerTravelGuide = () => {
   // Bikaner Images for Carousel
   const bikanerImages = [
     {
-      url: "https://images.unsplash.com/photo-1580651315530-4c6c5d5a1c0a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8anVuYWdhcmglMjBmb3J0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      url: "https://images.unsplash.com/photo-1706163903474-dfa8697c0134?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8anVuYWdhcmglMjBwYWxhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       title: "Junagarh Fort",
       description: "Magnificent fort built in 16th century with beautiful architecture"
     },
     {
-      url: "https://images.unsplash.com/photo-1599562215453-7c6d4da30a0e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmlrYW5lciUyMGNhbWVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://plus.unsplash.com/premium_photo-1661914463458-c643243cb167?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FtZWwlMjBmZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
       title: "Camel Festival",
       description: "Vibrant camel festival showcasing Rajasthan's cultural heritage"
     },
     {
-      url: "https://images.unsplash.com/photo-1570168007204-dfb528c6248c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFqYXN0aGFuJTIwZGVzZXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      title: "Thar Desert",
-      description: "Golden sand dunes and authentic desert experience"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1561982866-5d2d66ec0d7f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxhbGdhcmglMjBwYWxhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Lalgarh Palace",
-      description: "Red sandstone palace showcasing Indo-Saracenic architecture"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1599659628183-6832327c81b2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJpa2FuZXIlMjBmb29kfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      url: "https://images.unsplash.com/photo-1676193361626-debc2960b1c4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhlcml0YWdlJTIwaG90ZWwlMjByYWphc3RoYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       title: "Local Cuisine",
       description: "Famous Bikaneri bhujia and traditional Rajasthani food"
     }

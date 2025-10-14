@@ -12,27 +12,17 @@ const PahalgamTravelGuide = () => {
   // Pahalgam Images for Carousel
   const pahalgamImages = [
     {
-      url: "https://images.unsplash.com/photo-1580651315530-4c6c5d5a1c0a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFoYWxnYW0lMjB2YWxsZXl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Lidder River Valley",
-      description: "Crystal clear Lidder River flowing through picturesque valleys"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFoYWxnYW0lMjBtb3VudGFpbnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Snow-capped Himalayas",
-      description: "Breathtaking views of Himalayan peaks surrounding Pahalgam"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1579033064562-6d4ab36fdf6c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmV0YWJpbiUyMGtob3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://plus.unsplash.com/premium_photo-1676761976616-a185bc5f7981?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmV0YWFiJTIwdmFsbGV5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Betaab Valley",
       description: "Stunning valley named after the Bollywood movie Betaab"
     },
     {
-      url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXJ1JTIwdmFsbGV5fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      url: "https://images.unsplash.com/photo-1666438241711-d4001d1ff99a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXJ1JTIwdmFsbGV5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Aru Valley",
       description: "Base camp for trekking to Kolahoi Glacier and other adventures"
     },
     {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhaGFsZ2FtJTIwdHJla2tpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://images.unsplash.com/photo-1730567216154-ced4474b0f8b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVhZG93cyUyMGFuZCUyMHRyZWNra2luZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
       title: "Meadows and Trekking",
       description: "Lush green meadows perfect for trekking and pony rides"
     }

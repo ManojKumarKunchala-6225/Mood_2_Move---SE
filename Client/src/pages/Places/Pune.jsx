@@ -12,30 +12,20 @@ const PuneTravelGuide = () => {
   // Pune Images for Carousel
   const puneImages = [
     {
-      url: "https://media.istockphoto.com/id/1399328112/photo/shaniwar-wada-fort-in-pune-maharashtra-india.jpg?a=1&b=1&s=612x612&w=0&k=20&c=Q2lKXjXl4nM3Q4Y4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4=",
+      url: "https://images.unsplash.com/photo-1715678710159-ee67d5bdba85?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hhbml3YXIlMjB3YWRhfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Shaniwar Wada",
       description: "Historic fortification built by the Peshwa dynasty"
     },
     {
-      url: "https://media.istockphoto.com/id/1399328112/photo/shaniwar-wada-fort-in-pune-maharashtra-india.jpg?a=1&b=1&s=612x612&w=0&k=20&c=Q2lKXjXl4nM3Q4Y4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4=",
+      url: "https://plus.unsplash.com/premium_photo-1694475157443-58938d0ff195?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWdhJTIwa2hhbiUyMHBhbGFjZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
       title: "Aga Khan Palace",
       description: "Historical palace and memorial to Mahatma Gandhi"
     },
     {
-      url: "https://media.istockphoto.com/id/1399328112/photo/shaniwar-wada-fort-in-pune-maharashtra-india.jpg?a=1&b=1&s=612x612&w=0&k=20&c=Q2lKXjXl4nM3Q4Y4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4=",
-      title: "Sinhagad Fort",
+      url: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bHV4dXJ5JTIwaG90ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
+      title: "JW Marriot ",
       description: "Ancient hill fortress with panoramic views"
     },
-    {
-      url: "https://media.istockphoto.com/id/1399328112/photo/shaniwar-wada-fort-in-pune-maharashtra-india.jpg?a=1&b=1&s=612x612&w=0&k=20&c=Q2lKXjXl4nM3Q4Y4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4=",
-      title: "Koregaon Park",
-      description: "Upscale neighborhood with cafes and nightlife"
-    },
-    {
-      url: "https://media.istockphoto.com/id/1399328112/photo/shaniwar-wada-fort-in-pune-maharashtra-india.jpg?a=1&b=1&s=612x612&w=0&k=20&c=Q2lKXjXl4nM3Q4Y4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4W4Q4=",
-      title: "Dagdusheth Halwai Temple",
-      description: "Famous temple dedicated to Lord Ganesha"
-    }
   ];
 
   const styles = {

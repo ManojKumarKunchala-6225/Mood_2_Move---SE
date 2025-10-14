@@ -12,27 +12,17 @@ const ShirdiTravelGuide = () => {
   // Shirdi Images for Carousel
   const shirdiImages = [
     {
-      url: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1629640890590-7836d69c5237?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hpcmRpJTIwc2FpJTIwYmFiYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
       title: "Shirdi Sai Baba Temple",
       description: "The sacred temple of Shri Saibaba"
     },
     {
-      url: "https://images.unsplash.com/photo-1547981609-4b6bf67b9d0a?w=1200&h=600&fit=crop",
-      title: "Samadhi Mandir",
-      description: "Main shrine where Sai Baba attained Samadhi"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1603383928972-0d6b0cac7e8f?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/_ozbiaZMFzAidiHAN0eTf67z4w4iOXlt7n-PWK7ioBo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zYWli/YWJhaW1hZ2VzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8xMi9MYXJnZXIt/Vmlldy1vZi1Ed2Fy/a2FtYWktU2FpLUJh/YmEtU2hpcmRpLTEw/MjR4Njg0LmpwZw",
       title: "Dwarkamai Masjid",
       description: "The mosque where Sai Baba lived for many years"
     },
     {
-      url: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
-      title: "Chavadi",
-      description: "Place where Sai Baba used to sleep on alternate nights"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1547981609-4b6bf67b9d0a?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/rAroBy-2HZ0zdkMT9rZkhs8fzZ2Te5yMFnwXyJtKdA4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi9tc2lk/LTU5MjE4MDYxLHdp/ZHRoLTU1MCxoZWln/aHQtNDMzLzU5MjE4/MDYxLmpwZw",
       title: "Lendi Baug",
       description: "Beautiful garden where Sai Baba used to walk daily"
     }

@@ -24,17 +24,17 @@ const nearbyPlacesData = {
     {
       name: "Sabarmati Ashram",
       type: "Attraction",
-      image: "https://images.unsplash.com/photo-1594736797933-d0d69c1d9466?w=1200&h=600&fit=crop",
+      image: "https://plus.unsplash.com/premium_photo-1661934637634-6ea976de7a43?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FiYXJtYXRpJTIwYXNocmFtfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
     },
     {
       name: "Kankaria Lake",
       type: "Attraction",
-      image: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1596201403089-d6cb29543f22?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2Fua2FyaWElMjBsYWtlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
     },
     {
       name: "Adalaj Stepwell",
       type: "Hotel",
-      image: "https://images.unsplash.com/photo-1547981609-4b6bf67b9d0a?w=1200&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1662101511083-2411bdc40f27?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWRhbGFqJTIwc3RlcHdlbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
     }
   ],
   "AjantaElloraCaves": [
@@ -75,17 +75,17 @@ const nearbyPlacesData = {
     {
       name: "Auli Ski Resort",
       type: "Attraction",
-      image: "https://images.unsplash.com/photo-1579033064629-155106c33b24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVsaSUyMHNraWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1582054879934-92c44a8e149f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXVsaSUyMHNraSUyMHJlc29ydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
     },
     {
       name: "Auli Artificial Lake",
       type: "Attraction",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXVsaSUyMGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1701599346683-37a6c9d1e001?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
     },
     {
       name: "Paonromic Himalayan Views",
       type: "Hotel",
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXVsaSUyMGhpbWFsYXlhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1631377952034-a0460eba141f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVsaSUyMGhpbWFsYXlhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
     }
   ],
   "Backwater_Stays": [
@@ -109,34 +109,34 @@ const nearbyPlacesData = {
     {
       name: "Junagarh Fort",
       type: "Attraction",
-      image: "https://source.unsplash.com/400x300/?junagarh-fort"
+      image: "https://images.unsplash.com/photo-1706163903474-dfa8697c0134?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8anVuYWdhcmglMjBwYWxhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
     },
     {
       name: "Karni Mata Temple",
       type: "Attraction",
-      image: "https://source.unsplash.com/400x300/?karni-mata-temple"
+      image: "https://images.unsplash.com/photo-1730021155304-9ff1f0f33b29?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGthcm5pJTIwbWF0YSUyMHRlbXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
     },
     {
       name: "Narendra Bhawan",
       type: "Hotel",
-      image: "https://source.unsplash.com/400x300/?narendra-bhawan"
+      image: "https://images.unsplash.com/photo-1699949985517-cfcd9a3b154c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVyaXRhZ2UlMjBob3RlbCUyMHJhamFzdGhhbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
     }
   ],
   "Bir Billing": [
     {
       name: "Bir Monastery",
       type: "Attraction",
-      image: "https://source.unsplash.com/400x300/?bir-monastery"
+      image: "https://imgs.search.brave.com/5k54QYUJeENOsg58k0_TIVYcljw6_WUFUOP3iVHBFfk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z2xvYmFsLWdhbGxp/dmFudGluZy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTYv/MDcvMTA1MDIwNS0w/MS0xMDI0eDc2OC5q/cGVn"
     },
     {
       name: "Billing Paragliding",
       type: "Attraction",
-      image: "https://source.unsplash.com/400x300/?billing-paragliding"
+      image: "https://imgs.search.brave.com/v1afV2oIIRl8CClWQWDbkxa2nJwiOLdyQec-_lPwnDk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tYW51/YWR2ZW50dXJlc2lu/ZGlhLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8wNC9x/bTNlNmp6MjBtaWxu/dW9ucnJqdDRzOTJi/cjM1XzE1NjM5NzAx/NjFfMy53ZWJw"
     },
     {
       name: "Zostel Bir",
       type: "Hotel",
-      image: "https://source.unsplash.com/400x300/?zostel-bir"
+      image: "https://imgs.search.brave.com/nww1xXiiZjoH7Ru0o7NZ-7neamyTp1zY-smq5in8QU4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvbWF4MTAy/NHg3NjgvMjMzMzQz/NTAyLmpwZz9rPTdl/ZmE2NTExNmNlYTA5/NjllNTljOTc4MjA5/Y2RjMWU2Mjk4ZGZh/Y2M3OTE3MjE2M2Zj/YWE3Zjg1YmI1NDI0/NzQmbz0maHA9MQ"
     }
   ],
   "Jaipur": [
@@ -669,102 +669,102 @@ const nearbyPlacesData = {
   {
     name: "Betaab Valley",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pahalgam,betaab-valley"
+    image: "https://plus.unsplash.com/premium_photo-1676761976616-a185bc5f7981?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmV0YWFiJTIwdmFsbGV5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
   },
   {
     name: "Aru Valley",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pahalgam,aru-valley"
+    image: "https://images.unsplash.com/photo-1666438241711-d4001d1ff99a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXJ1JTIwdmFsbGV5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
   },
   {
     name: "Welcomhotel by ITC",
     type: "Hotel",
-    image: "https://source.unsplash.com/400x300/?pahalgam,hotel"
+    image: "https://images.unsplash.com/photo-1745243136447-e16e815d4a65?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2VsY29tZSUyMGl0Y3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
   }
 ],
 "Pangot": [
   {
     name: "Pangot Forest",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pangot,forest"
+    image: "https://imgs.search.brave.com/g5zuMn1NO7ZjhrTmSPYQ7YGA0z6XoyZEzl2XZuEltOg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iZWF1/dGlmdWwtcGFuZ290/LXZpbGxhZ2UtaGlt/YWxheWFzLWxvY2F0/ZWQta20tbmFpbml0/YWwtNDEyNDgyNjku/anBn"
   },
   {
     name: "Bird Watching Trails",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pangot,birds"
+    image: "https://imgs.search.brave.com/FCNgGQ5RVrMtravnsn9A7dOI8SSubV5Z7YKLtf8OenU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vo/aTFrZDBoTW9tUFN6/dldtTjBPYmpjbngy/bzNsOUV5MEVUU3Zi/WFc4a0xRdjQ0blVY/LTBWTFJXRUVSSUd1/U2ZUaWdsTlBscEpR/S1VQeWxjM05ZTGdj/N3dSMXNuNGgxNGQz/UTRycmVTMlJUWElM/SGxqdnpzVTM5TDda/QzJ3cWY2Y2s3Zy1Y/LWxwQjVUTVdFL3c2/NDAtaDQ4MC1ydy9i/aXJkX3dhdGNoaW5n/X2JheV9hcmVhSU1H/XzY2MzMuSlBH"
   },
   {
     name: "Jungle Lore Birding Lodge",
     type: "Hotel",
-    image: "https://source.unsplash.com/400x300/?pangot,hotel"
+    image: "https://imgs.search.brave.com/eybi_19UBeHrXEWExps-P5tqqTtkTJazb9hc0i8bAcI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDIvMzAvZjcvNGIv/anVuZ2xlLWxvcmUt/YmlyZGluZy1sb2Rn/ZS5qcGc"
   }
 ],
 "Patna": [
   {
     name: "Golghar",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?patna,golghar"
+    image: "https://images.unsplash.com/photo-1574313884751-84fd8b20c919?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z29sZ2hhciUyMHBhdG5hfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
   },
   {
     name: "Patna Sahib Gurudwara",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?patna,gurudwara"
+    image: "https://images.unsplash.com/photo-1667745812053-2e5eddef5dd3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGF0bmElMjBtdXNldW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
   },
   {
     name: "Hotel Maurya",
     type: "Hotel",
-    image: "https://source.unsplash.com/400x300/?patna,hotel"
+    image: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwaG90ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
   }
 ],
 "Pondicherry": [
   {
     name: "Promenade Beach",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pondicherry,beach"
+    image: "https://plus.unsplash.com/premium_photo-1675039871449-62f86fb78a70?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvbWVuYWRlJTIwYmVhY2glMjBwb25kaWNoZXJyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
   },
   {
     name: "Aurobindo Ashram",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pondicherry,ashram"
+    image: "https://images.unsplash.com/photo-1709817243500-87259ebd7d50?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3JpJTIwYXVyb2JpbmRvJTIwYXNocmFtfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
   },
   {
     name: "Palais de Mahe",
     type: "Hotel",
-    image: "https://source.unsplash.com/400x300/?pondicherry,hotel"
+    image: "https://images.unsplash.com/photo-1721548685266-68edbc084187?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UGFsYWlzJTIwZGUlMjBNYWhlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
   }
 ],
 "Pune": [
   {
     name: "Shaniwar Wada",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pune,shaniwar-wada"
+    image: "https://images.unsplash.com/photo-1715678710159-ee67d5bdba85?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hhbml3YXIlMjB3YWRhfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
   },
   {
     name: "Aga Khan Palace",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?pune,aga-khan-palace"
-  },
+    image: "https://plus.unsplash.com/premium_photo-1694475157443-58938d0ff195?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWdhJTIwa2hhbiUyMHBhbGFjZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+    },
   {
     name: "JW Marriott Pune",
     type: "Hotel",
-    image: "https://source.unsplash.com/400x300/?pune,hotel"
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bHV4dXJ5JTIwaG90ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
   }
 ],
 "Puri": [
   {
     name: "Jagannath Temple",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?puri,jagannath-temple"
+    image: "https://media.istockphoto.com/id/1069137628/photo/top-of-the-jagannath-temple-puri-odisha-india.webp?s=2048x2048&w=is&k=20&c=hsHY2ifaJtsllX5YqG6czbzgVeGoPD6u85sT03eHMSk=",
   },
   {
     name: "Chilika Lake",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?puri,chilika-lake"
+    image: "https://images.unsplash.com/photo-1633530541201-139b32fa4ffa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
   },
   {
     name: "Mayfair Heritage",
     type: "Hotel",
-    image: "https://source.unsplash.com/400x300/?puri,hotel"
+    image: "https://images.unsplash.com/photo-1720171649902-b839b8c774d8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1331Y"
   }
 ],
 "Pushkar": [
@@ -873,17 +873,17 @@ const nearbyPlacesData = {
   {
     name: "Saputara Lake",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?saputara,lake"
+    image: "https://imgs.search.brave.com/wI2nli-zccQSlrlatCQZ951QjgVed6988VF6AnDpNt4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMubGFuZ2ltZy5j/b20vbmJ0L3RodW1i/LzkxMzk5MzIzL25h/dmJoYXJhdC10aW1l/cy5qcGc_aW1nc2l6/ZT0xMzk3OTAmd2lk/dGg9NzAwJnJlc2l6/ZW1vZGU9Mw"
   },
   {
     name: "Sunset Point",
     type: "Attraction",
-    image: "https://source.unsplash.com/400x300/?saputara,sunset"
+    image: "https://imgs.search.brave.com/5Y5EiPTvZOdgCf-rup60mSVix0I_clKSKK0DqAonI5k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvc2Fw/dXRhcmEvbW10L2Fj/dGl2aXRpZXMvdF91/ZnMvbV9hY3Rpdml0/aWVzX3NhcHV0YXJh/X3N1bnNldF9wb2lu/dF9sXzQwMF82NDAu/anBn"
   },
   {
     name: "Aakar Lords Inn",
     type: "Hotel",
-    image: "https://source.unsplash.com/400x300/?saputara,hotel"
+    image: "https://imgs.search.brave.com/QsX0MrGlqVXahlbxCUYL9Ch3Kym8-Rcacayth9kaVdI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8zLmlt/aW1nLmNvbS9kYXRh/My9UUS9LVS9NWS04/Njg1NzQ5L2hvdGVs/LWFha2FyLWxvcmRz/LWlubi1zYXB1dGFy/YS1ndWphcmF0LXJl/ZGVmaW5pbmctbHV4/dXJ5LTUwMHg1MDAu/anBn"
   }
 ],
 "ShaktiPeeths": [
@@ -941,17 +941,17 @@ const nearbyPlacesData = {
   {
     name: "Sai Baba Temple",
     type: "Attraction",
-    image: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1629640890590-7836d69c5237?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hpcmRpJTIwc2FpJTIwYmFiYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
   },
   {
     name: "Dwarkamai",
     type: "Attraction",
-    image: "https://images.unsplash.com/photo-1603383928972-0d6b0cac7e8f?w=1200&h=600&fit=crop",
+    image: "https://imgs.search.brave.com/_ozbiaZMFzAidiHAN0eTf67z4w4iOXlt7n-PWK7ioBo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zYWli/YWJhaW1hZ2VzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8xMi9MYXJnZXIt/Vmlldy1vZi1Ed2Fy/a2FtYWktU2FpLUJh/YmEtU2hpcmRpLTEw/MjR4Njg0LmpwZw",
   },
   {
     name: "Lendi Baug",
     type: "Hotel",
-    image: "https://images.unsplash.com/photo-1547981609-4b6bf67b9d0a?w=1200&h=600&fit=crop",
+    image: "https://imgs.search.brave.com/W9UQn1EMpfnJBF3y1pLbSfln_vujGnRW7yDOlEtYuEE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hay1k/LnRyaXBjZG4uY29t/L2ltYWdlcy8wd3cw/dTEyMDAwOTBmdzZm/ZEQ4NjhfQ182NzBf/Mzc2X1E3MC53ZWJw/P3Byb2M9c291cmNl/L3RyaXAmcHJvYz1z/b3VyY2UvdHJpcA",
   }
 ],
 "Tirupati": [

@@ -12,30 +12,20 @@ const PangotTravelGuide = () => {
   // Pangot Images for Carousel
   const pangotImages = [
     {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhpbWFsYXlhbiUyMGJpcmRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Bird Watching Paradise",
-      description: "Home to over 580 species of Himalayan birds"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFuZ290JTIwaGltYWxheWFzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      url: "https://imgs.search.brave.com/QbHKb56NEPidvTJtoDWbKaqDS1_cLYBh5a_WA2NhleI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi9tc2lk/LTEwNDc1NTk2Mix3/aWR0aC03NDgsaGVp/Z2h0LTQ5OSxyZXNp/emVtb2RlPTQsaW1n/c2l6ZS04MjE4MC9U/aGUtS2h5YmVyLUhp/bWFsYXlhbi1SZXNv/cnQtU3BhLUd1bG1h/cmcuanBn",
       title: "Himalayan Views",
       description: "Breathtaking views of Trishul and Nanda Devi peaks"
     },
     {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG9ha2ZvcmVzdCUyMHBhbmdvdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://imgs.search.brave.com/0c2Ntk9IvbTMZFxYOqEQkdzYEO78-udZwb6JhM8yNgI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90cmF2/ZWxzZXR1LmNvbS9j/cm0vaW1hZ2VzL2Rl/c3RpbmF0aW9uX2lt/YWdlL1V0dGFyYWto/YW5kXzMuanBn",
       title: "Oak and Rhododendron Forests",
       description: "Dense forests with rich biodiversity and trekking trails"
     },
     {
-      url: "https://images.unsplash.com/photo-1579033064562-6d4ab36fdf6c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGltYWxheWFuJTIwdmlsbGFnZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://imgs.search.brave.com/g5zuMn1NO7ZjhrTmSPYQ7YGA0z6XoyZEzl2XZuEltOg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iZWF1/dGlmdWwtcGFuZ290/LXZpbGxhZ2UtaGlt/YWxheWFzLWxvY2F0/ZWQta20tbmFpbml0/YWwtNDEyNDgyNjku/anBn",
       title: "Quiet Village Life",
       description: "Peaceful mountain village with traditional Kumaoni culture"
     },
-    {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJpcmQlMjBwaG90b2dyYXBoeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Colorful Himalayan Birds",
-      description: "Spot exotic species like Khalij Pheasant and Cheer Pheasant"
-    }
   ];
 
   const styles = {

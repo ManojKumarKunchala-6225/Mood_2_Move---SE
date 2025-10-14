@@ -12,27 +12,17 @@ const AhmedabadTravelGuide = () => {
   // Ahmedabad Images for Carousel
   const ahmedabadImages = [
     {
-      url: "https://images.unsplash.com/photo-1594736797933-d0d69c1d9466?w=1200&h=600&fit=crop",
+      url: "https://plus.unsplash.com/premium_photo-1661934637634-6ea976de7a43?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FiYXJtYXRpJTIwYXNocmFtfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Sabarmati Ashram",
       description: "Historic ashram where Mahatma Gandhi lived"
     },
     {
-      url: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
-      title: "Sabarmati Riverfront",
-      description: "Beautifully developed riverfront with gardens and activities"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1547981609-4b6bf67b9d0a?w=1200&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1662101511083-2411bdc40f27?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWRhbGFqJTIwc3RlcHdlbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       title: "Adalaj Stepwell",
       description: "Ancient stepwell with intricate carvings"
     },
     {
-      url: "https://images.unsplash.com/photo-1603383928972-0d6b0cac7e8f?w=1200&h=600&fit=crop",
-      title: "Sidi Saiyyed Mosque",
-      description: "Famous for its exquisite stone lattice work"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1596201403089-d6cb29543f22?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2Fua2FyaWElMjBsYWtlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Kankaria Lake",
       description: "Historic lake with recreational activities"
     }

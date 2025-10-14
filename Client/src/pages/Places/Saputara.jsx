@@ -12,27 +12,17 @@ const SaputaraTravelGuide = () => {
   // Saputara Images for Carousel
   const saputaraImages = [
     {
-      url: "https://images.unsplash.com/photo-1548013141-0c11b866ff46?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/wI2nli-zccQSlrlatCQZ951QjgVed6988VF6AnDpNt4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMubGFuZ2ltZy5j/b20vbmJ0L3RodW1i/LzkxMzk5MzIzL25h/dmJoYXJhdC10aW1l/cy5qcGc_aW1nc2l6/ZT0xMzk3OTAmd2lk/dGg9NzAwJnJlc2l6/ZW1vZGU9Mw",
       title: "Saputara Lake",
       description: "Beautiful artificial lake surrounded by lush green hills"
     },
     {
-      url: "https://images.unsplash.com/photo-1464822759849-e41f4b4b2536?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/5Y5EiPTvZOdgCf-rup60mSVix0I_clKSKK0DqAonI5k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcvc2Fw/dXRhcmEvbW10L2Fj/dGl2aXRpZXMvdF91/ZnMvbV9hY3Rpdml0/aWVzX3NhcHV0YXJh/X3N1bnNldF9wb2lu/dF9sXzQwMF82NDAu/anBn",
       title: "Sunset Point",
       description: "Breathtaking sunset views over the Sahyadri ranges"
     },
     {
-      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
-      title: "Saputara Hills",
-      description: "Misty mountains and lush green valleys of the Western Ghats"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1574362841339-371839e69a59?w=1200&h=600&fit=crop",
-      title: "Boat Club",
-      description: "Picturesque boating experience in the heart of nature"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/Xb7bTr6S_SvWWtFUf3-AdakWDiKjzlByNZV58vzVwXw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi90ZW5l/cmlmZS1zcGFpbi1m/ZWJydWFyeS1hZnJp/Y2FuLXRyaWJhbC13/b29kZW4taGFuZC1j/YXJ2ZWQtbWFzay1h/ZnJpY2FuLXRyaWJh/bC1jdWx0dXJlLWV4/aGliaXRpb24tdGVu/ZXJpZmUtc3BhaW4t/ZmVicnVhcnktMTQ0/NTgxMjEyLmpwZw",
       title: "Tribal Culture",
       description: "Rich Warli tribal heritage and traditional art forms"
     }

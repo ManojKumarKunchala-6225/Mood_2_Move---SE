@@ -12,27 +12,17 @@ const PondicherryTravelGuide = () => {
   // Pondicherry Images for Carousel
   const pondicherryImages = [
     {
-      url: "https://images.unsplash.com/photo-1599396145122-4f3d1b1e7b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9uZGljaGVycnklMjBwcm9tZW5hZGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
+      url: "https://images.unsplash.com/photo-1671468158353-4e2b0c789f6a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9uZGljaGVycnklMjBmcmVuY2glMjBxdWFydGVyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "French Quarter Promenade",
       description: "Colonial architecture along the beachfront"
     },
     {
-      url: "https://images.unsplash.com/photo-1573549748958-1c7986ceff8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9uZGljaGVycnklMjBiZWFjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
-      title: "Paradise Beach",
-      description: "Pristine sandy beaches with turquoise waters"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1597041729366-cf1c75cd56d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9uZGljaGVycnklMjBmcmVuY2glMjBxdWFydGVyfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+      url: "https://plus.unsplash.com/premium_photo-1733266874906-104bbd3ca583?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBvbmRpY2hlcnJ5JTIwZnJlbmNoJTIwcXVhcnRlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
       title: "French Colony Streets",
       description: "Colorful colonial buildings with bougainvillea"
     },
     {
-      url: "https://images.unsplash.com/photo-1623846737355-83f34d2db80c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF1cm92aWxsZSUyMGFzaHJhbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
-      title: "Auroville Matrimandir",
-      description: "Spiritual golden globe in the international township"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1573549727652-7d6330369a7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvbmRpY2hlcnJ5JTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      url: "https://images.unsplash.com/photo-1759330814434-4843340ee84c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlbmNoJTIwY2FmZSUyMGN1bHR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       title: "French Café Culture",
       description: "European-style cafes with coastal charm"
     }

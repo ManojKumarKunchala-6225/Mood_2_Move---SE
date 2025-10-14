@@ -12,29 +12,19 @@ const PuriTravelGuide = () => {
   // Puri Images for Carousel
   const puriImages = [
     {
-      url: "https://images.unsplash.com/photo-1580651315530-4c6c5d5a1c0a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHVyaSUyMGphZ2FubmF0aCUyMHRlbXBsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://media.istockphoto.com/id/1069137628/photo/top-of-the-jagannath-temple-puri-odisha-india.webp?s=2048x2048&w=is&k=20&c=hsHY2ifaJtsllX5YqG6czbzgVeGoPD6u85sT03eHMSk=",
       title: "Jagannath Temple",
       description: "One of the Char Dham pilgrimage sites, famous for Rath Yatra"
     },
     {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHVyaSUyMGJlYWNofGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      url: "https://unsplash.com/photos/a-colorful-umbrella-on-a-sandy-beach-near-the-ocean-rbdGSSoLBYQ",
       title: "Puri Beach",
       description: "Golden sandy beach along the Bay of Bengal"
     },
     {
-      url: "https://images.unsplash.com/photo-1579033064562-6d4ab36fdf6c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2hha2ElyHRpcnRoYSUyMHB1cml8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://images.unsplash.com/photo-1633530541201-139b32fa4ffa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
       title: "Chilika Lake",
       description: "Asia's largest brackish water lagoon and bird sanctuary"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmF0aCUyMHlhdHJhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      title: "Rath Yatra",
-      description: "World famous chariot festival of Lord Jagannath"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG9kaXNoYSUyMGZvb2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Odisha Cuisine",
-      description: "Famous Mahaprasad and traditional Odia food"
     }
   ];
 

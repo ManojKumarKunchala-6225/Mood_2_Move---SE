@@ -12,30 +12,20 @@ const PatnaTravelGuide = () => {
   // Patna Images for Carousel
   const patnaImages = [
     {
-      url: "https://media.istockphoto.com/id/1470505132/photo/patna-sahib-gurudwara.webp?a=1&b=1&s=612x612&w=0&k=20&c=WQpJd5GQm6jfG2qLvH8x8Z8Q9y9X2Z2Y3b3Q5Q5Q5Q5Q=",
+      url: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwaG90ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       title: "Takht Sri Patna Sahib",
       description: "One of the Five Takhts of Sikhism, birthplace of Guru Gobind Singh Ji"
     },
     {
-      url: "https://media.istockphoto.com/id/1391502962/photo/patna-sahib-gurudwara.webp?a=1&b=1&s=612x612&w=0&k=20&c=9Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q=",
+      url: "https://images.unsplash.com/photo-1574313884751-84fd8b20c919?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z29sZ2hhciUyMHBhdG5hfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Golghar",
       description: "Historic granary with panoramic views of Patna"
     },
     {
-      url: "https://media.istockphoto.com/id/1391502962/photo/patna-sahib-gurudwara.webp?a=1&b=1&s=612x612&w=0&k=20&c=9Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q=",
-      title: "Mahatma Gandhi Setu",
-      description: "Long river bridge over Ganga connecting Patna to Hajipur"
-    },
-    {
-      url: "https://media.istockphoto.com/id/1391502962/photo/patna-sahib-gurudwara.webp?a=1&b=1&s=612x612&w=0&k=20&c=9Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q=",
+      url: "https://images.unsplash.com/photo-1667745812053-2e5eddef5dd3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGF0bmElMjBtdXNldW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       title: "Patna Museum",
       description: "Rich collection of historical artifacts and art"
     },
-    {
-      url: "https://media.istockphoto.com/id/1391502962/photo/patna-sahib-gurudwara.webp?a=1&b=1&s=612x612&w=0&k=20&c=9Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q=",
-      title: "Buddha Smriti Park",
-      description: "Peaceful park with stupa and meditation areas"
-    }
   ];
 
   const styles = {

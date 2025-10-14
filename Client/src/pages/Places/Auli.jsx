@@ -12,30 +12,20 @@ const AuliTravelGuide = () => {
   // Auli Images for Carousel
   const auliImages = [
     {
-      url: "https://images.unsplash.com/photo-1579033064629-155106c33b24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVsaSUyMHNraWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      url: "https://images.unsplash.com/photo-1582054879934-92c44a8e149f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXVsaSUyMHNraSUyMHJlc29ydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
       title: "Auli Ski Resort",
       description: "One of Asia's best skiing destinations with pristine slopes"
     },
     {
-      url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXVsaSUyMGhpbWFsYXlhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Panoramic Himalayan Views",
+      url: "https://images.unsplash.com/photo-1701599346683-37a6c9d1e001?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074",
+      title: "Auli Artificial Lake",
       description: "Breathtaking views of Nanda Devi, Trishul, and other peaks"
     },
     {
-      url: "https://images.unsplash.com/photo-1579033064562-6d4ab36fdf6c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXVsaSUyMGNhYmxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      title: "Auli Ropeway",
-      description: "Asia's longest cable car with spectacular mountain views"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXVsaSUyMGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Auli Artificial Lake",
+      url: "https://images.unsplash.com/photo-1631377952034-a0460eba141f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVsaSUyMGhpbWFsYXlhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
+      title: "Panoromic Himayalan Views",
       description: "World's highest artificial lake for snow production"
     },
-    {
-      url: "https://images.unsplash.com/photo-1544551763-77a457742e99?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF1bGklMjB3aW50ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      title: "Winter Wonderland",
-      description: "Snow-covered landscapes perfect for winter sports"
-    }
   ];
 
   const styles = {

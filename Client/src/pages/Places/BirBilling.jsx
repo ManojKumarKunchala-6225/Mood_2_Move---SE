@@ -12,30 +12,20 @@ const BirBillingTravelGuide = () => {
   // Bir Billing Images for Carousel
   const birBillingImages = [
     {
-      url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/v1afV2oIIRl8CClWQWDbkxa2nJwiOLdyQec-_lPwnDk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tYW51/YWR2ZW50dXJlc2lu/ZGlhLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8wNC9x/bTNlNmp6MjBtaWxu/dW9ucnJqdDRzOTJi/cjM1XzE1NjM5NzAx/NjFfMy53ZWJw",
       title: "Paragliding in Billing",
       description: "One of the world's best paragliding sites with breathtaking views"
     },
     {
-      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
-      title: "Takeoff from Billing",
-      description: "Professional paragliders taking off from Billing launch site"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1464822759849-e0e1003bcf7b?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/DAl2pML--_S2P-9NUImTyKGlye3NjzB91BrF1b3VZew/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/czN3YWFzLmdvdi5p/bi9zMzQ4YWVkYjg4/ODBjYWI4YzQ1NjM3/YWJjNzQ5M2VjZGRk/L3VwbG9hZHMvYmZp/X3RodW1iLzIwMTgw/NDI3MTgtb2x3OGs1/eWhiOThnNWZ6M24z/ODIzbDY0ZDVvN3d4/MmwzdWgzZDNpZzlz/LmpwZwhttps://images.unsplash.com/photo-1464822759849-e0e1003bcf7b?w=1200&h=600&fit=crop",
       title: "Dhauladhar Range",
       description: "Majestic Dhauladhar mountain range as seen from Bir"
     },
     {
-      url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop",
+      url: "https://imgs.search.brave.com/5k54QYUJeENOsg58k0_TIVYcljw6_WUFUOP3iVHBFfk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z2xvYmFsLWdhbGxp/dmFudGluZy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTYv/MDcvMTA1MDIwNS0w/MS0xMDI0eDc2OC5q/cGVn",
       title: "Tibetan Monasteries",
       description: "Beautiful Tibetan monasteries and culture in Bir"
     },
-    {
-      url: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&h=600&fit=crop",
-      title: "Landing Site in Bir",
-      description: "Spacious landing site surrounded by tea gardens and mountains"
-    }
   ];
 
   const styles = {
