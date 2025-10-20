@@ -35,9 +35,10 @@ import Agra from "./pages/Places/Agra.jsx";
 import Ahmedabad from "./pages/Places/Ahmedabad.jsx";
 import AjantaElloraCaves from "./pages/Places/AjantaElloraCaves.jsx";
 import AndamanNicobar from "./pages/Places/AndamanNicobar.jsx";
+import ArakuValley from "./pages/Places/ArakuValley.jsx";
 import Auli from "./pages/Places/Auli.jsx";
-import Backwater_Stays from "./pages/Places/Backwater_Stays.jsx";
 import Bikaner from "./pages/Places/Bikaner.jsx";
+import Goa from "./pages/Places/Goa.jsx";
 import BirBilling from "./pages/Places/BirBilling.jsx";
 import Jaipur from "./pages/Places/Jaipur.jsx";
 import Jodhpur from "./pages/Places/Jodhpur.jsx";
@@ -141,9 +142,10 @@ function App() {
             <Route path="/places/ahmedabad" element={<Ahmedabad />} />
             <Route path="/places/ajantaelloracaves" element={<AjantaElloraCaves />} />
             <Route path="/places/andamannicobar" element={<AndamanNicobar />} />
+            <Route path="/places/arakuvalley" element={<ArakuValley />} /> 
             <Route path="/places/auli" element={<Auli />} />
-            <Route path="/places/backwater_stays" element={<Backwater_Stays />} />
             <Route path="/places/bikaner" element={<Bikaner />} />
+            <Route path="/places/goa" element={<Goa />} />
             <Route path="/places/birbilling" element={<BirBilling />} />
             <Route path="/places/jaipur" element={<Jaipur />} />
             <Route path="/places/jodhpur" element={<Jodhpur />} />

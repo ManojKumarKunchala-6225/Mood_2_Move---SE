@@ -63,15 +63,33 @@ const nearbyPlacesData = {
     {
       name: "Neil Island",
       type: "Attraction",
-      image: "https://images.unsplash.com/photo-1582657118090-af35eefc4e1f?w=1200&h=600&fit=crop",
+      image: "https://imgs.search.brave.com/842CzFavFXMF3e39X4nSjhZsyoE9QR7EG-efzR-QGzs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vc3RhbXBl/ZG1vbWVudHMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzEwL2xha3NobWFu/cHVyLWJlYWNoLTEt/bmVpbC1pc2xhbmQt/YW5kYW1hbi0yLmpw/Zz9maXQ9MTAyNCw3/Njgmc3NsPTE",
     },
     {
       name: "Scuba Diving",
       type: "Hotel",
-      image: "https://images.unsplash.com/photo-1603383928972-0d6b0cac7e8f?w=1200&h=600&fit=crop",
+      image: "https://imgs.search.brave.com/5K0PnIS4i-O4yPOCq87E0eUZeGl7I1-wbnrTSrlodVk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ3/MzIxMDMwNy9waG90/by9hLXNjdWJhLWRp/dmVyc2l0cy1vbi1h/LWJvYXQtYW5kLWxv/b2tzLWF0LXRoZS10/dXJxdW9pc2Utc2Vh/LWluLWtyYWJpLXRo/YWlsYW5kLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz05MlhJ/eVpfUGI1Qi1RY0tn/cXl0MFlCQUN2UkEt/cEZZQXpJOTRGR0RO/cGhNPQ",
     }
   ],
-  "Auli": [
+  "ArakuValley":[
+    {
+      name: "Borra Caves",
+      type: "Attraction",
+      image: "https://imgs.search.brave.com/DSqNQ7uced7OeBEP2Gmk_iFWfeM64Bm1B0wzcnx2ARQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjI2/OTYzNTQ2L3Bob3Rv/L2NvbG9yZnVsLWJv/cnJhLWNhdmVzLWxv/Y2F0ZWQtb24tdGhl/LWVhc3QtY29hc3Qt/b2YtaW5kaWEuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTV5/MERrWVA4T3c1UHVX/TGVTOG04Y2kwT0V2/clJFNHNEbUdacktH/Q2NBQW89",
+      className: "w-full h-full object-cover"
+    },
+    {
+      name: "Tribal Museum",
+      type: "Attraction",
+      image: "https://imgs.search.brave.com/KmyyAPH0uvYk-ANVP-hvdjkm_GHDYtYT7BZ7XXq6Mrc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaG9w/Lm11c2V1bXNvZmlu/ZGlhLm9yZy9zaXRl/cy9kZWZhdWx0L2Zp/bGVzLzIwMjAtMDMv/QXJha3UlMjBUcmli/YWwlMjBNdXNldW1f/aW1nMS5qcGVn",
+    },
+    {
+      name: "Katiki Waterfalls",
+      type: "Attraction",
+      image: "https://imgs.search.brave.com/qFAHoLLAI9kvbm1wyiG6Tq4TUn1Veqw8ucP_koikoqw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9iYWNr/cGFja2Vyc3VuaXRl/ZC5pbi9fbmV4dC9p/bWFnZT91cmw9aHR0/cHM6Ly9icHUtaW1h/Z2VzLXYxLnMzLmV1/LW5vcnRoLTEuYW1h/em9uYXdzLmNvbS91/cGxvYWRzLzE3MjE5/ODAxMzk0MzJfS2F0/aWtpJTIwV2F0ZXJm/YWxscyUyMDQlMjAu/anBlZyZ3PTM4NDAm/cT03NQ",
+    },
+  ],
+  "Auli":[
     {
       name: "Auli Ski Resort",
       type: "Attraction",
@@ -88,23 +106,23 @@ const nearbyPlacesData = {
       image: "https://images.unsplash.com/photo-1631377952034-a0460eba141f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVsaSUyMGhpbWFsYXlhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
     }
   ],
-  "Backwater_Stays": [
-    {
-      name: "Alleppey Backwaters",
-      type: "Attraction",
-      image: "https://media.istockphoto.com/id/177447843/photo/house-boat-in-backwaters.webp?a=1&b=1&s=612x612&w=0&k=20&c=-qor9710ge3GbC6MvV0Mp9AK4UxmzfcFxphG5L_xMXE=",
-    },
-    {
-      name: "Paddy Fields",
-      type: "Attraction",
-      image: "https://media.istockphoto.com/id/657317806/photo/green-rice-fields-beside-kerala-backwaters-in-alleppey-kerala-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=4KNhXP-PQFxNc77O1RSVxC0wO-68kqdKRdMMfmc45_U=",
-    },
-    {
-      name: "Houseboats",
-      type: "Hotel",
-      image: "https://media.istockphoto.com/id/471988323/photo/india.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVx3BjCK4oghitogZjx9BN-dn4RWiKH-4ghZJFWzsiw=",
-    }
-  ],
+  // "Backwater_Stays": [
+  //   {
+  //     name: "Alleppey Backwaters",
+  //     type: "Attraction",
+  //     image: "https://media.istockphoto.com/id/177447843/photo/house-boat-in-backwaters.webp?a=1&b=1&s=612x612&w=0&k=20&c=-qor9710ge3GbC6MvV0Mp9AK4UxmzfcFxphG5L_xMXE=",
+  //   },
+  //   {
+  //     name: "Paddy Fields",
+  //     type: "Attraction",
+  //     image: "https://media.istockphoto.com/id/657317806/photo/green-rice-fields-beside-kerala-backwaters-in-alleppey-kerala-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=4KNhXP-PQFxNc77O1RSVxC0wO-68kqdKRdMMfmc45_U=",
+  //   },
+  //   {
+  //     name: "Houseboats",
+  //     type: "Hotel",
+  //     image: "https://media.istockphoto.com/id/471988323/photo/india.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVx3BjCK4oghitogZjx9BN-dn4RWiKH-4ghZJFWzsiw=",
+  //   }
+  // ],
   "Bikaner": [
     {
       name: "Junagarh Fort",
@@ -138,6 +156,23 @@ const nearbyPlacesData = {
       type: "Hotel",
       image: "https://imgs.search.brave.com/nww1xXiiZjoH7Ru0o7NZ-7neamyTp1zY-smq5in8QU4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZi5i/c3RhdGljLmNvbS94/ZGF0YS9pbWFnZXMv/aG90ZWwvbWF4MTAy/NHg3NjgvMjMzMzQz/NTAyLmpwZz9rPTdl/ZmE2NTExNmNlYTA5/NjllNTljOTc4MjA5/Y2RjMWU2Mjk4ZGZh/Y2M3OTE3MjE2M2Zj/YWE3Zjg1YmI1NDI0/NzQmbz0maHA9MQ"
     }
+  ],
+  "Goa": [
+    {
+      name: "Baga Beach",
+      type: "Attraction",
+      image: "https://imgs.search.brave.com/HaPaXJ07RIPp8N3tZGEe0Ovlp5uSzLZYg6ZNN276sgM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iYWdh/LWJlYWNoLW9uZS1t/b3N0LXBvcHVsYXIt/dmlzaXRlZC1iZWFj/aGVzLW5vcnRoLWdv/YS1uYW1lZC1jcmVl/ay13aGljaC1mbG93/cy1hcmFiaWFuLXNl/YS1wZXJmZWN0LTE3/NTY2NTMzNC5qcGc",
+    },
+    {
+      name: "Dudhsagar Falls",
+      type: "Attraction",
+      image: "https://imgs.search.brave.com/ENOTJABl3qyFGRHwNvIXNRqPPQpPKub98bBtgeReG6g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI0/NjIzMDk0OC9waG90/by90aGUtZHVkaHNh/Z2FyLWZhbGxzLWlu/LWdvYS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9dlZCZ3Nn/YmF5cFhQM25ydUx2/czdvUWpIYlNyR0ha/SDFZaU4tZmtMTmlR/WT0",
+    },
+    {
+      name: "Old Goa Churches",
+      type: "Attraction",
+      image: "https://imgs.search.brave.com/75rdeWucw7iZZl1nFVVKTLPUldIVqRltzcHcvvIJlSs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc2/OTQwNDYxNC9waG90/by9jaHVyY2hlcy1v/Zi1vbGQtZ29hLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1l/c2tObGhFMlhUY1Y1/RDAyeVhQNVJEWlpG/Z19keU5qbVNYT21u/UDhkVHc0PQ",
+    },
   ],
   "Jaipur": [
     {

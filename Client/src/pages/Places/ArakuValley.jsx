@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AndamanTravelGuide = () => {
+const ArakuValleyTravelGuide = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [userRatings, setUserRatings] = useState({});
@@ -9,22 +9,22 @@ const AndamanTravelGuide = () => {
   const [userReview, setUserReview] = useState('');
   const [currentRating, setCurrentRating] = useState(0);
 
-  // Andaman Images for Carousel
-  const andamanImages = [
+  // Araku Valley Images for Carousel
+  const arakuImages = [
     {
-      url: "https://imgs.search.brave.com/iAInBpGismqzZUC4QuTKC0oSgbRqijWS8SiSuRzGoqo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTQ3/ODcyMTUzL3Bob3Rv/L2NlbGx1bGFyLWph/aWwuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPWtVdFFwUHV4/UGl1R1dsUS02V19M/Tm9rczlmYXY5MUJy/UkEtcUNOdFlYNXc9",
-      title: "Cellular Jail",
-      description: "Historical prison from British colonial era"
+      url: "https://imgs.search.brave.com/2vLuHQsJHeYtMYlZWd6_geo0ZPrFfM86ckMpxg4-H50/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL3Av/QUYxUWlwTlZjM0c3/Slo0RnhFRDBSTEhC/UkJYcVNiYnZKUFNR/ZDNiN1FUMEM9czE2/MDAtdzQwMA",
+      title: "Coffee Plantations",
+      description: "Lush green coffee estates in Eastern Ghats"
     },
     {
-      url: "https://imgs.search.brave.com/5K0PnIS4i-O4yPOCq87E0eUZeGl7I1-wbnrTSrlodVk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ3/MzIxMDMwNy9waG90/by9hLXNjdWJhLWRp/dmVyc2l0cy1vbi1h/LWJvYXQtYW5kLWxv/b2tzLWF0LXRoZS10/dXJxdW9pc2Utc2Vh/LWluLWtyYWJpLXRo/YWlsYW5kLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz05MlhJ/eVpfUGI1Qi1RY0tn/cXl0MFlCQUN2UkEt/cEZZQXpJOTRGR0RO/cGhNPQ",
-      title: "Scuba Diving",
-      description: "Explore vibrant marine life and coral reefs"
+      url: "https://imgs.search.brave.com/DSqNQ7uced7OeBEP2Gmk_iFWfeM64Bm1B0wzcnx2ARQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjI2/OTYzNTQ2L3Bob3Rv/L2NvbG9yZnVsLWJv/cnJhLWNhdmVzLWxv/Y2F0ZWQtb24tdGhl/LWVhc3QtY29hc3Qt/b2YtaW5kaWEuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTV5/MERrWVA4T3c1UHVX/TGVTOG04Y2kwT0V2/clJFNHNEbUdacktH/Q2NBQW89",
+      title: "Borra Caves",
+      description: "Million-year-old limestone caves with stunning formations"
     },
     {
-      url: "https://imgs.search.brave.com/842CzFavFXMF3e39X4nSjhZsyoE9QR7EG-efzR-QGzs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vc3RhbXBl/ZG1vbWVudHMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzEwL2xha3NobWFu/cHVyLWJlYWNoLTEt/bmVpbC1pc2xhbmQt/YW5kYW1hbi0yLmpw/Zz9maXQ9MTAyNCw3/Njgmc3NsPTE",
-      title: "Neil Island",
-      description: "Serene island with natural bridges and beaches"
+      url: "https://imgs.search.brave.com/KmyyAPH0uvYk-ANVP-hvdjkm_GHDYtYT7BZ7XXq6Mrc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaG9w/Lm11c2V1bXNvZmlu/ZGlhLm9yZy9zaXRl/cy9kZWZhdWx0L2Zp/bGVzLzIwMjAtMDMv/QXJha3UlMjBUcmli/YWwlMjBNdXNldW1f/aW1nMS5qcGVn",
+      title: "Tribal Museum",
+      description: "Showcasing rich tribal culture and heritage"
     }
   ];
 
@@ -34,18 +34,18 @@ const AndamanTravelGuide = () => {
       margin: '0 auto',
       padding: '20px',
       fontFamily: '"Noto Sans", Arial, sans-serif',
-      backgroundColor: '#f0f8ff',
+      backgroundColor: '#f0fff0',
       minHeight: '100vh'
     },
     header: {
       textAlign: 'center',
       marginBottom: '30px',
-      marginTop:'50px',
+      marginTop: '50px',
       padding: '30px',
-      background: 'linear-gradient(135deg, #1e90ff, #00bfff)',
+      background: 'linear-gradient(135deg, #228b22, #32cd32)',
       color: 'white',
       borderRadius: '15px',
-      boxShadow: '0 8px 25px rgba(30, 144, 255, 0.3)'
+      boxShadow: '0 8px 25px rgba(34, 139, 34, 0.3)'
     },
     title: {
       fontSize: '3rem',
@@ -58,7 +58,6 @@ const AndamanTravelGuide = () => {
       opacity: 0.9,
       fontWeight: '500'
     },
-    // Carousel Styles
     carousel: {
       position: 'relative',
       width: '100%',
@@ -132,10 +131,9 @@ const AndamanTravelGuide = () => {
       transition: 'all 0.3s ease'
     },
     activeDot: {
-      backgroundColor: '#1e90ff',
+      backgroundColor: '#228b22',
       transform: 'scale(1.2)'
     },
-    // Rating Styles
     ratingSection: {
       backgroundColor: 'white',
       padding: '20px',
@@ -144,7 +142,7 @@ const AndamanTravelGuide = () => {
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
     },
     ratingTitle: {
-      color: '#1e90ff',
+      color: '#228b22',
       marginBottom: '15px',
       fontSize: '1.5rem'
     },
@@ -155,10 +153,10 @@ const AndamanTravelGuide = () => {
       marginTop: '15px'
     },
     ratingCard: {
-      backgroundColor: '#f0f8ff',
+      backgroundColor: '#f0fff0',
       padding: '20px',
       borderRadius: '10px',
-      border: '2px solid #87ceeb',
+      border: '2px solid #32cd32',
       transition: 'all 0.3s ease'
     },
     ratingStars: {
@@ -176,7 +174,7 @@ const AndamanTravelGuide = () => {
       color: '#ffa500'
     },
     rateButton: {
-      backgroundColor: '#1e90ff',
+      backgroundColor: '#228b22',
       color: 'white',
       border: 'none',
       padding: '8px 16px',
@@ -188,11 +186,10 @@ const AndamanTravelGuide = () => {
     userRating: {
       marginTop: '10px',
       padding: '10px',
-      backgroundColor: '#f0f8ff',
+      backgroundColor: '#f0fff0',
       borderRadius: '5px',
-      borderLeft: '3px solid #00bfff'
+      borderLeft: '3px solid #32cd32'
     },
-    // Modal Styles
     modal: {
       position: 'fixed',
       top: '0',
@@ -214,7 +211,7 @@ const AndamanTravelGuide = () => {
       boxShadow: '0 10px 40px rgba(0,0,0,0.3)'
     },
     modalTitle: {
-      color: '#1e90ff',
+      color: '#228b22',
       marginBottom: '20px',
       textAlign: 'center'
     },
@@ -234,7 +231,7 @@ const AndamanTravelGuide = () => {
       justifyContent: 'center'
     },
     submitButton: {
-      backgroundColor: '#00bfff',
+      backgroundColor: '#32cd32',
       color: 'white',
       border: 'none',
       padding: '12px 25px',
@@ -251,7 +248,6 @@ const AndamanTravelGuide = () => {
       cursor: 'pointer',
       fontSize: '16px'
     },
-    // Tab Styles
     tabs: {
       display: 'flex',
       justifyContent: 'center',
@@ -271,10 +267,10 @@ const AndamanTravelGuide = () => {
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
     },
     activeTab: {
-      backgroundColor: '#1e90ff',
+      backgroundColor: '#228b22',
       color: 'white',
       transform: 'scale(1.05)',
-      boxShadow: '0 6px 20px rgba(30, 144, 255, 0.4)'
+      boxShadow: '0 6px 20px rgba(34, 139, 34, 0.4)'
     },
     content: {
       backgroundColor: 'white',
@@ -287,8 +283,8 @@ const AndamanTravelGuide = () => {
       marginBottom: '30px'
     },
     sectionTitle: {
-      color: '#1e90ff',
-      borderBottom: '3px solid #00bfff',
+      color: '#228b22',
+      borderBottom: '3px solid #32cd32',
       paddingBottom: '15px',
       marginBottom: '25px',
       fontSize: '2rem',
@@ -303,27 +299,27 @@ const AndamanTravelGuide = () => {
       marginTop: '25px'
     },
     card: {
-      backgroundColor: '#f0f8ff',
+      backgroundColor: '#f0fff0',
       padding: '25px',
       borderRadius: '12px',
-      border: '2px solid #87ceeb',
+      border: '2px solid #32cd32',
       transition: 'all 0.3s ease',
-      boxShadow: '0 4px 15px rgba(30, 144, 255, 0.1)'
+      boxShadow: '0 4px 15px rgba(34, 139, 34, 0.1)'
     },
     warning: {
-      backgroundColor: '#fff3e0',
-      border: '2px solid #ffb74d',
+      backgroundColor: '#fff0f0',
+      border: '2px solid #ff6b6b',
       padding: '20px',
       borderRadius: '10px',
       margin: '15px 0'
     },
     highlight: {
-      color: '#1e90ff',
+      color: '#228b22',
       fontWeight: 'bold',
       fontSize: '1.1rem'
     },
     price: {
-      color: '#00bfff',
+      color: '#32cd32',
       fontWeight: 'bold',
       fontSize: '1.1rem'
     },
@@ -333,224 +329,224 @@ const AndamanTravelGuide = () => {
     }
   };
 
-  // Andaman Travel Data
-  const andamanData = {
+  // Araku Valley Travel Data
+  const arakuData = {
     overview: {
-      title: "Andaman & Nicobar Islands - Tropical Paradise",
-      content: `The Andaman and Nicobar Islands are a breathtaking archipelago of 572 islands in the Bay of Bengal, known for their pristine beaches, crystal-clear turquoise waters, and vibrant marine life. This Union Territory of India is a tropical paradise that offers a perfect blend of adventure, relaxation, and natural beauty. The islands are famous for their white sandy beaches, coral reefs, lush rainforests, and rich history, including the Cellular Jail in Port Blair. With activities ranging from scuba diving and snorkeling to island hopping and historical tours, the Andaman Islands provide an unforgettable tropical experience. The islands are also home to indigenous tribes and offer unique cultural insights alongside their natural wonders.`
+      title: "Araku Valley - Kashmir of Andhra Pradesh",
+      content: `Araku Valley is a picturesque hill station located in the Eastern Ghats of Andhra Pradesh, approximately 115 kilometers from Visakhapatnam. Often referred to as the 'Kashmir of Andhra Pradesh', this beautiful valley is known for its stunning landscapes, coffee plantations, waterfalls, and rich tribal culture. Situated at an altitude of 911 meters to 1,415 meters above sea level, Araku Valley offers a perfect escape from the heat and hustle of city life. The valley is surrounded by lush green forests, terraced gardens, and scenic waterfalls. It is home to various tribal communities who have preserved their unique culture and traditions. The famous Borra Caves, located nearby, add to the valley's natural charm with their million-year-old limestone formations.`
     },
     famousFoods: [
       {
-        name: "Seafood Platter",
-        description: "Fresh catch including fish, prawns, crabs, and lobsters",
-        place: "Beachside shacks, Local restaurants",
-        price: "₹500-2000",
-        special: "Daily fresh seafood from local waters"
-      },
-      {
-        name: "Andaman Fish Curry",
-        description: "Traditional fish curry with coconut and local spices",
-        place: "Local eateries, Home stays",
+        name: "Bamboo Chicken",
+        description: "Chicken marinated in spices and cooked inside bamboo",
+        place: "Local tribal stalls, Roadside eateries",
         price: "₹200-500",
-        special: "Authentic local preparation"
+        special: "Traditional tribal cooking method"
       },
       {
-        name: "Coconut Prawns",
-        description: "Prawns cooked in coconut gravy with spices",
-        place: "Beach restaurants, Hotels",
+        name: "Tribal Coffee",
+        description: "Freshly brewed coffee from local plantations",
+        place: "Coffee stalls, Plantation visits",
+        price: "₹50-100",
+        special: "Freshly grown Araku coffee"
+      },
+      {
+        name: "Organic Honey",
+        description: "Pure honey collected from forest areas",
+        place: "Local markets, Tribal vendors",
         price: "₹300-800",
-        special: "Coastal specialty"
+        special: "Natural and organic"
       },
       {
-        name: "Grilled Lobster",
-        description: "Fresh lobster grilled with butter and herbs",
-        place: "Premium restaurants, Resorts",
-        price: "₹800-2500",
-        special: "Luxury seafood experience"
+        name: "Local Vegetables",
+        description: "Fresh organic vegetables grown in valley",
+        place: "Local restaurants, Homestays",
+        price: "₹100-300",
+        special: "Fresh from tribal farms"
       },
       {
-        name: "Tropical Fruits",
-        description: "Fresh local fruits including coconut, pineapple, bananas",
-        place: "Local markets, Street vendors",
-        price: "₹50-200",
-        special: "Fresh from island plantations"
+        name: "Rice-based Dishes",
+        description: "Traditional rice preparations with local spices",
+        place: "Local eateries, Tribal food centers",
+        price: "₹150-400",
+        special: "Authentic tribal cuisine"
       }
     ],
     shopping: [
       {
-        category: "Pearl Jewelry",
-        description: "Beautiful pearls and pearl jewelry",
-        places: ["Aberdeen Bazaar", "Government emporium", "Pearl shops"],
-        items: ["Pearl necklaces", "Earrings", "Bracelets", "Rings"],
-        priceRange: "₹500 - ₹50,000",
+        category: "Coffee & Tea",
+        description: "Fresh coffee and tea from local plantations",
+        places: ["Local markets", "Plantation shops", "Government outlets"],
+        items: ["Araku Coffee", "Organic Tea", "Coffee powder", "Tea leaves"],
+        priceRange: "₹200 - ₹2,000",
         bestTime: "Year-round"
       },
       {
-        category: "Shell Crafts",
-        description: "Handicrafts made from seashells and corals",
-        places: ["Local markets", "Beach shops", "Craft stores"],
-        items: ["Shell decorations", "Wind chimes", "Jewelry boxes", "Showpieces"],
+        category: "Tribal Handicrafts",
+        description: "Handmade crafts by local tribal communities",
+        places: ["Tribal Museum", "Local markets", "Craft centers"],
+        items: ["Wood carvings", "Bamboo crafts", "Tribal jewelry", "Handwoven textiles"],
         priceRange: "₹100 - ₹5,000",
         bestTime: "Tourist season"
       },
       {
-        category: "Wooden Crafts",
-        description: "Handcrafted wooden items",
-        places: ["Local markets", "Tribal craft centers"],
-        items: ["Wooden sculptures", "Furniture", "Decorative items"],
-        priceRange: "₹200 - ₹20,000",
+        category: "Organic Products",
+        description: "Natural and organic products from valley",
+        places: ["Local markets", "Government shops", "Farm outlets"],
+        items: ["Organic honey", "Herbal products", "Natural oils", "Spices"],
+        priceRange: "₹150 - ₹3,000",
         bestTime: "Year-round"
       },
       {
-        category: "Coconut Products",
-        description: "Products made from coconut shells and fibers",
-        places: ["Local markets", "Government shops"],
-        items: ["Coconut shell crafts", "Coir products", "Coconut oil"],
-        priceRange: "₹50 - ₹2,000",
-        bestTime: "Year-round"
+        category: "Local Artifacts",
+        description: "Traditional tribal artifacts and souvenirs",
+        places: ["Tribal Museum shop", "Local craft stores"],
+        items: ["Tribal masks", "Musical instruments", "Decorative items", "Paintings"],
+        priceRange: "₹200 - ₹10,000",
+        bestTime: "October to March"
       }
     ],
     hotels: [
       {
-        name: "Taj Exotica Resort & Spa",
-        type: "Luxury Beach Resort",
-        price: "₹15,000-40,000/night",
-        rating: "4.7/5",
-        facilities: ["Private beach", "Infinity pool", "Spa", "Multiple restaurants"],
-        location: "Havelock Island",
-        distance: "On Radhanagar Beach"
-      },
-      {
-        name: "Sinclair's Bayview",
-        type: "4-Star Hotel",
-        price: "₹6,000-15,000/night",
-        rating: "4.3/5",
-        facilities: ["Sea view", "Restaurant", "Pool", "Travel desk"],
-        location: "Port Blair",
-        distance: "2 km from Cellular Jail"
-      },
-      {
-        name: "SeaShell Hotel & Resort",
-        type: "Beach Resort",
+        name: "ITC Grand Bay",
+        type: "Luxury Resort",
         price: "₹8,000-20,000/night",
-        rating: "4.4/5",
-        facilities: ["Beach access", "Pool", "Water sports", "Restaurant"],
-        location: "Havelock Island",
-        distance: "On Beach No. 5"
+        rating: "4.5/5",
+        facilities: ["Swimming pool", "Spa", "Restaurant", "Mountain views"],
+        location: "Araku Valley",
+        distance: "Central location"
       },
       {
-        name: "Hotel Driftwood",
+        name: "Haritha Valley Resort",
+        type: "Government Resort",
+        price: "₹3,000-8,000/night",
+        rating: "4.0/5",
+        facilities: ["Basic amenities", "Restaurant", "Garden", "Tour assistance"],
+        location: "Araku Valley",
+        distance: "Near main attractions"
+      },
+      {
+        name: "Araku Tribal Resort",
+        type: "Eco Resort",
+        price: "₹4,000-12,000/night",
+        rating: "4.2/5",
+        facilities: ["Eco-friendly", "Nature walks", "Cultural programs", "Organic food"],
+        location: "Araku Valley",
+        distance: "Amidst coffee plantations"
+      },
+      {
+        name: "Hotel Mayfair",
         type: "Mid-range Hotel",
-        price: "₹4,000-10,000/night",
-        rating: "4.1/5",
-        facilities: ["Restaurant", "Travel Desk", "Parking", "AC Rooms"],
-        location: "Port Blair",
-        distance: "3 km from airport"
+        price: "₹5,000-15,000/night",
+        rating: "4.3/5",
+        facilities: ["Restaurant", "Bar", "Conference hall", "Travel desk"],
+        location: "Araku Valley",
+        distance: "Central location"
       },
       {
-        name: "Blue Planet Resort",
-        type: "Budget Resort",
-        price: "₹2,000-6,000/night",
-        rating: "3.9/5",
-        facilities: ["Beach view", "Basic amenities", "Restaurant", "Tour assistance"],
-        location: "Neil Island",
-        distance: "Walking distance to beaches"
+        name: "Homestays",
+        type: "Budget Accommodation",
+        price: "₹1,000-4,000/night",
+        rating: "4.1/5",
+        facilities: ["Home-cooked food", "Local experience", "Basic amenities", "Cultural immersion"],
+        location: "Various locations",
+        distance: "Scattered across valley"
       }
     ],
     places: [
       {
-        name: "Radhanagar Beach",
-        description: "Voted as Asia's best beach with white sands and turquoise waters",
+        name: "Borra Caves",
+        description: "Million-year-old limestone caves with stunning formations",
+        timing: "10:00 AM - 5:00 PM",
+        entryFee: "₹60 (Indians), ₹100 (Foreigners)",
+        bestTime: "Morning hours",
+        highlights: ["Stalactites", "Stalagmites", "Natural formations", "Photography"]
+      },
+      {
+        name: "Coffee Plantations",
+        description: "Vast expanses of coffee estates in Eastern Ghats",
+        timing: "8:00 AM - 6:00 PM",
+        entryFee: "Free (some charge for guided tours)",
+        bestTime: "October to March",
+        highlights: ["Coffee walks", "Plantation tours", "Fresh coffee", "Scenic views"]
+      },
+      {
+        name: "Tribal Museum",
+        description: "Showcasing rich tribal culture and heritage of Araku",
+        timing: "9:30 AM - 5:30 PM",
+        entryFee: "₹20",
+        bestTime: "Daytime",
+        highlights: ["Tribal artifacts", "Cultural exhibits", "Handicrafts", "History"]
+      },
+      {
+        name: "Katiki Waterfalls",
+        description: "Beautiful waterfall near Borra Caves",
+        timing: "8:00 AM - 5:00 PM",
+        entryFee: "Free",
+        bestTime: "Monsoon season",
+        highlights: ["Waterfall views", "Trekking", "Photography", "Nature walks"]
+      },
+      {
+        name: "Padmapuram Gardens",
+        description: "Beautiful botanical gardens with tree houses",
+        timing: "9:00 AM - 6:00 PM",
+        entryFee: "₹30",
+        bestTime: "Morning or evening",
+        highlights: ["Tree houses", "Gardens", "Toy train", "Flower shows"]
+      },
+      {
+        name: "Ananthagiri Hills",
+        description: "Scenic hills with coffee plantations and viewpoints",
         timing: "24 hours",
         entryFee: "Free",
         bestTime: "Sunrise or sunset",
-        highlights: ["White sandy beach", "Crystal clear water", "Sunset views", "Photography"]
-      },
-      {
-        name: "Cellular Jail",
-        description: "Historical prison from British colonial era, now a national memorial",
-        timing: "9:00 AM - 12:30 PM, 1:30 PM - 5:00 PM",
-        entryFee: "₹30 (Indians), ₹100 (Foreigners)",
-        bestTime: "Morning for light and sound show booking",
-        highlights: ["Historical significance", "Light and sound show", "Museum", "Architecture"]
-      },
-      {
-        name: "Havelock Island",
-        description: "Most popular island with pristine beaches and water sports",
-        timing: "24 hours",
-        entryFee: "Free (ferry charges apply)",
-        bestTime: "November to April",
-        highlights: ["Radhanagar Beach", "Elephant Beach", "Kalapathar Beach", "Water sports"]
-      },
-      {
-        name: "Ross Island",
-        description: "Former British administrative headquarters with ruins",
-        timing: "8:30 AM - 4:00 PM",
-        entryFee: "₹50 (Indians), ₹500 (Foreigners)",
-        bestTime: "Morning hours",
-        highlights: ["Historical ruins", "Deer spotting", "Light and sound show", "Photography"]
-      },
-      {
-        name: "Neil Island",
-        description: "Serene island with natural bridges and beautiful beaches",
-        timing: "24 hours",
-        entryFee: "Free (ferry charges apply)",
-        bestTime: "Day trip",
-        highlights: ["Natural Bridge", "Bharatpur Beach", "Laxmanpur Beach", "Coral viewing"]
-      },
-      {
-        name: "Baratang Island",
-        description: "Known for limestone caves and mangrove forests",
-        timing: "6:00 AM - 3:00 PM",
-        entryFee: "Permit required",
-        bestTime: "Early morning",
-        highlights: ["Limestone Caves", "Mangrove forests", "Tribal areas", "Adventure"]
+        highlights: ["Viewpoints", "Coffee estates", "Trekking", "Photography"]
       }
     ],
     precautions: [
       {
-        category: "Water Activities",
+        category: "Trekking & Hiking",
         tips: [
-          "Always use life jackets during water sports",
-          "Check weather conditions before sea activities",
-          "Follow instructor guidelines for scuba diving",
-          "Avoid touching corals while snorkeling"
+          "Hire local guides for forest treks",
+          "Carry water and snacks",
+          "Wear comfortable trekking shoes",
+          "Check weather conditions before trekking"
         ]
       },
       {
-        category: "Travel & Permits",
+        category: "Weather & Clothing",
         tips: [
-          "Carry valid ID proof at all times",
-          "Obtain necessary permits for restricted areas",
-          "Book ferry tickets in advance during peak season",
-          "Keep permit copies handy during island visits"
+          "Carry woolens during winter months",
+          "Carry raincoat during monsoon",
+          "Wear comfortable walking shoes",
+          "Carry sunscreen and hats"
         ]
       },
       {
         category: "Health & Safety",
         tips: [
-          "Carry mosquito repellent",
-          "Stay hydrated in tropical climate",
-          "Use sunscreen and hats for sun protection",
-          "Carry basic medicines and first aid"
+          "Carry basic medicines",
+          "Stay hydrated during treks",
+          "Be cautious near waterfalls",
+          "Carry mosquito repellent"
         ]
       },
       {
-        category: "Island Etiquette",
+        category: "Cultural Etiquette",
         tips: [
-          "Respect tribal areas and restrictions",
-          "Do not litter on beaches and islands",
-          "Follow designated paths in forests",
-          "Respect marine life and coral reefs"
+          "Respect tribal customs and traditions",
+          "Seek permission before photography of tribal people",
+          "Don't litter in forest areas",
+          "Respect local culture and traditions"
         ]
       },
       {
         category: "General Tips",
         tips: [
-          "Carry cash as ATMs are limited on islands",
+          "Carry cash as ATMs are limited",
           "Book accommodation in advance during peak season",
-          "Carry waterproof bags for beach visits",
-          "Learn about tidal patterns for beach activities"
+          "Carry power banks for photography",
+          "Learn about local customs and traditions"
         ]
       }
     ]
@@ -559,13 +555,13 @@ const AndamanTravelGuide = () => {
   // Carousel Functions
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === andamanImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === arakuImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? andamanImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? arakuImages.length - 1 : prevIndex - 1
     );
   };
 
@@ -624,13 +620,13 @@ const AndamanTravelGuide = () => {
             {/* Image Carousel */}
             <div style={styles.carousel}>
               <img 
-                src={andamanImages[currentImageIndex].url} 
-                alt={andamanImages[currentImageIndex].title}
+                src={arakuImages[currentImageIndex].url} 
+                alt={arakuImages[currentImageIndex].title}
                 style={styles.carouselImage}
               />
               <div style={styles.carouselText}>
-                <h3 style={styles.carouselTitle}>{andamanImages[currentImageIndex].title}</h3>
-                <p style={styles.carouselDescription}>{andamanImages[currentImageIndex].description}</p>
+                <h3 style={styles.carouselTitle}>{arakuImages[currentImageIndex].title}</h3>
+                <p style={styles.carouselDescription}>{arakuImages[currentImageIndex].description}</p>
               </div>
               
               <div style={styles.carouselControls}>
@@ -649,7 +645,7 @@ const AndamanTravelGuide = () => {
               </div>
               
               <div style={styles.carouselDots}>
-                {andamanImages.map((_, index) => (
+                {arakuImages.map((_, index) => (
                   <div
                     key={index}
                     style={{
@@ -662,38 +658,38 @@ const AndamanTravelGuide = () => {
               </div>
             </div>
 
-            <h2 style={styles.sectionTitle}>🏝️ About Andaman & Nicobar Islands</h2>
+            <h2 style={styles.sectionTitle}>🏞️ About Araku Valley - Kashmir of Andhra Pradesh</h2>
             <p style={{fontSize: '18px', lineHeight: '1.8', textAlign: 'justify'}}>
-              {andamanData.overview.content}
+              {arakuData.overview.content}
             </p>
             
             <div style={styles.grid}>
               <div style={styles.card}>
-                <h3 style={{color: '#1e90ff', marginBottom: '15px'}}>📅 Best Time to Visit</h3>
-                <p><span style={styles.highlight}>October to May:</span> Perfect weather for beach activities</p>
-                <p><span style={styles.highlight}>November to February:</span> Pleasant climate, ideal for sightseeing</p>
-                <p><span style={styles.highlight}>March to May:</span> Warm weather, good for water sports</p>
-                <p><span style={styles.highlight}>June to September:</span> Monsoon, some activities restricted</p>
+                <h3 style={{color: '#228b22', marginBottom: '15px'}}>📅 Best Time to Visit</h3>
+                <p><span style={styles.highlight}>September to March:</span> Pleasant weather for sightseeing</p>
+                <p><span style={styles.highlight}>October to February:</span> Ideal for trekking and outdoor activities</p>
+                <p><span style={styles.highlight}>June to August:</span> Monsoon, lush greenery but limited activities</p>
+                <p><span style={styles.highlight}>April to May:</span> Summer, warm but good for valley views</p>
               </div>
               
               <div style={styles.card}>
-                <h3 style={{color: '#1e90ff', marginBottom: '15px'}}>🚗 How to Reach</h3>
-                <p><span style={styles.highlight}>By Air:</span> Veer Savarkar Airport, Port Blair</p>
-                <p><span style={styles.highlight}>By Sea:</span> Ships from Chennai, Kolkata, Visakhapatnam</p>
-                <p><span style={styles.highlight}>Inter-island:</span> Government and private ferries</p>
-                <p><span style={styles.highlight}>Local Transport:</span> Taxis, Auto-rickshaws, Buses</p>
+                <h3 style={{color: '#228b22', marginBottom: '15px'}}>🚗 How to Reach</h3>
+                <p><span style={styles.highlight}>By Train:</span> Scenic train from Visakhapatnam</p>
+                <p><span style={styles.highlight}>By Road:</span> Well-connected by road from Vizag</p>
+                <p><span style={styles.highlight}>Nearest Airport:</span> Visakhapatnam Airport</p>
+                <p><span style={styles.highlight}>Local Transport:</span> Taxis, Buses, Auto-rickshaws</p>
               </div>
             </div>
 
             {/* Rating Section */}
             <div style={styles.ratingSection}>
-              <h3 style={styles.ratingTitle}>⭐ Rate Your Andaman Experience</h3>
+              <h3 style={styles.ratingTitle}>⭐ Rate Your Araku Valley Experience</h3>
               <p>Share your experience and help other travelers</p>
               
               <div style={styles.ratingGrid}>
                 <div style={styles.ratingCard}>
-                  <h4>Overall Island Experience</h4>
-                  <p>How was your visit to Andaman Islands?</p>
+                  <h4>Overall Valley Experience</h4>
+                  <p>How was your visit to Araku Valley?</p>
                   {userRatings.overall ? (
                     <div style={styles.userRating}>
                       <p><strong>Your Rating:</strong> {userRatings.overall.rating}/5</p>
@@ -715,19 +711,19 @@ const AndamanTravelGuide = () => {
                 </div>
 
                 <div style={styles.ratingCard}>
-                  <h4>Beach Experience</h4>
-                  <p>How were the beaches and water activities?</p>
-                  {userRatings.beach ? (
+                  <h4>Nature Experience</h4>
+                  <p>How was your experience with nature and scenery?</p>
+                  {userRatings.nature ? (
                     <div style={styles.userRating}>
-                      <p><strong>Your Rating:</strong> {userRatings.beach.rating}/5</p>
+                      <p><strong>Your Rating:</strong> {userRatings.nature.rating}/5</p>
                       <div style={styles.ratingStars}>
-                        {renderStars(userRatings.beach.rating)}
+                        {renderStars(userRatings.nature.rating)}
                       </div>
                     </div>
                   ) : (
                     <button 
                       style={styles.rateButton}
-                      onClick={() => handleRateClick({ name: 'beach', type: 'Beach Experience' })}
+                      onClick={() => handleRateClick({ name: 'nature', type: 'Nature Experience' })}
                     >
                       Rate Now
                     </button>
@@ -735,19 +731,19 @@ const AndamanTravelGuide = () => {
                 </div>
 
                 <div style={styles.ratingCard}>
-                  <h4>Water Sports Experience</h4>
-                  <p>How was your scuba diving and snorkeling?</p>
-                  {userRatings.watersports ? (
+                  <h4>Tribal Culture Experience</h4>
+                  <p>How was your experience with tribal culture?</p>
+                  {userRatings.tribal ? (
                     <div style={styles.userRating}>
-                      <p><strong>Your Rating:</strong> {userRatings.watersports.rating}/5</p>
+                      <p><strong>Your Rating:</strong> {userRatings.tribal.rating}/5</p>
                       <div style={styles.ratingStars}>
-                        {renderStars(userRatings.watersports.rating)}
+                        {renderStars(userRatings.tribal.rating)}
                       </div>
                     </div>
                   ) : (
                     <button 
                       style={styles.rateButton}
-                      onClick={() => handleRateClick({ name: 'watersports', type: 'Water Sports' })}
+                      onClick={() => handleRateClick({ name: 'tribal', type: 'Tribal Culture' })}
                     >
                       Rate Now
                     </button>
@@ -761,11 +757,11 @@ const AndamanTravelGuide = () => {
       case 'food':
         return (
           <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>🍽️ Famous Foods & Seafood Delicacies</h2>
+            <h2 style={styles.sectionTitle}>🍽️ Famous Foods & Tribal Delicacies</h2>
             <div style={styles.grid}>
-              {andamanData.famousFoods.map((food, index) => (
+              {arakuData.famousFoods.map((food, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#1e90ff', marginBottom: '15px'}}>{food.name}</h3>
+                  <h3 style={{color: '#228b22', marginBottom: '15px'}}>{food.name}</h3>
                   <p>{food.description}</p>
                   <p><strong>Best Place:</strong> {food.place}</p>
                   <p><strong>Price:</strong> <span style={styles.price}>{food.price}</span></p>
@@ -797,11 +793,11 @@ const AndamanTravelGuide = () => {
       case 'shopping':
         return (
           <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>🛍️ Shopping in Andaman</h2>
+            <h2 style={styles.sectionTitle}>🛍️ Shopping in Araku Valley</h2>
             <div style={styles.grid}>
-              {andamanData.shopping.map((item, index) => (
+              {arakuData.shopping.map((item, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#1e90ff', marginBottom: '15px'}}>{item.category}</h3>
+                  <h3 style={{color: '#228b22', marginBottom: '15px'}}>{item.category}</h3>
                   <p>{item.description}</p>
                   <p><strong>Best Places:</strong> {item.places.join(', ')}</p>
                   <p><strong>Popular Items:</strong> {item.items.join(', ')}</p>
@@ -818,9 +814,9 @@ const AndamanTravelGuide = () => {
           <div style={styles.section}>
             <h2 style={styles.sectionTitle}>🏨 Hotels & Accommodation</h2>
             <div style={styles.grid}>
-              {andamanData.hotels.map((hotel, index) => (
+              {arakuData.hotels.map((hotel, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#1e90ff', marginBottom: '15px'}}>{hotel.name}</h3>
+                  <h3 style={{color: '#228b22', marginBottom: '15px'}}>{hotel.name}</h3>
                   <p><strong>Type:</strong> {hotel.type}</p>
                   <p><strong>Price:</strong> <span style={styles.price}>{hotel.price}</span></p>
                   <p><strong>Rating:</strong> {hotel.rating}</p>
@@ -836,11 +832,11 @@ const AndamanTravelGuide = () => {
       case 'places':
         return (
           <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>🏝️ Famous Places to Visit</h2>
+            <h2 style={styles.sectionTitle}>🏞️ Famous Places to Visit</h2>
             <div style={styles.grid}>
-              {andamanData.places.map((place, index) => (
+              {arakuData.places.map((place, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#1e90ff', marginBottom: '15px'}}>{place.name}</h3>
+                  <h3 style={{color: '#228b22', marginBottom: '15px'}}>{place.name}</h3>
                   <p>{place.description}</p>
                   <p><strong>Timing:</strong> {place.timing}</p>
                   <p><strong>Entry Fee:</strong> {place.entryFee}</p>
@@ -857,9 +853,9 @@ const AndamanTravelGuide = () => {
           <div style={styles.section}>
             <h2 style={styles.sectionTitle}>⚠️ Travel Precautions & Tips</h2>
             <div style={styles.grid}>
-              {andamanData.precautions.map((category, index) => (
+              {arakuData.precautions.map((category, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#1e90ff', marginBottom: '15px'}}>{category.category}</h3>
+                  <h3 style={{color: '#228b22', marginBottom: '15px'}}>{category.category}</h3>
                   <ul style={{paddingLeft: '20px'}}>
                     {category.tips.map((tip, tipIndex) => (
                       <li key={tipIndex} style={{marginBottom: '10px', lineHeight: '1.5'}}>
@@ -874,9 +870,9 @@ const AndamanTravelGuide = () => {
             <div style={{...styles.warning, marginTop: '20px'}}>
               <h4>🚨 Emergency Contacts</h4>
               <p><strong>Police:</strong> 100 | <strong>Ambulance:</strong> 102 | <strong>Fire:</strong> 101</p>
-              <p><strong>Tourist Helpline:</strong> 1363 | <strong>Coast Guard:</strong> 1554</p>
-              <p><strong>Port Blair Police:</strong> 03192-233077 | <strong>Hospital:</strong> 03192-233473</p>
-              <p><strong>Tourist Information Center:</strong> 03192-232694</p>
+              <p><strong>Tourist Helpline:</strong> 1363 | <strong>Forest Department:</strong> 1800-425-5366</p>
+              <p><strong>Araku Police Station:</strong> 08936-235522 | <strong>Hospital:</strong> 08936-235533</p>
+              <p><strong>Tourist Information Center:</strong> 08936-235544</p>
             </div>
           </div>
         );
@@ -939,8 +935,8 @@ const AndamanTravelGuide = () => {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h1 style={styles.title}>🏝️ Andaman & Nicobar</h1>
-        <p style={styles.subtitle}>Tropical Paradise - Emerald Islands</p>
+        <h1 style={styles.title}>🏞️ Araku Valley</h1>
+        <p style={styles.subtitle}>Kashmir of Andhra Pradesh - Coffee Paradise</p>
       </div>
 
       <div style={styles.tabs}>
@@ -953,7 +949,7 @@ const AndamanTravelGuide = () => {
             }}
             onMouseEnter={(e) => {
               if (activeTab !== tab) {
-                e.target.style.backgroundColor = '#00bfff';
+                e.target.style.backgroundColor = '#32cd32';
                 e.target.style.color = 'white';
               }
             }}
@@ -969,7 +965,7 @@ const AndamanTravelGuide = () => {
             {tab === 'food' && '🍽️ Food'}
             {tab === 'shopping' && '🛍️ Shopping'}
             {tab === 'hotels' && '🏨 Hotels'}
-            {tab === 'places' && '🏝️ Places'}
+            {tab === 'places' && '🏞️ Places'}
             {tab === 'precautions' && '⚠️ Precautions'}
           </button>
         ))}
@@ -989,13 +985,13 @@ const AndamanTravelGuide = () => {
         color: '#666',
         borderTop: '1px solid #ddd'
       }}>
-        <p>© 2024 Andaman & Nicobar Travel Guide. Experience Tropical Paradise!</p>
+        <p>© 2024 Araku Valley Travel Guide. Experience Coffee Paradise!</p>
         <p style={{fontSize: '14px', marginTop: '10px'}}>
-          Made with ❤️ for travelers exploring the Emerald Islands
+          Made with ❤️ for travelers exploring the Kashmir of Andhra Pradesh
         </p>
       </div>
     </div>
   );
 };
 
-export default AndamanTravelGuide;
+export default ArakuValleyTravelGuide;

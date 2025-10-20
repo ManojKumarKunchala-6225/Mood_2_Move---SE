@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AlleppeyTravelGuide = () => {
+const GoaTravelGuide = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [userRatings, setUserRatings] = useState({});
@@ -9,53 +9,43 @@ const AlleppeyTravelGuide = () => {
   const [userReview, setUserReview] = useState('');
   const [currentRating, setCurrentRating] = useState(0);
 
-  // Alleppey Images for Carousel
-  const alleppeyImages = [
+  // Goa Images for Carousel
+  const goaImages = [
     {
-      url: "https://media.istockphoto.com/id/177447843/photo/house-boat-in-backwaters.webp?a=1&b=1&s=612x612&w=0&k=20&c=-qor9710ge3GbC6MvV0Mp9AK4UxmzfcFxphG5L_xMXE=",
-      title: "Backwaters of Alleppey",
-      description: "Serene network of canals, lakes and lagoons - Venice of the East"
+      url: "https://imgs.search.brave.com/lEDqX2h8pMZhajjPMfX61uT46so-1MLV-yzwi3O33DA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zN2Fw/MS5zY2VuZTcuY29t/L2lzL2ltYWdlL2lu/Y3JlZGlibGVpbmRp/YS9jYWxhbmd1dGUt/YmVhY2gtZ29hLTUt/bXVzdGhlYWQtaGVy/bz9xbHQ9ODImdHM9/MTc0MjE2ODkzNzE5/NQ",
+      title: "Calangute Beach",
+      description: "Queen of beaches with golden sands and vibrant atmosphere"
     },
     {
-      url: "https://media.istockphoto.com/id/471988323/photo/india.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVx3BjCK4oghitogZjx9BN-dn4RWiKH-4ghZJFWzsiw=",
-      title: "Houseboat Experience",
-      description: "Luxurious houseboats cruising through peaceful backwaters"
+      url: "https://imgs.search.brave.com/ENOTJABl3qyFGRHwNvIXNRqPPQpPKub98bBtgeReG6g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI0/NjIzMDk0OC9waG90/by90aGUtZHVkaHNh/Z2FyLWZhbGxzLWlu/LWdvYS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9dlZCZ3Nn/YmF5cFhQM25ydUx2/czdvUWpIYlNyR0ha/SDFZaU4tZmtMTmlR/WT0",
+      title: "Dudhsagar Falls",
+      description: "Magnificent four-tiered waterfall on Mandovi River"
     },
     {
-      url: "https://media.istockphoto.com/id/656511192/photo/kerala-india-vacation-in-exotic-country.webp?a=1&b=1&s=612x612&w=0&k=20&c=SKnpKc1Cimi03C7pisjo0ZAxz5r01nO5nxBgVdpJn3k=",
-      title: "Alleppey Beach",
-      description: "Pristine beach with historic pier and lighthouse"
-    },
-    {
-      url: "https://media.istockphoto.com/id/657317806/photo/green-rice-fields-beside-kerala-backwaters-in-alleppey-kerala-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=4KNhXP-PQFxNc77O1RSVxC0wO-68kqdKRdMMfmc45_U=",
-      title: "Paddy Fields",
-      description: "Lush green rice fields stretching to the horizon"
-    },
-    {
-      url: "https://media.istockphoto.com/id/471498081/photo/boat-on-indian-river.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ikln9fzf2oP0OOMaP4Nsk2xCFTzUJKP6CukSB6Oi4c0=",
-      title: "Vembanad Lake",
-      description: "Longest lake in India, heart of Kerala backwaters"
+      url: "https://imgs.search.brave.com/75rdeWucw7iZZl1nFVVKTLPUldIVqRltzcHcvvIJlSs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc2/OTQwNDYxNC9waG90/by9jaHVyY2hlcy1v/Zi1vbGQtZ29hLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1l/c2tObGhFMlhUY1Y1/RDAyeVhQNVJEWlpG/Z19keU5qbVNYT21u/UDhkVHc0PQ",
+      title: "Old Goa Churches",
+      description: "UNESCO World Heritage site with Portuguese architecture"
     }
   ];
 
   const styles = {
     container: {
-      maxWidth: '100%',
+      maxWidth: '1200px',
       margin: '0 auto',
       padding: '20px',
       fontFamily: '"Noto Sans", Arial, sans-serif',
-      backgroundColor: '#f0fff8',
+      backgroundColor: '#fff5e6',
       minHeight: '100vh'
     },
     header: {
       textAlign: 'center',
       marginBottom: '30px',
-      marginTop:'4%',
+      marginTop: '50px',
       padding: '30px',
-      background: 'linear-gradient(135deg, #006400, #228B22)',
+      background: 'linear-gradient(135deg, #ff6b6b, #ffa500)',
       color: 'white',
       borderRadius: '15px',
-      boxShadow: '0 8px 25px rgba(0, 100, 0, 0.3)'
+      boxShadow: '0 8px 25px rgba(255, 107, 107, 0.3)'
     },
     title: {
       fontSize: '3rem',
@@ -68,7 +58,6 @@ const AlleppeyTravelGuide = () => {
       opacity: 0.9,
       fontWeight: '500'
     },
-    // Carousel Styles
     carousel: {
       position: 'relative',
       width: '100%',
@@ -142,10 +131,9 @@ const AlleppeyTravelGuide = () => {
       transition: 'all 0.3s ease'
     },
     activeDot: {
-      backgroundColor: '#006400',
+      backgroundColor: '#ff6b6b',
       transform: 'scale(1.2)'
     },
-    // Rating Styles
     ratingSection: {
       backgroundColor: 'white',
       padding: '20px',
@@ -154,7 +142,7 @@ const AlleppeyTravelGuide = () => {
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
     },
     ratingTitle: {
-      color: '#006400',
+      color: '#ff6b6b',
       marginBottom: '15px',
       fontSize: '1.5rem'
     },
@@ -165,10 +153,10 @@ const AlleppeyTravelGuide = () => {
       marginTop: '15px'
     },
     ratingCard: {
-      backgroundColor: '#f0fff8',
+      backgroundColor: '#fff5e6',
       padding: '20px',
       borderRadius: '10px',
-      border: '2px solid #228B22',
+      border: '2px solid #ffa500',
       transition: 'all 0.3s ease'
     },
     ratingStars: {
@@ -186,7 +174,7 @@ const AlleppeyTravelGuide = () => {
       color: '#ffa500'
     },
     rateButton: {
-      backgroundColor: '#006400',
+      backgroundColor: '#ff6b6b',
       color: 'white',
       border: 'none',
       padding: '8px 16px',
@@ -198,11 +186,10 @@ const AlleppeyTravelGuide = () => {
     userRating: {
       marginTop: '10px',
       padding: '10px',
-      backgroundColor: '#f0fff8',
+      backgroundColor: '#fff5e6',
       borderRadius: '5px',
-      borderLeft: '3px solid #228B22'
+      borderLeft: '3px solid #ffa500'
     },
-    // Modal Styles
     modal: {
       position: 'fixed',
       top: '0',
@@ -224,7 +211,7 @@ const AlleppeyTravelGuide = () => {
       boxShadow: '0 10px 40px rgba(0,0,0,0.3)'
     },
     modalTitle: {
-      color: '#006400',
+      color: '#ff6b6b',
       marginBottom: '20px',
       textAlign: 'center'
     },
@@ -244,7 +231,7 @@ const AlleppeyTravelGuide = () => {
       justifyContent: 'center'
     },
     submitButton: {
-      backgroundColor: '#228B22',
+      backgroundColor: '#ffa500',
       color: 'white',
       border: 'none',
       padding: '12px 25px',
@@ -261,7 +248,6 @@ const AlleppeyTravelGuide = () => {
       cursor: 'pointer',
       fontSize: '16px'
     },
-    // Tab Styles
     tabs: {
       display: 'flex',
       justifyContent: 'center',
@@ -281,10 +267,10 @@ const AlleppeyTravelGuide = () => {
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
     },
     activeTab: {
-      backgroundColor: '#006400',
+      backgroundColor: '#ff6b6b',
       color: 'white',
       transform: 'scale(1.05)',
-      boxShadow: '0 6px 20px rgba(0, 100, 0, 0.4)'
+      boxShadow: '0 6px 20px rgba(255, 107, 107, 0.4)'
     },
     content: {
       backgroundColor: 'white',
@@ -297,8 +283,8 @@ const AlleppeyTravelGuide = () => {
       marginBottom: '30px'
     },
     sectionTitle: {
-      color: '#006400',
-      borderBottom: '3px solid #228B22',
+      color: '#ff6b6b',
+      borderBottom: '3px solid #ffa500',
       paddingBottom: '15px',
       marginBottom: '25px',
       fontSize: '2rem',
@@ -313,27 +299,27 @@ const AlleppeyTravelGuide = () => {
       marginTop: '25px'
     },
     card: {
-      backgroundColor: '#f0fff8',
+      backgroundColor: '#fff5e6',
       padding: '25px',
       borderRadius: '12px',
-      border: '2px solid #228B22',
+      border: '2px solid #ffa500',
       transition: 'all 0.3s ease',
-      boxShadow: '0 4px 15px rgba(0, 100, 0, 0.1)'
+      boxShadow: '0 4px 15px rgba(255, 107, 107, 0.1)'
     },
     warning: {
-      backgroundColor: '#fff3e0',
-      border: '2px solid #ffb74d',
+      backgroundColor: '#ffe0e0',
+      border: '2px solid #ff6b6b',
       padding: '20px',
       borderRadius: '10px',
       margin: '15px 0'
     },
     highlight: {
-      color: '#006400',
+      color: '#ff6b6b',
       fontWeight: 'bold',
       fontSize: '1.1rem'
     },
     price: {
-      color: '#228B22',
+      color: '#ffa500',
       fontWeight: 'bold',
       fontSize: '1.1rem'
     },
@@ -343,224 +329,224 @@ const AlleppeyTravelGuide = () => {
     }
   };
 
-  // Alleppey Travel Data
-  const alleppeyData = {
+  // Goa Travel Data
+  const goaData = {
     overview: {
-      title: "Alleppey - Venice of the East",
-      content: `Alleppey (Alappuzha), often called the 'Venice of the East', is a picturesque city in Kerala famous for its beautiful backwaters, houseboats, and pristine beaches. Located on the Malabar Coast, Alleppey is the gateway to Kerala's famous backwaters with over 900 km of canals, lakes, and lagoons. The city is renowned for its annual Nehru Trophy Boat Race, traditional houseboats, coir industry, and breathtaking natural beauty. Alleppey's unique geography with the Arabian Sea on the west and Vembanad Lake on the east makes it one of the most popular tourist destinations in India, offering a perfect blend of natural beauty, cultural heritage, and authentic Kerala experiences.`
+      title: "Goa - Pearl of the Orient",
+      content: `Goa is India's smallest state by area and the fourth smallest by population. Located on India's western coast, it is bounded by the state of Maharashtra to the north and by Karnataka to the east and south, with the Arabian Sea forming its western coast. Goa is famous for its beautiful beaches, vibrant nightlife, Portuguese heritage, and delicious seafood. The state is known for its rich cultural heritage, evident in its architecture, cuisine, and festivals. From the bustling beaches of North Goa to the serene shores of South Goa, this coastal paradise offers something for every type of traveler. The state's unique blend of Indian and Portuguese cultures creates a distinctive atmosphere that makes it one of India's most popular tourist destinations.`
     },
     famousFoods: [
       {
-        name: "Karimeen Pollichathu",
-        description: "Pearl spot fish marinated and grilled in banana leaf",
-        place: "Houseboats, Local restaurants",
-        price: "₹400-800",
-        special: "Kerala's signature fish dish"
+        name: "Goan Fish Curry",
+        description: "Spicy and tangy coconut-based curry with fresh fish",
+        place: "Beach shacks, Local restaurants",
+        price: "₹300-800",
+        special: "Traditional Goan preparation with kokum and coconut"
       },
       {
-        name: "Appam with Stew",
-        description: "Lacy rice pancakes with vegetable or meat stew",
-        place: "Local eateries, Hotels",
-        price: "₹120-250",
-        special: "Traditional Kerala breakfast"
-      },
-      {
-        name: "Puttu and Kadala",
-        description: "Steamed rice cakes with black chickpea curry",
-        place: "Breakfast joints, Street stalls",
-        price: "₹60-120",
-        special: "Classic Kerala morning meal"
+        name: "Pork Vindaloo",
+        description: "Fiery pork curry with vinegar and spices",
+        place: "Portuguese restaurants, Local eateries",
+        price: "₹400-900",
+        special: "Portuguese-Goan fusion dish"
       },
       {
         name: "Seafood Platter",
-        description: "Fresh catch including prawns, crabs, and fish",
-        place: "Beachside restaurants",
-        price: "₹600-1500",
-        special: "Fresh from Arabian Sea"
+        description: "Grilled fish, prawns, crabs, and lobsters",
+        place: "Beachside restaurants, Luxury hotels",
+        price: "₹800-2500",
+        special: "Fresh catch from Arabian Sea"
       },
       {
-        name: "Kerala Sadya",
-        description: "Traditional vegetarian feast served on banana leaf",
-        place: "Special occasions, Temple festivals",
+        name: "Bebinca",
+        description: "Traditional Goan layered dessert",
+        place: "Bakeries, Sweet shops",
         price: "₹200-500",
-        special: "Complete traditional meal"
+        special: "16-layer coconut cake"
+      },
+      {
+        name: "Feni",
+        description: "Local alcoholic drink made from cashew or coconut",
+        place: "Bars, Local taverns",
+        price: "₹100-300",
+        special: "Goa's signature spirit"
       }
     ],
     shopping: [
       {
-        category: "Coir Products",
-        description: "Eco-friendly products made from coconut fiber",
-        places: ["Coir emporiums", "Local markets", "Government shops"],
-        items: ["Mats", "Baskets", "Wall hangings", "Doormats"],
-        priceRange: "₹100 - ₹5,000",
+        category: "Cashew Nuts",
+        description: "Fresh and flavored cashew nuts",
+        places: ["Mapusa Market", "Anjuna Flea Market", "Local shops"],
+        items: ["Plain cashews", "Masala cashews", "Honey roasted", "Spicy variants"],
+        priceRange: "₹200 - ₹2,000",
+        bestTime: "November to March"
+      },
+      {
+        category: "Feni & Alcohol",
+        description: "Local Goan alcoholic beverages",
+        places: ["Local distilleries", "Wine shops", "Supermarkets"],
+        items: ["Cashew Feni", "Coconut Feni", "Local beers", "Wines"],
+        priceRange: "₹150 - ₹2,000",
         bestTime: "Year-round"
       },
       {
-        category: "Spices",
-        description: "Fresh Kerala spices and ayurvedic products",
-        places: ["Spice markets", "Ayurvedic stores"],
-        items: ["Cardamom", "Pepper", "Cinnamon", "Ayurvedic oils"],
-        priceRange: "₹200 - ₹10,000",
-        bestTime: "Winter season"
-      },
-      {
-        category: "Handicrafts",
-        description: "Traditional Kerala crafts and artifacts",
-        places: ["Crafts emporium", "Beach road shops"],
-        items: ["Wood carvings", "Brass lamps", "Kathakali masks"],
-        priceRange: "₹500 - ₹20,000",
+        category: "Beach Wear",
+        description: "Colorful beach clothing and accessories",
+        places: ["Anjuna Flea Market", "Calangute Beach Road", "Local boutiques"],
+        items: ["Beach dresses", "Hats", "Sunglasses", "Beach bags"],
+        priceRange: "₹100 - ₹5,000",
         bestTime: "Tourist season"
       },
       {
-        category: "Cashew Nuts",
-        description: "Fresh and processed cashews from Kerala",
-        places: ["Local markets", "Specialty stores"],
-        items: ["Roasted cashews", "Cashew butter", "Spiced cashews"],
-        priceRange: "₹300 - ₹2,000",
-        bestTime: "Harvest season"
+        category: "Handicrafts",
+        description: "Local crafts and souvenirs",
+        places: ["Saturday Night Market", "Anjuna Market", "Government emporium"],
+        items: ["Shell crafts", "Wood carvings", "Jewelry", "Home decor"],
+        priceRange: "₹50 - ₹10,000",
+        bestTime: "October to April"
       }
     ],
     hotels: [
       {
-        name: "Punnamada Resort",
-        type: "Luxury Backwater Resort",
-        price: "₹8,000-25,000/night",
+        name: "Taj Fort Aguada",
+        type: "Luxury Heritage Resort",
+        price: "₹20,000-60,000/night",
+        rating: "4.8/5",
+        facilities: ["Private beach", "Infinity pools", "Spa", "Multiple restaurants"],
+        location: "Sinquerim, North Goa",
+        distance: "On Aguada Beach"
+      },
+      {
+        name: "W Goa",
+        type: "Luxury Design Hotel",
+        price: "₹15,000-45,000/night",
         rating: "4.7/5",
-        facilities: ["Backwater view", "Ayurveda spa", "Pool", "Private houseboat"],
-        location: "Punnamada",
-        distance: "On backwaters"
+        facilities: ["Designer pools", "Beach access", "Luxury spa", "Wet deck"],
+        location: "Vagator, North Goa",
+        distance: "Beachfront property"
       },
       {
-        name: "Sterling Lake Palace",
-        type: "Luxury Lake Resort",
-        price: "₹6,000-18,000/night",
+        name: "Park Hyatt Goa",
+        type: "Luxury Beach Resort",
+        price: "₹12,000-35,000/night",
+        rating: "4.6/5",
+        facilities: ["Private beach", "Golf course", "Spa", "Multiple dining"],
+        location: "Arossim Beach, South Goa",
+        distance: "On Arossim Beach"
+      },
+      {
+        name: "Alila Diwa Goa",
+        type: "Luxury Resort",
+        price: "₹10,000-25,000/night",
         rating: "4.5/5",
-        facilities: ["Lake view", "Spa", "Swimming pool", "Cultural programs"],
-        location: "Punnamada",
-        distance: "On Vembanad Lake"
+        facilities: ["Infinity pool", "Spa", "Fine dining", "Rice field views"],
+        location: "Majorda, South Goa",
+        distance: "Near Majorda Beach"
       },
       {
-        name: "Ramada Alleppey",
-        type: "5-Star Hotel",
-        price: "₹5,000-15,000/night",
-        rating: "4.3/5",
-        facilities: ["Multiple restaurants", "Pool", "Fitness center", "Banquet"],
-        location: "Beach Road",
-        distance: "1 km from beach"
-      },
-      {
-        name: "Tharavadu Heritage",
-        type: "Heritage Homestay",
-        price: "₹2,500-6,000/night",
-        rating: "4.2/5",
-        facilities: ["Traditional meals", "Cultural experience", "Garden", "Boat rides"],
-        location: "Backwaters",
-        distance: "Access to backwaters"
-      },
-      {
-        name: "Zostel Alleppey",
-        type: "Budget Hostel",
-        price: "₹500-1,500/night",
-        rating: "3.9/5",
-        facilities: ["Dormitory", "Common area", "Bike rental", "Tour desk"],
-        location: "City Center",
-        distance: "2 km from backwaters"
+        name: "Coconut Grove",
+        type: "Budget Beach Resort",
+        price: "₹2,000-8,000/night",
+        rating: "4.0/5",
+        facilities: ["Beach access", "Pool", "Restaurant", "Beach activities"],
+        location: "Calangute, North Goa",
+        distance: "Walking distance to Calangute Beach"
       }
     ],
     places: [
       {
-        name: "Alleppey Backwaters",
-        description: "Network of canals, rivers and lakes - Venice of the East",
-        timing: "6:00 AM - 6:00 PM",
-        entryFee: "Houseboat ₹5,000-20,000, Shikara ₹1,000-3,000",
-        bestTime: "Early morning or sunset",
-        highlights: ["Houseboat cruise", "Village life", "Paddy fields", "Bird watching"]
-      },
-      {
-        name: "Vembanad Lake",
-        description: "Longest lake in India, hub of backwater tourism",
-        timing: "All day",
-        entryFee: "Free (Boat rides extra)",
-        bestTime: "Sunset",
-        highlights: ["Boat races", "Fishing", "Sunset views", "Bird sanctuary"]
-      },
-      {
-        name: "Alleppey Beach",
-        description: "Pristine beach with 150-year-old pier and lighthouse",
-        timing: "All day",
+        name: "Calangute Beach",
+        description: "Largest beach in North Goa, known as Queen of Beaches",
+        timing: "24 hours",
         entryFee: "Free",
-        bestTime: "Early morning or evening",
-        highlights: ["Pier", "Lighthouse", "Beach activities", "Sunset"]
+        bestTime: "November to February",
+        highlights: ["Water sports", "Beach shacks", "Shopping", "Nightlife"]
       },
       {
-        name: "Krishnapuram Palace",
-        description: "18th-century palace with Kerala architecture and mural",
-        timing: "9:00 AM - 5:00 PM",
-        entryFee: "₹10 (Indians), ₹50 (Foreigners)",
+        name: "Baga Beach",
+        description: "Famous for water sports and vibrant nightlife",
+        timing: "24 hours",
+        entryFee: "Free",
+        bestTime: "Evening for nightlife",
+        highlights: ["Water sports", "Beach clubs", "Cafés", "Tito's Lane"]
+      },
+      {
+        name: "Dudhsagar Falls",
+        description: "Magnificent four-tiered waterfall on Mandovi River",
+        timing: "9:00 AM - 5:30 PM",
+        entryFee: "₹50-100",
+        bestTime: "Monsoon season",
+        highlights: ["Waterfall views", "Trekking", "Photography", "Train ride"]
+      },
+      {
+        name: "Old Goa Churches",
+        description: "UNESCO World Heritage site with Portuguese churches",
+        timing: "7:30 AM - 6:30 PM",
+        entryFee: "Free (some churches)",
         bestTime: "Morning hours",
-        highlights: ["Gajendra Moksham mural", "Museum", "Architecture", "Gardens"]
+        highlights: ["Basilica of Bom Jesus", "Se Cathedral", "Architecture", "History"]
       },
       {
-        name: "Ambalapuzha Temple",
-        description: "Famous Krishna temple known for Palpayasam",
-        timing: "5:00 AM - 12:00 PM, 5:00 PM - 8:00 PM",
+        name: "Fort Aguada",
+        description: "17th-century Portuguese fort overlooking Arabian Sea",
+        timing: "9:30 AM - 6:00 PM",
+        entryFee: "₹25 (Indians), ₹300 (Foreigners)",
+        bestTime: "Sunset",
+        highlights: ["Lighthouse", "Fort walls", "Sea views", "Photography"]
+      },
+      {
+        name: "Anjuna Flea Market",
+        description: "Famous Wednesday flea market with global vendors",
+        timing: "9:00 AM - 6:00 PM (Wednesdays)",
         entryFee: "Free",
-        bestTime: "Morning or evening",
-        highlights: ["Traditional architecture", "Palpayasam", "Festivals", "Cultural significance"]
-      },
-      {
-        name: "Pathiramanal Island",
-        description: "Beautiful island in Vembanad Lake, bird watcher's paradise",
-        timing: "Daylight hours",
-        entryFee: "Boat charges apply",
-        bestTime: "Morning for bird watching",
-        highlights: ["Migratory birds", "Nature walk", "Photography", "Serene environment"]
+        bestTime: "Wednesday mornings",
+        highlights: ["Shopping", "Street food", "Live music", "Cultural mix"]
       }
     ],
     precautions: [
       {
-        category: "Houseboat Experience",
+        category: "Beach Safety",
         tips: [
-          "Book houseboats through registered operators",
-          "Carry mosquito repellent",
-          "Confirm meal inclusions in package",
-          "Check safety equipment on board"
+          "Swim only in designated safe areas",
+          "Beware of strong currents during monsoon",
+          "Don't swim under influence of alcohol",
+          "Follow lifeguard instructions"
         ]
       },
       {
-        category: "Weather & Clothing",
+        category: "Nightlife",
         tips: [
-          "Light cotton clothes recommended",
-          "Carry rain protection during monsoon",
-          "Sunscreen and hats essential",
-          "Comfortable footwear for walking"
-        ]
-      },
-      {
-        category: "Transport & Travel",
-        tips: [
-          "Pre-book houseboats in peak season",
-          "Use registered boat operators",
-          "Bargain for Shikara boat rides",
-          "Keep hotel contact details handy"
-        ]
-      },
-      {
-        category: "Food & Water",
-        tips: [
-          "Drink bottled water only",
-          "Try local seafood from clean establishments",
-          "Carry basic medications",
-          "Inform about food allergies"
-        ]
-      },
-      {
-        category: "General Safety",
-        tips: [
-          "Respect local customs and traditions",
-          "Be cautious while swimming",
+          "Drink responsibly",
+          "Use authorized taxis or ride-sharing",
           "Keep valuables secure",
-          "Save emergency contacts"
+          "Stay in groups at night"
+        ]
+      },
+      {
+        category: "Health & Hygiene",
+        tips: [
+          "Stay hydrated in humid climate",
+          "Use sunscreen and hats",
+          "Be cautious with street food",
+          "Carry mosquito repellent"
+        ]
+      },
+      {
+        category: "Travel & Transport",
+        tips: [
+          "Rent vehicles from authorized dealers",
+          "Carry driving license for rentals",
+          "Use helmets on two-wheelers",
+          "Book water sports through registered operators"
+        ]
+      },
+      {
+        category: "General Tips",
+        tips: [
+          "Respect local customs and culture",
+          "Dress appropriately in religious places",
+          "Carry cash as some places don't accept cards",
+          "Book accommodation in advance during peak season"
         ]
       }
     ]
@@ -569,13 +555,13 @@ const AlleppeyTravelGuide = () => {
   // Carousel Functions
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === alleppeyImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === goaImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? alleppeyImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? goaImages.length - 1 : prevIndex - 1
     );
   };
 
@@ -634,13 +620,13 @@ const AlleppeyTravelGuide = () => {
             {/* Image Carousel */}
             <div style={styles.carousel}>
               <img 
-                src={alleppeyImages[currentImageIndex].url} 
-                alt={alleppeyImages[currentImageIndex].title}
+                src={goaImages[currentImageIndex].url} 
+                alt={goaImages[currentImageIndex].title}
                 style={styles.carouselImage}
               />
               <div style={styles.carouselText}>
-                <h3 style={styles.carouselTitle}>{alleppeyImages[currentImageIndex].title}</h3>
-                <p style={styles.carouselDescription}>{alleppeyImages[currentImageIndex].description}</p>
+                <h3 style={styles.carouselTitle}>{goaImages[currentImageIndex].title}</h3>
+                <p style={styles.carouselDescription}>{goaImages[currentImageIndex].description}</p>
               </div>
               
               <div style={styles.carouselControls}>
@@ -659,7 +645,7 @@ const AlleppeyTravelGuide = () => {
               </div>
               
               <div style={styles.carouselDots}>
-                {alleppeyImages.map((_, index) => (
+                {goaImages.map((_, index) => (
                   <div
                     key={index}
                     style={{
@@ -672,38 +658,38 @@ const AlleppeyTravelGuide = () => {
               </div>
             </div>
 
-            <h2 style={styles.sectionTitle}>🌴 About Alleppey - Venice of the East</h2>
+            <h2 style={styles.sectionTitle}>🏖️ About Goa - Pearl of the Orient</h2>
             <p style={{fontSize: '18px', lineHeight: '1.8', textAlign: 'justify'}}>
-              {alleppeyData.overview.content}
+              {goaData.overview.content}
             </p>
             
             <div style={styles.grid}>
               <div style={styles.card}>
-                <h3 style={{color: '#006400', marginBottom: '15px'}}>📅 Best Time to Visit</h3>
-                <p><span style={styles.highlight}>September to March:</span> Pleasant weather, ideal for backwaters</p>
-                <p><span style={styles.highlight}>November to February:</span> Cool winter, perfect for houseboats</p>
-                <p><span style={styles.highlight}>April to June:</span> Summer, good for beach activities</p>
-                <p><span style={styles.highlight}>June to August:</span> Monsoon, lush greenery but humid</p>
+                <h3 style={{color: '#ff6b6b', marginBottom: '15px'}}>📅 Best Time to Visit</h3>
+                <p><span style={styles.highlight}>November to February:</span> Perfect beach weather</p>
+                <p><span style={styles.highlight}>March to May:</span> Hot but good for water sports</p>
+                <p><span style={styles.highlight}>June to September:</span> Monsoon, lush greenery</p>
+                <p><span style={styles.highlight}>October:</span> Shoulder season, fewer crowds</p>
               </div>
               
               <div style={styles.card}>
-                <h3 style={{color: '#006400', marginBottom: '15px'}}>🚗 How to Reach</h3>
-                <p><span style={styles.highlight}>By Air:</span> Cochin International Airport (85 km)</p>
-                <p><span style={styles.highlight}>By Train:</span> Alleppey Railway Station (well connected)</p>
-                <p><span style={styles.highlight}>By Road:</span> Excellent road connectivity via NH66</p>
-                <p><span style={styles.highlight}>Local Transport:</span> Auto-rickshaws, Taxis, Boats</p>
+                <h3 style={{color: '#ff6b6b', marginBottom: '15px'}}>🚗 How to Reach</h3>
+                <p><span style={styles.highlight}>By Air:</span> Dabolim Airport, Goa</p>
+                <p><span style={styles.highlight}>By Train:</span> Madgaon, Thivim, Vasco da Gama</p>
+                <p><span style={styles.highlight}>By Road:</span> Well-connected by NH66</p>
+                <p><span style={styles.highlight}>Local Transport:</span> Bikes, Cars, Taxis, Buses</p>
               </div>
             </div>
 
             {/* Rating Section */}
             <div style={styles.ratingSection}>
-              <h3 style={styles.ratingTitle}>⭐ Rate Your Alleppey Experience</h3>
+              <h3 style={styles.ratingTitle}>⭐ Rate Your Goa Experience</h3>
               <p>Share your experience and help other travelers</p>
               
               <div style={styles.ratingGrid}>
                 <div style={styles.ratingCard}>
-                  <h4>Overall Backwater Experience</h4>
-                  <p>How was your visit to Alleppey?</p>
+                  <h4>Overall Goa Experience</h4>
+                  <p>How was your visit to Goa?</p>
                   {userRatings.overall ? (
                     <div style={styles.userRating}>
                       <p><strong>Your Rating:</strong> {userRatings.overall.rating}/5</p>
@@ -725,19 +711,19 @@ const AlleppeyTravelGuide = () => {
                 </div>
 
                 <div style={styles.ratingCard}>
-                  <h4>Houseboat Experience</h4>
-                  <p>How was your backwater cruise?</p>
-                  {userRatings.houseboat ? (
+                  <h4>Beach Experience</h4>
+                  <p>How were the beaches and water activities?</p>
+                  {userRatings.beach ? (
                     <div style={styles.userRating}>
-                      <p><strong>Your Rating:</strong> {userRatings.houseboat.rating}/5</p>
+                      <p><strong>Your Rating:</strong> {userRatings.beach.rating}/5</p>
                       <div style={styles.ratingStars}>
-                        {renderStars(userRatings.houseboat.rating)}
+                        {renderStars(userRatings.beach.rating)}
                       </div>
                     </div>
                   ) : (
                     <button 
                       style={styles.rateButton}
-                      onClick={() => handleRateClick({ name: 'houseboat', type: 'Houseboat' })}
+                      onClick={() => handleRateClick({ name: 'beach', type: 'Beach Experience' })}
                     >
                       Rate Now
                     </button>
@@ -745,19 +731,19 @@ const AlleppeyTravelGuide = () => {
                 </div>
 
                 <div style={styles.ratingCard}>
-                  <h4>Kerala Food Experience</h4>
-                  <p>How was the local cuisine?</p>
-                  {userRatings.food ? (
+                  <h4>Nightlife Experience</h4>
+                  <p>How was your nightlife experience in Goa?</p>
+                  {userRatings.nightlife ? (
                     <div style={styles.userRating}>
-                      <p><strong>Your Rating:</strong> {userRatings.food.rating}/5</p>
+                      <p><strong>Your Rating:</strong> {userRatings.nightlife.rating}/5</p>
                       <div style={styles.ratingStars}>
-                        {renderStars(userRatings.food.rating)}
+                        {renderStars(userRatings.nightlife.rating)}
                       </div>
                     </div>
                   ) : (
                     <button 
                       style={styles.rateButton}
-                      onClick={() => handleRateClick({ name: 'food', type: 'Kerala Food' })}
+                      onClick={() => handleRateClick({ name: 'nightlife', type: 'Nightlife' })}
                     >
                       Rate Now
                     </button>
@@ -771,11 +757,11 @@ const AlleppeyTravelGuide = () => {
       case 'food':
         return (
           <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>🍽️ Famous Foods & Kerala Cuisine</h2>
+            <h2 style={styles.sectionTitle}>🍽️ Famous Foods & Goan Delicacies</h2>
             <div style={styles.grid}>
-              {alleppeyData.famousFoods.map((food, index) => (
+              {goaData.famousFoods.map((food, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#006400', marginBottom: '15px'}}>{food.name}</h3>
+                  <h3 style={{color: '#ff6b6b', marginBottom: '15px'}}>{food.name}</h3>
                   <p>{food.description}</p>
                   <p><strong>Best Place:</strong> {food.place}</p>
                   <p><strong>Price:</strong> <span style={styles.price}>{food.price}</span></p>
@@ -807,11 +793,11 @@ const AlleppeyTravelGuide = () => {
       case 'shopping':
         return (
           <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>🛍️ Shopping in Alleppey</h2>
+            <h2 style={styles.sectionTitle}>🛍️ Shopping in Goa</h2>
             <div style={styles.grid}>
-              {alleppeyData.shopping.map((item, index) => (
+              {goaData.shopping.map((item, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#006400', marginBottom: '15px'}}>{item.category}</h3>
+                  <h3 style={{color: '#ff6b6b', marginBottom: '15px'}}>{item.category}</h3>
                   <p>{item.description}</p>
                   <p><strong>Best Places:</strong> {item.places.join(', ')}</p>
                   <p><strong>Popular Items:</strong> {item.items.join(', ')}</p>
@@ -828,9 +814,9 @@ const AlleppeyTravelGuide = () => {
           <div style={styles.section}>
             <h2 style={styles.sectionTitle}>🏨 Hotels & Accommodation</h2>
             <div style={styles.grid}>
-              {alleppeyData.hotels.map((hotel, index) => (
+              {goaData.hotels.map((hotel, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#006400', marginBottom: '15px'}}>{hotel.name}</h3>
+                  <h3 style={{color: '#ff6b6b', marginBottom: '15px'}}>{hotel.name}</h3>
                   <p><strong>Type:</strong> {hotel.type}</p>
                   <p><strong>Price:</strong> <span style={styles.price}>{hotel.price}</span></p>
                   <p><strong>Rating:</strong> {hotel.rating}</p>
@@ -846,11 +832,11 @@ const AlleppeyTravelGuide = () => {
       case 'places':
         return (
           <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>🌴 Famous Places to Visit</h2>
+            <h2 style={styles.sectionTitle}>🏖️ Famous Places to Visit</h2>
             <div style={styles.grid}>
-              {alleppeyData.places.map((place, index) => (
+              {goaData.places.map((place, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#006400', marginBottom: '15px'}}>{place.name}</h3>
+                  <h3 style={{color: '#ff6b6b', marginBottom: '15px'}}>{place.name}</h3>
                   <p>{place.description}</p>
                   <p><strong>Timing:</strong> {place.timing}</p>
                   <p><strong>Entry Fee:</strong> {place.entryFee}</p>
@@ -867,9 +853,9 @@ const AlleppeyTravelGuide = () => {
           <div style={styles.section}>
             <h2 style={styles.sectionTitle}>⚠️ Travel Precautions & Tips</h2>
             <div style={styles.grid}>
-              {alleppeyData.precautions.map((category, index) => (
+              {goaData.precautions.map((category, index) => (
                 <div key={index} style={styles.card}>
-                  <h3 style={{color: '#006400', marginBottom: '15px'}}>{category.category}</h3>
+                  <h3 style={{color: '#ff6b6b', marginBottom: '15px'}}>{category.category}</h3>
                   <ul style={{paddingLeft: '20px'}}>
                     {category.tips.map((tip, tipIndex) => (
                       <li key={tipIndex} style={{marginBottom: '10px', lineHeight: '1.5'}}>
@@ -883,10 +869,9 @@ const AlleppeyTravelGuide = () => {
             
             <div style={{...styles.warning, marginTop: '20px'}}>
               <h4>🚨 Emergency Contacts</h4>
-              <p><strong>Police:</strong> 100 | <strong>Ambulance:</strong> 108 | <strong>Fire:</strong> 101</p>
-              <p><strong>Tourist Helpline:</strong> 1363 | <strong>Women Helpline:</strong> 1091</p>
-              <p><strong>Local Police:</strong> 0477-2252266 | <strong>Hospital:</strong> 0477-2262222</p>
-              <p><strong>Tourist Information Center:</strong> 0477-2253308</p>
+              <p><strong>Police:</strong> 100 | <strong>Ambulance:</strong> 102 | <strong>Fire:</strong> 101</p>
+              <p><strong>Tourist Police:</strong> 0832-2427432 | <strong>Coastal Security:</strong> 1093</p>
+              <p><strong>Goa Medical College:</strong> 0832-2458700 | <strong>Tourist Helpline:</strong> 1363</p>
             </div>
           </div>
         );
@@ -949,8 +934,8 @@ const AlleppeyTravelGuide = () => {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h1 style={styles.title}>🌴 Alleppey</h1>
-        <p style={styles.subtitle}>Venice of the East - Backwater Paradise</p>
+        <h1 style={styles.title}>🏖️ Goa</h1>
+        <p style={styles.subtitle}>Pearl of the Orient - Beach Paradise</p>
       </div>
 
       <div style={styles.tabs}>
@@ -963,7 +948,7 @@ const AlleppeyTravelGuide = () => {
             }}
             onMouseEnter={(e) => {
               if (activeTab !== tab) {
-                e.target.style.backgroundColor = '#228B22';
+                e.target.style.backgroundColor = '#ffa500';
                 e.target.style.color = 'white';
               }
             }}
@@ -979,7 +964,7 @@ const AlleppeyTravelGuide = () => {
             {tab === 'food' && '🍽️ Food'}
             {tab === 'shopping' && '🛍️ Shopping'}
             {tab === 'hotels' && '🏨 Hotels'}
-            {tab === 'places' && '🌴 Places'}
+            {tab === 'places' && '🏖️ Places'}
             {tab === 'precautions' && '⚠️ Precautions'}
           </button>
         ))}
@@ -999,13 +984,13 @@ const AlleppeyTravelGuide = () => {
         color: '#666',
         borderTop: '1px solid #ddd'
       }}>
-        <p>© 2024 Alleppey Travel Guide. Experience the Backwater Paradise!</p>
+        <p>© 2024 Goa Travel Guide. Experience Beach Paradise!</p>
         <p style={{fontSize: '14px', marginTop: '10px'}}>
-          Made with ❤️ for travelers exploring the wonders of Kerala
+          Made with ❤️ for travelers exploring the Pearl of the Orient
         </p>
       </div>
     </div>
   );
 };
 
-export default AlleppeyTravelGuide;
+export default GoaTravelGuide;
