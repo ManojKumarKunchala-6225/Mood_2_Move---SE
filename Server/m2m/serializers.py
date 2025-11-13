@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 # Assuming your User model is being extended by a Profile model in .models
-from .models import Profile 
+from .models import Profile, Testimonial
 
 User = get_user_model() # Best practice: always use get_user_model()
 
@@ -154,3 +154,8 @@ class PasswordResetRequestSerializer(serializers.Serializer):
 class PasswordResetConfirmSerializer(serializers.Serializer):
     """Serializer for confirming the password reset."""
     password = serializers.CharField(write_only=True, required=True)
+    
+class TestimonialSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Testimonial
+        fields = ['id', 'name', 'text', 'avatar', 'created_at']

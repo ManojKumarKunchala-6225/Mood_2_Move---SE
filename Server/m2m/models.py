@@ -33,6 +33,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15, blank=True)
@@ -76,3 +77,11 @@ class Place(models.Model):
     def __str__(self):
         return self.name
 
+class Testimonial(models.Model):
+    name = models.CharField(max_length=100)
+    text = models.TextField()
+    avatar = models.URLField(blank=True, null=True)  # image URL
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

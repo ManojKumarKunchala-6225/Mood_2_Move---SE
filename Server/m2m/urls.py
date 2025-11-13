@@ -7,7 +7,7 @@
 #     path('api/stats/', stats_view, name='stats')
 # ]
 from django.urls import path
-from .views import stats_view, MyTokenObtainPairView, RegisterView, RecommendationView, HelloWorldView
+from .views import stats_view, MyTokenObtainPairView, RegisterView, RecommendationView, HelloWorldView, TestimonialListView
 
 urlpatterns = [
     path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -15,4 +15,6 @@ urlpatterns = [
     path('api/recommend/', RecommendationView.as_view(), name='recommend'),
     path('api/hello/', HelloWorldView.as_view(), name='hello'),
     path('api/stats/', stats_view, name='stats'),   # ✅ Add this line
+    path("api/testimonials/", TestimonialListView.as_view(), name="testimonials"),
+
 ]

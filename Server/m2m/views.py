@@ -6,7 +6,9 @@ from rest_framework.views import APIView
 from rest_framework.decorators import api_view   # ✅ Added this import
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
-from .models import Place, Mood, User  
+from .models import Place, Mood, User 
+from .models import Testimonial
+from .serializers import TestimonialSerializer
 
 # ✅ Imports for Password Reset
 from django.contrib.auth.tokens import default_token_generator
@@ -222,3 +224,8 @@ class PasswordResetConfirmView(generics.GenericAPIView):
             return Response({"message": "Password has been reset successfully."}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Invalid token or user ID."}, status=status.HTTP_400_BAD_REQUEST)
+
+class TestimonialListView(generics.ListAPIView):
+    queryset = Testimonial.objects.all().order_by('-created_at')
+    serializer_class = TestimonialSerializer
+    permission_classes = [permissions.AllowAny]
