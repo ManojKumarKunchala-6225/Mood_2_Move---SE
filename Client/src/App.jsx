@@ -1,6 +1,7 @@
 // src/App.jsx
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Results from "./pages/Results";
 
 // ===================== CONTEXT =====================
 import { AuthProvider } from "./AuthContext.jsx";
@@ -136,6 +137,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/results" element={<Results />} />
 
             {/* ============ PLACES ROUTES ============ */}
             <Route path="/places/agra" element={<Agra />} />
