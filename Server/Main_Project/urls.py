@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 # Import for the standard token refresh view
 from rest_framework_simplejwt.views import TokenRefreshView
@@ -35,7 +35,7 @@ urlpatterns = [
     
     # Profile Update (PATCH) 
     path('api/profile/update/', ProfileUpdateAPIView.as_view(), name='user_profile_update'), 
-    
+    path('', include('m2m.urls')),
     path('api/password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
     path('api/password-reset-confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     

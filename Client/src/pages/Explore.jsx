@@ -238,7 +238,6 @@ export default function Explore() {
         },
       })
       .then((response) => {
-        // ✅ Navigate to Results page and pass data
         navigate("/results", { state: { results: response.data } });
       })
       .catch((err) => {
@@ -256,7 +255,7 @@ export default function Explore() {
 
   const RadioButton = ({ category, value, color = "white", children }) => (
     <label
-      className={`flex items-center space-x-2 bg-${color}-50 p-3 rounded-lg hover:bg-${color}-100 cursor-pointer transform hover:scale-105 transition`}
+      className={`flex items-center justify-center space-x-2 bg-${color}-50 px-6 py-3 rounded-lg hover:bg-${color}-100 cursor-pointer transform hover:scale-105 transition`}
     >
       <input
         type="radio"
@@ -266,7 +265,7 @@ export default function Explore() {
         onChange={() => handleRadioChange(category, value)}
         className={`w-5 h-5 text-${color}-600 focus:ring-${color}-500`}
       />
-      <span>{children}</span>
+      <span className="font-medium">{children}</span>
     </label>
   );
 
@@ -275,25 +274,28 @@ export default function Explore() {
       <Navbar />
       <div className="min-h-screen flex flex-col items-center justify-center p-6 pt-24 bg-gradient-to-b from-blue-100 via-white to-green-50">
         <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-2xl">
-          <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
+          <h1 className="text-3xl font-bold text-blue-700 text-center mb-6">
             Choose Your Travel Preferences
           </h1>
 
           {/* Mood Based */}
-          <section className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-700 mb-3">Mood Based</h2>
-            <div className="grid grid-cols-2 gap-4">
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4 text-left">Mood Based</h2>
+            <div className="grid grid-cols-2 gap-4 justify-items-center">
               <RadioButton category="mood" value="Peace">Relax</RadioButton>
               <RadioButton category="mood" value="Adventure">Adventure</RadioButton>
-              <RadioButton category="mood" value="Spiritual">Happy</RadioButton>
+              <RadioButton category="mood" value="Happy">Happy</RadioButton>
               <RadioButton category="mood" value="Romantic">Romantic</RadioButton>
+              <div className="col-span-2 flex justify-center">
+                <RadioButton category="mood" value="Spiritual">Spiritual</RadioButton>
+              </div>
             </div>
           </section>
 
           {/* People Based */}
-          <section className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-700 mb-3">People Based</h2>
-            <div className="grid grid-cols-2 gap-4">
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4 text-left">People Based</h2>
+            <div className="grid grid-cols-2 gap-4 justify-items-center">
               <RadioButton category="people" value="Solo" color="green">Solo</RadioButton>
               <RadioButton category="people" value="Family" color="green">Family</RadioButton>
               <RadioButton category="people" value="Couple" color="green">Couple</RadioButton>
@@ -302,16 +304,16 @@ export default function Explore() {
           </section>
 
           {/* Location */}
-          <section className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-700 mb-3">Location</h2>
-            <div className="grid grid-cols-2 gap-4">
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4 text-left">Location</h2>
+            <div className="grid grid-cols-2 gap-4 justify-items-center">
               <RadioButton category="location" value="North" color="yellow">North</RadioButton>
               <RadioButton category="location" value="South" color="yellow">South</RadioButton>
             </div>
           </section>
 
           {/* Search Button */}
-          <div className="text-center mt-6">
+          <div className="text-center mt-8">
             <button
               onClick={handleSearch}
               className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-700 text-white text-lg font-semibold rounded-full shadow-lg hover:scale-105 transition duration-300"

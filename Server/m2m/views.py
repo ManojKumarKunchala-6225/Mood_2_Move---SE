@@ -3,8 +3,10 @@ from django.contrib.auth.models import User
 from rest_framework import generics, permissions, serializers, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view   # ✅ Added this import
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+from .models import Place, Mood, User  
 
 # ✅ Imports for Password Reset
 from django.contrib.auth.tokens import default_token_generator
@@ -16,7 +18,7 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404 
 
 from .recommend_logic import find_recommendations
-from .models import Profile # Make sure Profile is imported
+from .models import Profile
 
 # 🚀 SERIALIZER IMPORTS
 from .serializers import (
@@ -30,18 +32,24 @@ from .serializers import (
 )
 
 User = get_user_model()
-# Get an instance of a logger
 logger = logging.getLogger(__name__)
 
+# ✅ ADD THIS — your new stats endpoint (works with your React app)
+@api_view(['GET'])
+def stats_view(request):
+    data = {
+        "destinations": Place.objects.count(),
+        "moods": Mood.objects.count(),
+        "travelers": User.objects.count(),
+    }
+    return Response(data)
 
-# ==============================================================================
-# TOKEN SERIALIZER (Defined here since it extends a JWT view)
-# ==============================================================================
 
+# =====================================================================
+# TOKEN SERIALIZER
+# =====================================================================
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
-    """
-    Custom token serializer to allow login with either username or email.
-    """
+    """Custom token serializer to allow login with either username or email."""
     def validate(self, attrs):
         identifier = attrs.get('username')
         password = attrs.get('password')
@@ -67,9 +75,9 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         raise serializers.ValidationError('No active account found with the given credentials')
 
 
-# ==============================================================================
+# =====================================================================
 # API VIEWS
-# ==============================================================================
+# =====================================================================
 
 class MyTokenObtainPairView(TokenObtainPairView):
     """Custom view to use the custom token serializer."""
@@ -122,39 +130,28 @@ class UserProfileView(generics.RetrieveAPIView):
 
 
 class ProfileUpdateAPIView(generics.UpdateAPIView):
-    """
-    API view to update the currently authenticated user's profile data.
-    Handles PATCH requests from the frontend.
-    """
+    """API view to update the currently authenticated user's profile data."""
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = UserProfileUpdateSerializer
-    http_method_names = ['patch'] # Only allow PATCH updates
+    http_method_names = ['patch'] 
 
     def get_object(self):
-        # Set the object to be updated to the currently authenticated user
         return self.request.user
 
 
-# 🚀 Change Password View
 class ChangePasswordView(generics.GenericAPIView):
-    """
-    An endpoint for changing the currently authenticated user's password.
-    Endpoint: api/profile/change_password/
-    """
+    """An endpoint for changing the currently authenticated user's password."""
     serializer_class = ChangePasswordSerializer
     permission_classes = (permissions.IsAuthenticated,) 
     
     def get_object(self, queryset=None):
-        # Ensures we operate on the currently logged-in user
         return self.request.user
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
-        # Pass the request object to the serializer context for old password validation
         serializer = self.get_serializer(data=request.data, context={'request': request}) 
 
         if serializer.is_valid(raise_exception=True):
-            # Save the new password
             self.object.set_password(serializer.validated_data['new_password1'])
             self.object.save()
             
@@ -175,11 +172,8 @@ class HelloWorldView(APIView):
 
 
 # ✅ --- PASSWORD RESET VIEWS ---
-
 class PasswordResetRequestView(generics.GenericAPIView):
-    """
-    Takes an email and sends a password reset link if the user exists.
-    """
+    """Takes an email and sends a password reset link if the user exists."""
     permission_classes = [permissions.AllowAny]
     serializer_class = PasswordResetRequestSerializer
 
@@ -193,8 +187,6 @@ class PasswordResetRequestView(generics.GenericAPIView):
             
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token = default_token_generator.make_token(user)
-            
-            # 💡 CRITICAL: Ensure this reset_url matches your frontend route structure
             reset_url = f"http://localhost:5173/reset-password/{uid}/{token}/"
             
             subject = "Password Reset for Your Mood2Move Account"
@@ -203,15 +195,13 @@ class PasswordResetRequestView(generics.GenericAPIView):
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])
             
         except User.DoesNotExist:
-            pass # Don't reveal if the user does not exist for security
+            pass 
             
         return Response({"message": "If an account with that email exists, a password reset link has been sent."}, status=status.HTTP_200_OK)
 
 
 class PasswordResetConfirmView(generics.GenericAPIView):
-    """
-    Verifies the token and uid and resets the user's password.
-    """
+    """Verifies the token and uid and resets the user's password."""
     permission_classes = [permissions.AllowAny]
     serializer_class = PasswordResetConfirmSerializer
 
